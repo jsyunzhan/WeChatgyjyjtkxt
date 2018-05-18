@@ -6,6 +6,7 @@
 
     <typeAliases>
         <typeAlias alias="ParamEntityInfo" type="domain.base.entity.ParamEntity"/>
+        <typeAlias alias="SchoolEntityInfo" type="domain.listen.entity.SchoolEntity"/>
     </typeAliases>
 
 </configuration>

@@ -10,12 +10,17 @@ $(function () {
             }
 
         }
-    })
+    });
 
     $("#town").change(function () {
-        $(this).val();
+        var id = $(this).val();
         $.ajax({
-
+            url:"/listen/getSchoolType/" + id,
+            type:"GET",
+            dataType:"json",
+            success:function (event) {
+                console.log(event)
+            }
         })
     })
 });
