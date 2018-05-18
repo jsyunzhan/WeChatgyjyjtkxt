@@ -31,7 +31,6 @@ $(function(){
             }else{
                 $(".imagesNum").text(imageNum);
             }
-
             $(".imgclose").click(function(){
                 $(this).parent(".fileImage").remove();
                 imageNum = $(".fileImage").length;
@@ -41,10 +40,9 @@ $(function(){
                 }
             })
         })
-
-
     }
-    
+
+    // 高德地图定位
     function map_position(){
         var mapObj = new AMap.Map('iCenter');
         mapObj.plugin('AMap.Geolocation', function () {
@@ -70,6 +68,12 @@ $(function(){
             $(".town").text(res);
         }
     }
+
+    // 公开评价
+    $(".content_03").click(function(){
+        $(this).find("span").toggleClass("choosen");
+    })
+
 
     uploadImage();
     map_position();

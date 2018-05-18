@@ -32,7 +32,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select></select>
+            <select id="school_lx"></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课学校</div>
@@ -99,12 +99,15 @@
             <div class="arrow" width="100px;"></div>
         </div>
     </div>
+    <div class="content_03">
+        <span></span>是否公开此评价
+    </div>
 </div>
 
 <div class="footer">
     <div>
-        <span><img src="../../static/images/icon_05.png"></span>
-        <span>听课评价</span>
+        <span><img src="../../static/images/icon_01.png"></span>
+        <span style="color: #FFCC00;">听课评价</span>
     </div>
     <div>
         <span><img src="../../static/images/icon_06.png"></span>
