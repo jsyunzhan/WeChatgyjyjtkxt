@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../../static/css/public.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/index.css">
-    <script type="text/javascript" src="../../static/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="../../static/jquery/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
-    <script type="text/javascript" src="../../static/js/pop.js"></script>
+    <script type="text/javascript" src="../../static/jquery/pop.js"></script>
     <script type="text/javascript" src="../../static/js/index.js"></script>
     <script type="text/javascript" src="../../static/js/listen/notecommentpanel.js"></script>
     <title>高邮市教育局机关进校园系统</title>
