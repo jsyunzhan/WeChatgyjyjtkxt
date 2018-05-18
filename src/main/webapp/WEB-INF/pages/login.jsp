@@ -11,6 +11,7 @@
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
     <script type="text/javascript" src="../../static/js/pop.js"></script>
     <script type="text/javascript" src="../../static/js/index.js"></script>
+    <script type="text/javascript" src="../../static/js/listen/notecommentpanel.js"></script>
     <title>高邮市教育局机关进校园系统</title>
 </head>
 <body>
