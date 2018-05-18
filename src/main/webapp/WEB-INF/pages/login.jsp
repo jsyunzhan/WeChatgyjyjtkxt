@@ -10,6 +10,7 @@
     <script type="text/javascript" src="../../static/js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="../../static/js/pop.js"></script>
     <script type="text/javascript" src="../../static/js/index.js"></script>
+    <script type="text/javascript" src="../../static/js/listen/notecommentpanel.js"></script>
     <title>高邮市教育局机关进校园系统</title>
 </head>
 <body>
