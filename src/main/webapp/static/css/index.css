@@ -1,0 +1,191 @@
+body{
+	background: #FAFAFA;
+	font-size: 14px;
+	color: #666;
+}
+
+.title{
+	text-align: center;
+	font-size: 18px;
+	font-family: "宋体";
+	line-height: 50px;
+}
+
+/*选项*/
+.wrapper{
+	overflow-y: scroll;
+}
+
+.content_01,.content_02{
+	border-top: 1px solid #ccc;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.inform{
+	display: flex;
+	border-bottom: 1px solid #ccc;
+}
+
+.inform .name{
+	width: 80px;
+	min-width: 80px;
+	height: 40px;
+	line-height: 40px;
+	padding-left: 10px;
+}
+
+.inform .arrow{
+	width: 20px;
+	padding: 10px;
+}
+
+.inform .text{
+	flex: 1;
+	height: 40px;
+	line-height: 40px;
+}
+
+.inform .text input{
+	border: 0;
+	outline: 0;
+	height: 40px;
+	line-height: 40px;
+	width: 90%;
+}
+
+input::-webkit-input-placeholder{
+	color: #999;
+}
+
+input::-moz-placeholder{
+    color: #999;
+}
+
+input:-moz-placeholder{
+    color: #999;
+}
+
+input:-ms-input-placeholder{
+    color: #999;
+}
+
+textarea::-webkit-input-placeholder{
+	color: #999;
+}
+
+textarea::-moz-placeholder{
+    color: #999;
+}
+
+textarea:-moz-placeholder{
+    color: #999;
+}
+
+textarea:-ms-input-placeholder{
+    color: #999;
+}
+
+.inform .textarea{
+	width: 100%;
+}
+
+.inform .textarea textarea{
+	display: block;
+	width: 90%;
+	border: 0;
+	outline: 0;
+	height: 80px;
+	line-height: 30px;
+	padding: 5px 0;
+	resize: none;
+	word-break: break-all;
+}
+
+/*照片上传*/
+.image_num{
+	padding: 0 10px;
+	line-height: 40px;
+	height: 40px;
+}
+
+.image_num div{
+	width: 50%;
+	float: left;
+}
+
+.image_num div:nth-child(2){
+	text-align: right;
+}
+
+.upload{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.upload div{
+	float: left;
+	width: 50px;
+	height: 50px;
+}
+
+.upload div img{
+	width: 100%;
+	height: 100%;
+}
+
+.upload .fileImage img{
+	border-radius: 5px;
+	border: 1px solid #ccc;
+}
+
+.addImage{
+	position: relative;
+	overflow: hidden;
+}
+
+.addImage #addImage{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+/*页面底部*/
+.footer{
+	width: 100%;
+	height: 50px;
+	display: flex;
+}
+
+.footer div{
+	flex: 1;
+	background: #fefefe;
+	border-top: 1px solid #eee;
+	border-right: 1px solid #eee;
+}
+
+.footer div:nth-last-child(1){
+	border-right: 0;
+}
+
+.footer div span{
+	display: block;
+	font-size: 12px;
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	line-height: 20px;
+}
+
+.footer div span:nth-child(1){
+	margin-top: 5px;
+}
+
+.footer div span:nth-child(2){
+	width: 80%;
+	text-align: center;
+	color: #666
+}
