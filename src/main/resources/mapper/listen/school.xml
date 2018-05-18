@@ -6,7 +6,7 @@
     <!--查询学校类型，by街道id-->
     <select id="getSchoolType" resultType="SchoolEntityInfo">
         SELECT
-        DISTINCT t.SCHOOL_TYPE_ID
+        DISTINCT t.SCHOOL_TYPE_ID id
         FROM t_sys_school t
         WHERE t.DELETE_FLAG='1'
         AND t.STREET_ID=#{id}
