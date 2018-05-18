@@ -13,7 +13,7 @@ import java.util.List;
 import static domain.base.BaseWebURLMapping.PARAM_URL;
 
 @Controller
-public class BaseController {
+public class BaseController{
 
     final private BaseService baseService;
 
@@ -21,7 +21,6 @@ public class BaseController {
     public BaseController(BaseService baseService){
         this.baseService = baseService;
     }
-
 
     @RequestMapping(value = PARAM_URL)
     @ResponseBody
