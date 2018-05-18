@@ -11,7 +11,7 @@
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
     <script type="text/javascript" src="../../static/jquery/pop.js"></script>
     <script type="text/javascript" src="../../static/js/index.js"></script>
-    <script type="text/javascript" src="../../static/js/listen/notecommentpanel.js"></script>
+    <script type="text/javascript" src="../../static/js/listen/note.js"></script>
     <title>高邮市教育局机关进校园系统</title>
 </head>
 <body>
@@ -24,6 +24,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
+            <select id="town"></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">学校类型</div>
@@ -31,6 +32,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
+            <select></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课学校</div>
@@ -38,6 +40,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
+            <select></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">班级年级</div>
@@ -52,6 +55,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
+            <select></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课课题</div>
@@ -86,7 +90,6 @@
         </div>
         <div class="upload clearfix">
             <div class="addImage">
-                <img src="../../static/images/images.png">
                 <input type="file" accept="image/*" name="addImage" id="addImage" multiple>	<!-- multiple属性支持多张照片上传 -->
             </div>
         </div>
