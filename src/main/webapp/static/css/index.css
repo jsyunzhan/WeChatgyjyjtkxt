@@ -1,12 +1,20 @@
+html{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: #FAFAFA;
+}
+
 body{
 	background: #FAFAFA;
-	font-size: 14px;
+	font-size: 16px;
 	color: #666;
 }
 
 .title{
 	text-align: center;
-	font-size: 18px;
+	font-size: 20px;
 	font-family: "宋体";
 	line-height: 50px;
 }
@@ -14,6 +22,7 @@ body{
 /*选项*/
 .wrapper{
 	overflow-y: scroll;
+	-webkit-overflow-scrolling : touch;
 }
 
 .content_01,.content_02{
@@ -28,29 +37,28 @@ body{
 }
 
 .inform .name{
-	width: 80px;
-	min-width: 80px;
-	height: 40px;
-	line-height: 40px;
+	width: 90px;
+	min-width: 90px;
+	height: 50px;
+	line-height: 50px;
 	padding-left: 10px;
 }
 
 .inform .arrow{
 	width: 20px;
-	padding: 10px;
+	padding: 15px;
 }
 
 .inform .text{
 	flex: 1;
-	height: 40px;
-	line-height: 40px;
+	line-height: 50px;
 }
 
 .inform .text input{
 	border: 0;
 	outline: 0;
-	height: 40px;
-	line-height: 40px;
+	height: 50px;
+	line-height: 50px;
 	width: 90%;
 }
 
@@ -97,7 +105,7 @@ textarea:-ms-input-placeholder{
 	outline: 0;
 	height: 80px;
 	line-height: 30px;
-	padding: 5px 0;
+	padding: 10px 0;
 	resize: none;
 	word-break: break-all;
 }
@@ -105,8 +113,8 @@ textarea:-ms-input-placeholder{
 /*照片上传*/
 .image_num{
 	padding: 0 10px;
-	line-height: 40px;
-	height: 40px;
+	line-height: 50px;
+	height: 50px;
 }
 
 .image_num div{
@@ -121,12 +129,14 @@ textarea:-ms-input-placeholder{
 .upload{
 	width: 90%;
 	margin: 0 auto;
+	padding: 10px 0;
 }
 
 .upload div{
 	float: left;
-	width: 50px;
-	height: 50px;
+	width: 60px;
+	height: 60px;
+	margin-right: 10px;
 }
 
 .upload div img{
@@ -151,6 +161,12 @@ textarea:-ms-input-placeholder{
 	width: 100%;
 	height: 100%;
 	opacity: 0;
+}
+
+/*地图定位*/
+.inform .town{
+	padding: 10px 0;
+	line-height: 30px;
 }
 
 /*页面底部*/

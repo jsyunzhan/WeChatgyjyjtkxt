@@ -8,12 +8,12 @@
     <link rel="stylesheet" type="text/css" href="../../static/css/public.css">
     <link rel="stylesheet" type="text/css" href="../../static/css/index.css">
     <script type="text/javascript" src="../../static/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
     <script type="text/javascript" src="../../static/js/pop.js"></script>
     <script type="text/javascript" src="../../static/js/index.js"></script>
     <title>高邮市教育局机关进校园系统</title>
 </head>
 <body>
-
 <div class="wrapper">
     <div class="title">听课评价</div>
     <div class="content_01">
@@ -91,10 +91,8 @@
         </div>
         <div class="inform">
             <div class="name" width="100px;">所属乡镇</div>
-            <div class="text"></div>
-            <div class="arrow" width="100px;">
-                <img src="../../static/images/position.png">
-            </div>
+            <div class="text town"></div>
+            <div class="arrow" width="100px;"></div>
         </div>
     </div>
 </div>
@@ -117,5 +115,7 @@
         <span>用户中心</span>
     </div>
 </div>
+</body>
+</html>
 </body>
 </html>
