@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="domain.base.dao.BaseDao">
+
+    <!--查询蚕食-->
+    <select id="getParams" resultType="ParamEntityInfo">
+        SELECT
+        t.ID id,
+        t.PARAM_NAME paramName,
+        t.PARAM_TYPE paramType,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_sys_parameter t
+        WHERE t.DELETE_FLAG='1'
+        AND t.PARAM_TYPE=#{paramType}
+    </select>
+
+</mapper>

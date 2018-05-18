@@ -5,7 +5,7 @@
 
 
     <typeAliases>
-
+        <typeAlias alias="ParamEntityInfo" type="domain.base.entity.ParamEntity"/>
     </typeAliases>
 
 </configuration>
