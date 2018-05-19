@@ -13,15 +13,20 @@ $(function () {
         }
     });
 
-    $("#town").change(function () {
+    $("#town").change(function(){
+        $("#school_lx").html("");
+        $("#school_lx").append('<option>请选择</option>');
+        $("#school").html("");
+        $("#school").append('<option>请选择</option>');
+        $("#school_lx").siblings(".text").text("");
         var id = $(this).val();
+        $(this).siblings(".text").text($("#town option:selected").text());
         if(id!="请选择"){
             $.ajax({
                 url:"/listen/getSchoolType/" + id,
                 type:"GET",
                 dataType:"json",
                 success:function (event) {
-                    $("#school_lx").append('<option>请选择</option>');
                     for(var i in event){
                         if(event[i].id ==1){
                             var _html = '<option value="'+event[i].id+'">小学</option>';
@@ -40,7 +45,10 @@ $(function () {
     })
 
     $("#school_lx").change(function () {
+        $("#school").html("");
+        $("#school").append('<option>请选择</option>');
         var id = $(this).val();
+        $(this).siblings(".text").text($("#school_lx option:selected").text());
         if(id!="请选择"){
 
         }

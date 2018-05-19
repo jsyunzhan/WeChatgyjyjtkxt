@@ -40,7 +40,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select></select>
+            <select id="school_lx"></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">班级年级</div>
