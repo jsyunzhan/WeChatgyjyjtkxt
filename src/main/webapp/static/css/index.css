@@ -213,6 +213,18 @@ textarea:-ms-input-placeholder{
     background-size: 100% 100%;
 }
 
+/*提交*/
+.submit{
+	width: 80%;
+	margin: 10px auto;
+	line-height: 36px;
+	background: #FFCC00;
+	text-align: center;
+	color: #fff;
+	border-radius: 5px;
+	font-family: '黑体';
+}
+
 /*页面底部*/
 .footer{
     position: fixed;

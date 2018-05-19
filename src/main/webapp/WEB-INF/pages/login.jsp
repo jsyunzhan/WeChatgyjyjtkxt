@@ -24,7 +24,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select id="town"></select>
+            <select id="town"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">学校类型</div>
@@ -32,7 +32,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select id="school_lx"></select>
+            <select id="school_lx"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课学校</div>
@@ -40,7 +40,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select id="school_lx"></select>
+            <select id="school"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">班级年级</div>
@@ -55,7 +55,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select></select>
+            <select><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课课题</div>
@@ -102,6 +102,7 @@
     <div class="content_03">
         <span></span>是否公开此评价
     </div>
+    <div class="submit">提交</div>
 </div>
 
 <div class="footer">
