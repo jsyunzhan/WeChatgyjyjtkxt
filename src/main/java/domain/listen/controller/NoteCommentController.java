@@ -46,6 +46,11 @@ public class NoteCommentController {
         return noteCommentService.getSchoolType(id);
     }
 
+    /**
+     * 通过 街道id和学校类型id，获取学校名称
+     * @param schoolEntity 查询实体
+     * @return List<SchoolEntity>
+     */
     @RequestMapping(value = GET_SCHOOL_NAME)
     @ResponseBody
     public List<SchoolEntity> getSchool(@RequestBody SchoolEntity schoolEntity){

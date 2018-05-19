@@ -1,4 +1,5 @@
 $(function () {
+    //获取乡镇下拉数据
     $.ajax({
         url:"/paramters/STREET",
         type:"GET",
@@ -10,6 +11,26 @@ $(function () {
                 $("#town").append(_html);
             }
 
+        }
+    });
+
+    //获取学科下拉框数据
+    $.ajax({
+        url:"/paramters/DISCIPLINE",
+        type:"GET",
+        dataType:"json",
+        success:function (event) {
+            console.log(event)
+        }
+    });
+
+    //获取课堂评分下拉框数据
+    $.ajax({
+        url:"/paramters/SCORE",
+        type:"GET",
+        dataType:"json",
+        success:function (event) {
+            console.log(event)
         }
     });
 
