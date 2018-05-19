@@ -1,10 +1,14 @@
 package domain.listen.entity;
 
 import domain.base.entity.AbstractEntity;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * 学校实体类
  */
+@Getter
+@Setter
 public class SchoolEntity extends AbstractEntity{
 
     //学校类型ID

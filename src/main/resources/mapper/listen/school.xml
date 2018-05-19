@@ -12,4 +12,15 @@
         AND t.STREET_ID=#{id}
     </select>
 
+    <!--根据街道id，学校类id，获取学校-->
+    <select id="getSchool" resultType="SchoolEntityInfo">
+        SELECT
+        t.ID id,
+        t.SCHOOL_NAME SchoolName
+        FROM t_sys_school t
+        WHERE t.DELETE_FLAG='1'
+        AND t.STREET_ID=#{streetId}
+        AND t.SCHOOL_TYPE_ID=#{schoolTypeId}
+    </select>
+
 </mapper>

@@ -22,4 +22,9 @@ public class NoteCommentServiceImpl implements NoteCommentService{
     public List<SchoolEntity> getSchoolType(Long id) {
         return schoolDao.getSchoolType(id);
     }
+
+    @Override
+    public List<SchoolEntity> getSchool(Long streetId, Long schoolTypeId) {
+        return schoolDao.getSchool(streetId,schoolTypeId);
+    }
 }

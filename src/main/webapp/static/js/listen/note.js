@@ -13,6 +13,7 @@ $(function () {
         }
     });
 
+    var streetId;
     $("#town").change(function(){
         $("#school_lx").html("");
         $("#school_lx").append('<option>请选择</option>');
@@ -20,6 +21,7 @@ $(function () {
         $("#school").append('<option>请选择</option>');
         $("#school_lx").siblings(".text").text("");
         var id = $(this).val();
+        streetId = id;
         $(this).siblings(".text").text($("#town option:selected").text());
         if(id!="请选择"){
             $.ajax({

@@ -2,5 +2,6 @@
 <html>
 <body>
 <jsp:forward page="/security/movetologin"/>
+<%--<a href="/security/movetologin">点击</a>--%>
 </body>
 </html>

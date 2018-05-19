@@ -14,4 +14,12 @@ public interface NoteCommentService {
      * @return List<SchoolEntity>
      */
     List<SchoolEntity> getSchoolType(Long id);
+
+    /**
+     * 根据街道id，学校类id，获取学校
+     * @param streetId 街道id
+     * @param schoolTypeId 学校类id
+     * @return List<SchoolEntity>
+     */
+    List<SchoolEntity> getSchool(Long streetId, Long schoolTypeId);
 }
