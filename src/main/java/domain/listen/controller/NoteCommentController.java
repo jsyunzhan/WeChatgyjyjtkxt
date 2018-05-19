@@ -5,13 +5,14 @@ import domain.listen.service.NoteCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
+import static domain.listen.ListenWebURLMapping.GET_SCHOOL_NAME;
 import static domain.listen.ListenWebURLMapping.GET_SCHOOL_TYPE;
 
 
@@ -45,11 +46,10 @@ public class NoteCommentController {
         return noteCommentService.getSchoolType(id);
     }
 
-    @RequestMapping(value = "")
+    @RequestMapping(value = GET_SCHOOL_NAME)
     @ResponseBody
-    public List<SchoolEntity> getSchool(@RequestParam("streetId") Long streetId,
-                                        @RequestParam("schoolTypeId") Long schoolTypeId){
-        return noteCommentService.getSchool(streetId,schoolTypeId);
+    public List<SchoolEntity> getSchool(@RequestBody SchoolEntity schoolEntity){
+        return noteCommentService.getSchool(schoolEntity);
     }
 
 }

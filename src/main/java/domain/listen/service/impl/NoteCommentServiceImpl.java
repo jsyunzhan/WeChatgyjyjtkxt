@@ -24,7 +24,7 @@ public class NoteCommentServiceImpl implements NoteCommentService{
     }
 
     @Override
-    public List<SchoolEntity> getSchool(Long streetId, Long schoolTypeId) {
-        return schoolDao.getSchool(streetId,schoolTypeId);
+    public List<SchoolEntity> getSchool(SchoolEntity schoolEntity) {
+        return schoolDao.getSchool(schoolEntity);
     }
 }

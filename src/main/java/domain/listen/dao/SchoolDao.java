@@ -1,7 +1,6 @@
 package domain.listen.dao;
 
 import domain.listen.entity.SchoolEntity;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,9 +16,8 @@ public interface SchoolDao {
 
     /**
      * 根据街道id，学校类id，获取学校
-     * @param streetId 街道id
-     * @param schoolTypeId 学校类id
+     * @param schoolEntity schoolEntity
      * @return List<SchoolEntity>
      */
-    List<SchoolEntity> getSchool(@Param("streetId") Long streetId,@Param("schoolTypeId") Long schoolTypeId);
+    List<SchoolEntity> getSchool(SchoolEntity schoolEntity);
 }

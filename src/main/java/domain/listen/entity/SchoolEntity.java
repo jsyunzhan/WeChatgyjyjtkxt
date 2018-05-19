@@ -18,13 +18,13 @@ public class SchoolEntity extends AbstractEntity{
     private String schoolTypeName;
 
     //街道ID
-    private Long StreetId;
+    private Long streetId;
 
     //街道名称
-    private String StreetName;
+    private String streetName;
 
     //学校名称
-    private String SchoolName;
+    private String schoolName;
 
 
 

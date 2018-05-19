@@ -17,9 +17,8 @@ public interface NoteCommentService {
 
     /**
      * 根据街道id，学校类id，获取学校
-     * @param streetId 街道id
-     * @param schoolTypeId 学校类id
+     * @param schoolEntity schoolEntity
      * @return List<SchoolEntity>
      */
-    List<SchoolEntity> getSchool(Long streetId, Long schoolTypeId);
+    List<SchoolEntity> getSchool(SchoolEntity schoolEntity);
 }

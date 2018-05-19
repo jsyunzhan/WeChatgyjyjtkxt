@@ -44,15 +44,23 @@ $(function () {
                 }
             })
         }
-    })
+    });
 
     $("#school_lx").change(function () {
         $("#school").html("");
         $("#school").append('<option>请选择</option>');
         var id = $(this).val();
+        var data = {streetId:streetId,schoolTypeId:id},
+        url = "/listen/getschoolname";
+        console.log(data);
         $(this).siblings(".text").text($("#school_lx option:selected").text());
         if(id!="请选择"){
-
+            $.ajax({
+                url:url,type:"POST",contentType: "application/json",data:JSON.stringify(data),
+                success:function (r) {
+                    console.log(r)
+                }
+            })
         }
     })
 });
