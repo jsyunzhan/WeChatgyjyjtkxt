@@ -29,9 +29,13 @@ public class NoteCommentController {
         this.noteCommentService = noteCommentService;
     }
 
+    /**
+     * 去笔记提交页面
+     * @return ModelAndView
+     */
     @RequestMapping(value = "/listen/note")
     public ModelAndView index(){
-        return new ModelAndView("login");
+        return new ModelAndView("listen/notes");
     }
 
     /**

@@ -77,15 +77,16 @@ public class BaseController{
     }
 
     //登录
-    private void login(String openid,HttpServletRequest request,HttpServletResponse response) throws IOException {
+    private void login(String openid, HttpServletRequest request, HttpServletResponse response) throws IOException {
         final ListenerEntity listenerEntity = baseService.getListenerByOpenId(openid);
         if (Objects.isNull(listenerEntity)){
-            System.out.println("1");
+            response.sendRedirect("/base/register");
         }else {
             request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
 //            response.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
             response.sendRedirect("/listen/note");
 
         }
+
     }
 }
