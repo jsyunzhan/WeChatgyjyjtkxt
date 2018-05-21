@@ -11,7 +11,14 @@ $(function () {
                 if (r.success){
                     window.open("/security/movetologin");
                 }
+            },
+            error:function (r) {
+                $(".input_error").text("姓名身份证不匹配！");
             }
         })
     })
+
+    $('input').bind('input propertychange', function() {
+        $(".input_error").text("");
+    });
 });
