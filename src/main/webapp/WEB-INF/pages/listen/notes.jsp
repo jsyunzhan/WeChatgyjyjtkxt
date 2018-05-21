@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../../../static/css/public.css">
-    <link rel="stylesheet" type="text/css" href="../../../static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="../../../static/css/notes.css">
     <script type="text/javascript" src="../../../static/jquery/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
     <script type="text/javascript" src="../../../static/jquery/pop.js"></script>
-    <script type="text/javascript" src="../../../static/js/index.js"></script>
+    <script type="text/javascript" src="../../../static/js/notes.js"></script>
     <script type="text/javascript" src="../../../static/js/listen/note.js"></script>
     <title>高邮市教育局机关进校园系统</title>
 </head>
@@ -22,7 +22,7 @@
             <div class="name" width="100px;">所属乡镇</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
-                <img src="../../../static/images/right.png">
+                <img src="../../../static/images/listen/right.png">
             </div>
             <select id="town" name="town"><option>请选择</option></select>
         </div>
@@ -30,7 +30,7 @@
             <div class="name" width="100px;">学校类型</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
-                <img src="../../../static/images/right.png">
+                <img src="../../../static/images/listen/right.png">
             </div>
             <select id="school_lx" name="school_lx"><option>请选择</option></select>
         </div>
@@ -38,7 +38,7 @@
             <div class="name" width="100px;">听课学校</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
-                <img src="../../../static/images/right.png">
+                <img src="../../../static/images/listen/right.png">
             </div>
             <select id="school" name="school"><option>请选择</option></select>
         </div>
@@ -53,7 +53,7 @@
             <div class="name" width="100px;">听课学科</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
-                <img src="../../../static/images/right.png">
+                <img src="../../../static/images/listen/right.png">
             </div>
             <select id="subject"><option>请选择</option></select>
         </div>
@@ -79,7 +79,7 @@
             <div class="name" width="100px;">课堂评分</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
-                <img src="../../../static/images/right.png">
+                <img src="../../../static/images/listen/right.png">
             </div>
             <select id="score" name="score"><option>请选择</option></select>
         </div>
@@ -108,19 +108,19 @@
 
 <div class="footer">
     <a href="javascript:;">
-            <span><img src="../../../static/images/icon_01.png"></span>
+            <span><img src="../../../static/images/listen/icon_01.png"></span>
             <span style="color: #FFCC00;">听课评价</span>
     </a>
     <a href="javascript:;">
-        <span><img src="../../../static/images/icon_06.png"></span>
+        <span><img src="../../../static/images/listen/icon_06.png"></span>
         <span>机关进校</span>
     </a>
     <a href="http://www.baidu.com">
-        <span><img src="../../../static/images/icon_07.png"></span>
+        <span><img src="../../../static/images/listen/icon_07.png"></span>
         <span>历史评价</span>
     </a>
     <a href="javascript:;">
-        <span><img src="../../../static/images/icon_08.png"></span>
+        <span><img src="../../../static/images/listen/icon_08.png"></span>
         <span>用户中心</span>
     </a>
 </div>

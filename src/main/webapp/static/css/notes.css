@@ -1,0 +1,261 @@
+body{
+	background: #FAFAFA;
+	font-size: 16px;
+	color: #666;
+    font-family: "宋体";
+}
+
+.title{
+	text-align: center;
+	font-size: 20px;
+	line-height: 50px;
+}
+
+/*选项*/
+select{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0;
+	outline: 0;
+	border: 0;
+}
+
+.wrapper{
+	padding-bottom: 60px;
+}
+
+.content_01,.content_02{
+	border-top: 1px solid #eee;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.inform{
+	position: relative;
+	display: flex;
+	border-bottom: 1px solid #eee;
+}
+
+.inform .name{
+	width: 90px;
+	min-width: 90px;
+	height: 50px;
+	line-height: 50px;
+	padding-left: 10px;
+}
+
+.inform .arrow{
+	width: 20px;
+	padding: 15px;
+}
+
+.inform .text{
+	flex: 1;
+	line-height: 50px;
+}
+
+.inform .text input{
+	border: 0;
+	outline: 0;
+	height: 50px;
+	line-height: 50px;
+	width: 90%;
+}
+
+input::-webkit-input-placeholder{
+	color: #999;
+}
+
+input::-moz-placeholder{
+    color: #999;
+}
+
+input:-moz-placeholder{
+    color: #999;
+}
+
+input:-ms-input-placeholder{
+    color: #999;
+}
+
+textarea::-webkit-input-placeholder{
+	color: #999;
+}
+
+textarea::-moz-placeholder{
+    color: #999;
+}
+
+textarea:-moz-placeholder{
+    color: #999;
+}
+
+textarea:-ms-input-placeholder{
+    color: #999;
+}
+
+.inform .textarea{
+	width: 100%;
+}
+
+.inform .textarea textarea{
+	display: block;
+	width: 90%;
+	border: 0;
+	outline: 0;
+	height: 80px;
+	line-height: 30px;
+	padding: 10px 0;
+	resize: none;
+	word-break: break-all;
+}
+
+/*照片上传*/
+.image_num{
+	padding: 0 10px;
+	line-height: 50px;
+	height: 50px;
+}
+
+.image_num div{
+	width: 50%;
+	float: left;
+}
+
+.image_num div:nth-child(2){
+	text-align: right;
+}
+
+.upload{
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px 0;
+}
+
+.upload .fileImage,.upload .addImage{
+	float: left;
+	width: 20%;
+	padding-bottom: 20%;
+	margin-right: 3%;
+}
+
+.addImage{
+	background: url(../images/listen/images.png)no-repeat;
+	background-size: 100% 100%;
+}
+
+.upload div img{
+	width: 100%;
+	height: 100%;
+}
+
+.addImage{
+	position: relative;
+	overflow: hidden;
+}
+
+.addImage #addImage{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+.upload .fileImage{
+    position: relative;
+	border-radius: 5px;
+	border: 1px solid #eee;
+}
+
+.upload .fileImage .imgclose{
+    position: absolute;
+    right: -8px;
+    top: -8px;
+    width: 20px;
+    height: 20px;
+}
+
+.upload .fileImage .imgclose img{
+    border: 0;
+}
+
+/*地图定位*/
+.inform .town{
+	padding: 10px 0;
+	line-height: 30px;
+}
+
+/*评价公开*/
+.content_03{
+    line-height: 30px;
+    display: inline-block;
+}
+
+.content_03 span{
+    display: inline-block;
+    vertical-align: top;
+    width: 14px;
+    height: 14px;
+    margin: 8px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    background: url("../images/listen/notchoose.png");
+    background-size: 100% 100%;
+}
+
+.content_03 .choosen{
+    background: url("../images/listen/choosen.png");
+    background-size: 100% 100%;
+}
+
+/*提交*/
+.submit{
+	width: 80%;
+	margin: 10px auto;
+	line-height: 36px;
+	background: #FFCC00;
+	text-align: center;
+	color: #fff;
+	border-radius: 5px;
+	font-family: '黑体';
+}
+
+/*页面底部*/
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+	width: 100%;
+	height: 50px;
+	display: flex;
+}
+
+.footer a{
+	flex: 1;
+	background: #fefefe;
+	border-top: 1px solid #eee;
+}
+
+.footer a span{
+	display: block;
+	font-size: 10px;
+	width: 20px;
+	height: 20px;
+	margin: 0 auto;
+	line-height: 20px;
+}
+
+.footer a span:nth-child(1){
+	margin-top: 8px;
+}
+
+.footer a span:nth-child(2){
+	width: 80%;
+	text-align: center;
+	color: #666
+}
