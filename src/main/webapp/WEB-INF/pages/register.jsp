@@ -15,11 +15,11 @@
         <div class="content">
             <div class="title">高邮市机关进校园系统</div>
             <form>
-                <input type="text" name="username" placeholder="输入姓名">
-                <input type="password" name="password" placeholder="输入身份证号码验证">
+                <input type="text" id="listenerName" name="listenerName" placeholder="输入姓名">
+                <input type="text" id="listenerNumb" name="listenerNumb" placeholder="输入身份证号码验证">
             </form>
             <div class="input_error">姓名身份证不匹配</div>
-            <div class="submit">注册并登陆<div></div></div>
+            <div id="registerSub" class="submit">注册并登陆<div></div></div>
         </div>
     </div>
 </body>

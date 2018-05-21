@@ -30,4 +30,19 @@ public class BaseServiceImpl implements BaseService{
     public ListenerEntity getListenerByOpenId(String openid) {
         return baseDao.getListenerByOpenId(openid);
     }
+
+    @Override
+    public Boolean register(ListenerEntity listenerEntity) {
+        //验证听课人员姓名和生份证
+        final Long id = baseDao.checkListenerNameAndNum(listenerEntity);
+        if (null != id){
+            baseDao.register(listenerEntity.getOpenId(),id);
+            return true;
+        }else {
+            return false;
+        }
+
+    }
+
+
 }

@@ -59,7 +59,17 @@ public class ListenerEntity extends AbstractEntity {
                 ", listenerNumb=" + listenerNumb +
                 ", schoolName='" + schoolName + '\'' +
                 ", permissionFlag=" + permissionFlag +
-                ", openId=" + openId +
+                ", openId='" + openId + '\'' +
+                ", yearString='" + yearString + '\'' +
+                ", listenCount='" + listenCount + '\'' +
+                ", threeCount=" + threeCount +
+                ", fourCount=" + fourCount +
+                ", fiveCount=" + fiveCount +
+                ", sixCount=" + sixCount +
+                ", nineCount=" + nineCount +
+                ", tenCount=" + tenCount +
+                ", elevenCount=" + elevenCount +
+                ", twelveCount=" + twelveCount +
                 '}';
     }
 }

@@ -36,4 +36,22 @@
         AND t.OPEN_ID=#{openid}
     </select>
 
+    <!--验证听课人员姓名和生份证-->
+    <select id="checkListenerNameAndNum" resultType="Long">
+        SELECT t.ID
+        FROM t_person_listener t
+        WHERE t.DELETE_FLAG='1'
+        AND t.LISTENER_NAME=#{listenerName}
+        AND t.LISTENER_NUMB=#{listenerNumb}
+    </select>
+
+    <!--注册-->
+    <update id="register">
+        UPDATE t_person_listener SET
+        OPEN_ID=#{openid},
+        UPDATE_USER_ID=#{id},
+        UPDATE_DATA=NOW()
+        WHERE ID=#{id}
+    </update>
+
 </mapper>

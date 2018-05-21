@@ -140,7 +140,7 @@ $(function () {
         var data = {schoolId:schoolId,className:className,teacherName:teacherName,
                 disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
         url = "/listen/notecomment";
-        console.log(data);
+
         $.ajax({
             url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
             success:function (r) {

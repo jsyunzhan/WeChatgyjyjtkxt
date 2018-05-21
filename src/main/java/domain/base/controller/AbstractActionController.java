@@ -15,9 +15,7 @@ public abstract class AbstractActionController {
 
     //获取登录Session
     private ListenerEntity getLoginSession(){
-//        final Subject securitySubject = getSubject();
-//        HttpServletRequest request = ServletActionContext.getRequest();
-
+//
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 
 

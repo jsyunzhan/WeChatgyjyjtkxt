@@ -20,4 +20,11 @@ public interface BaseService {
      * @return ListenerEntity
      */
     ListenerEntity getListenerByOpenId(String openid);
+
+    /**
+     * 注册
+     * @param listenerEntity 注册实体
+     * @return Boolean
+     */
+    Boolean register(ListenerEntity listenerEntity);
 }

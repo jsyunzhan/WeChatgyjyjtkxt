@@ -81,9 +81,9 @@ public class BaseController{
         final ListenerEntity listenerEntity = baseService.getListenerByOpenId(openid);
         if (Objects.isNull(listenerEntity)){
             response.sendRedirect("/base/register");
+            request.getSession().setAttribute("openid",openid);
         }else {
             request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
-//            response.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
             response.sendRedirect("/listen/note");
 
         }
