@@ -235,13 +235,13 @@ textarea:-ms-input-placeholder{
 	display: flex;
 }
 
-.footer div{
+.footer a{
 	flex: 1;
 	background: #fefefe;
 	border-top: 1px solid #eee;
 }
 
-.footer div span{
+.footer a span{
 	display: block;
 	font-size: 10px;
 	width: 20px;
@@ -250,11 +250,11 @@ textarea:-ms-input-placeholder{
 	line-height: 20px;
 }
 
-.footer div span:nth-child(1){
+.footer a span:nth-child(1){
 	margin-top: 8px;
 }
 
-.footer div span:nth-child(2){
+.footer a span:nth-child(2){
 	width: 80%;
 	text-align: center;
 	color: #666

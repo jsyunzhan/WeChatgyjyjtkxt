@@ -24,7 +24,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select id="town"><option>请选择</option></select>
+            <select id="town" name="town"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">学校类型</div>
@@ -32,7 +32,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select id="school_lx"><option>请选择</option></select>
+            <select id="school_lx" name="school_lx"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课学校</div>
@@ -40,14 +40,14 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select id="school"><option>请选择</option></select>
+            <select id="school" name="school"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">班级年级</div>
-            <div class="text"></div>
-            <div class="arrow" width="100px;">
-                <img src="../../static/images/right.png">
+            <div class="text">
+                <input type="text" name="class" placeholder="请填写听课班级">
             </div>
+            <div class="arrow" width="100px;"></div>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课学科</div>
@@ -55,7 +55,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
-            <select><option>请选择</option></select>
+            <select id="subject" name="subject"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课课题</div>
@@ -72,7 +72,7 @@
         <div class="inform">
             <div class="name" width="100px;">课堂评价</div>
             <div class="textarea">
-                <textarea placeholder="请填写课堂评价"></textarea>
+                <textarea name="evaluate" placeholder="请填写课堂评价"></textarea>
             </div>
         </div>
         <div class="inform">
@@ -81,6 +81,7 @@
             <div class="arrow" width="100px;">
                 <img src="../../static/images/right.png">
             </div>
+            <select id="score" name="score"><option>请选择</option></select>
         </div>
     </div>
     <div class="content_02">
@@ -106,22 +107,22 @@
 </div>
 
 <div class="footer">
-    <div>
-        <span><img src="../../static/images/icon_01.png"></span>
-        <span style="color: #FFCC00;">听课评价</span>
-    </div>
-    <div>
+    <a href="javascript:;">
+            <span><img src="../../static/images/icon_01.png"></span>
+            <span style="color: #FFCC00;">听课评价</span>
+    </a>
+    <a href="javascript:;">
         <span><img src="../../static/images/icon_06.png"></span>
         <span>机关进校</span>
-    </div>
-    <div>
+    </a>
+    <a href="http://www.baidu.com">
         <span><img src="../../static/images/icon_07.png"></span>
         <span>历史评价</span>
-    </div>
-    <div>
+    </a>
+    <a href="javascript:;">
         <span><img src="../../static/images/icon_08.png"></span>
         <span>用户中心</span>
-    </div>
+    </a>
 </div>
 </body>
 </html>

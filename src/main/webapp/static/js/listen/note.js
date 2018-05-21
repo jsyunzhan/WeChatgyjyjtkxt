@@ -20,7 +20,12 @@ $(function () {
         type:"GET",
         dataType:"json",
         success:function (event) {
-            console.log(event)
+            $("#subject").html("");
+            $("#subject").append('<option>请选择</option>');
+            for(var i in event){
+                var _html = '<option value="'+event[i].id+'">'+event[i].paramName+'</option>';
+                $("#subject").append(_html);
+            }
         }
     });
 
@@ -30,20 +35,26 @@ $(function () {
         type:"GET",
         dataType:"json",
         success:function (event) {
-            console.log(event)
+            $("#score").html("");
+            $("#score").append('<option>请选择</option>');
+            for(var i in event){
+                var _html = '<option value="'+event[i].id+'">'+event[i].paramName+'</option>';
+                $("#score").append(_html);
+            }
         }
     });
 
+    // 所属乡镇
     var streetId;
     $("#town").change(function(){
-        $("#school_lx").html('<option>请选择</option>');
-        $("#school").html('<option>请选择</option>');
-        $("#school_lx").siblings(".text").text("");
-        $("#school").siblings(".text").text("");
         var id = $(this).val();
-        streetId = id;
-        $(this).siblings(".text").text($("#town option:selected").text());
         if(id!="请选择"){
+            streetId = id;
+            $("#school_lx").html('<option>请选择</option>');
+            $("#school_lx").siblings(".text").text("");
+            $("#school").html('<option>请选择</option>');
+            $("#school").siblings(".text").text("");
+            $(this).siblings(".text").text($("#town option:selected").text());
             $.ajax({
                 url:"/listen/getSchoolType/" + id,
                 type:"GET",
@@ -66,15 +77,15 @@ $(function () {
         }
     });
 
+    // 学校类型
     $("#school_lx").change(function () {
-        $("#school").html('<option>请选择</option>');
-        $("#school").siblings(".text").text("");
-        $(this).siblings(".text").text($("#school option:selected").text());
         var id = $(this).val();
-        var data = {streetId:streetId,schoolTypeId:id},
-        url = "/listen/getschoolname";
-        $(this).siblings(".text").text($("#school_lx option:selected").text());
         if(id!="请选择"){
+            var data = {streetId:streetId,schoolTypeId:id}, url = "/listen/getschoolname";
+            $("#school").html('<option>请选择</option>');
+            $("#school").siblings(".text").text("");
+            $(this).siblings(".text").text($("#school option:selected").text());
+            $(this).siblings(".text").text($("#school_lx option:selected").text());
             $.ajax({
                 url:url,type:"POST",contentType: "application/json",data:JSON.stringify(data),
                 success:function (event) {
@@ -88,9 +99,40 @@ $(function () {
         }
     })
 
+    // 学校
     $("#school").change(function () {
-        $(this).siblings(".text").text($("#school option:selected").text());
+        var id = $(this).val();
+        if(id!="请选择") {
+            $(this).siblings(".text").text($("#school option:selected").text());
+        }
     })
+
+    // 学科
+    $("#subject").change(function () {
+        var id = $(this).val();
+        if(id!="请选择") {
+            $(this).siblings(".text").text($("#subject option:selected").text());
+        }
+    })
+
+    // 评分
+    $("#score").change(function () {
+        var id = $(this).val();
+        if(id!="请选择") {
+            $(this).siblings(".text").text($("#score option:selected").text());
+        }
+    })
+
+    $(".submit").click(function () {
+        $.ajax({
+
+        })
+    })
+
+
+
+
+
 
 
 });
