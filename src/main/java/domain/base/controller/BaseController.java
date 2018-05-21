@@ -67,6 +67,5 @@ public class BaseController{
 
         JSONObject userInfo = AuthUtil.doGetJson(infoUrl);
         System.out.println(userInfo.toJSONString());
-
     }
 }
