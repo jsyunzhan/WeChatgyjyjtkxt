@@ -15,7 +15,7 @@
     <title>高邮市教育局机关进校园系统</title>
 </head>
 <body>
-<div class="wrapper">
+<form class="wrapper">
     <div class="title">听课评价</div>
     <div class="content_01">
         <div class="inform">
@@ -45,7 +45,7 @@
         <div class="inform">
             <div class="name" width="100px;">班级年级</div>
             <div class="text">
-                <input type="text" name="class" placeholder="请填写听课班级">
+                <input type="text" id="className" name="class" placeholder="请填写听课班级">
             </div>
             <div class="arrow" width="100px;"></div>
         </div>
@@ -55,24 +55,24 @@
             <div class="arrow" width="100px;">
                 <img src="../../../static/images/right.png">
             </div>
-            <select id="subject" name="subject"><option>请选择</option></select>
+            <select id="subject"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课课题</div>
             <div class="text">
-                <input type="text" name="topic" placeholder="请填写听课课题">
+                <input type="text" id="topic" name="topic" placeholder="请填写听课课题">
             </div>
         </div>
         <div class="inform">
             <div class="name" width="100px;">执教老师</div>
             <div class="text">
-                <input type="text" name="teacher" placeholder="请填写执教老师">
+                <input type="text" id="teacherName" name="teacher" placeholder="请填写执教老师">
             </div>
         </div>
         <div class="inform">
             <div class="name" width="100px;">课堂评价</div>
             <div class="textarea">
-                <textarea name="evaluate" placeholder="请填写课堂评价"></textarea>
+                <textarea id="comments" name="comments" placeholder="请填写课堂评价"></textarea>
             </div>
         </div>
         <div class="inform">
@@ -95,7 +95,7 @@
             </div>
         </div>
         <div class="inform">
-            <div class="name" width="100px;">所属乡镇</div>
+            <div class="name" width="100px;">听课地址</div>
             <div class="text town"></div>
             <div class="arrow" width="100px;"></div>
         </div>
@@ -104,7 +104,7 @@
         <span></span>是否公开此评价
     </div>
     <div class="submit">提交</div>
-</div>
+</form>
 
 <div class="footer">
     <a href="javascript:;">

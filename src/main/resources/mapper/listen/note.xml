@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="domain.listen.dao.NoteDao">
+
+    <!--听课笔记新增-->
+    <insert id="noteComment" >
+        INSERT INTO t_listen_notes
+        (
+        LISTENER_ID,
+        SCHOOL_ID,
+        CLASS_NAME,
+        TEACHER_NAME,
+        DISCIPLINE_ID,
+        SUBJECT,
+        SHARE_FLAGE,
+        COMMENTS,
+        PICTURE_PATH,
+        SCORE_ID,
+        LISTENER_PATH,
+        CREATE_USER_ID,
+        CREATE_DATA
+        ) VALUE (
+        #{listenerId},
+        #{schoolId},
+        #{className},
+        #{teacherName},
+        #{disciplineId},
+        #{subject},
+        #{shareFlag},
+        #{comments},
+        #{picturePath},
+        #{scoreId},
+        #{listenPath},
+        #{createUserId},
+        NOW()
+        )
+    </insert>
+
+</mapper>

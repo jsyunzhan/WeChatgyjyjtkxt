@@ -1,5 +1,6 @@
 package domain.listen.service;
 
+import domain.listen.entity.NoteEntity;
 import domain.listen.entity.SchoolEntity;
 
 import java.util.List;
@@ -21,4 +22,11 @@ public interface NoteCommentService {
      * @return List<SchoolEntity>
      */
     List<SchoolEntity> getSchool(SchoolEntity schoolEntity);
+
+    /**
+     * 听课笔记提交
+     * @param noteEntity 笔记实体
+     * @return Boolean
+     */
+    Boolean noteComment(NoteEntity noteEntity);
 }

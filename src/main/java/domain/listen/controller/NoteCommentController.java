@@ -1,5 +1,8 @@
 package domain.listen.controller;
 
+import domain.base.controller.AbstractActionController;
+import domain.base.entity.JsonResponseVO;
+import domain.listen.entity.NoteEntity;
 import domain.listen.entity.SchoolEntity;
 import domain.listen.service.NoteCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +23,7 @@ import static domain.listen.ListenWebURLMapping.GET_SCHOOL_TYPE;
  * 听课笔记提交
  */
 @Controller
-public class NoteCommentController {
+public class NoteCommentController extends AbstractActionController{
 
     final private NoteCommentService noteCommentService;
 
@@ -61,4 +64,16 @@ public class NoteCommentController {
         return noteCommentService.getSchool(schoolEntity);
     }
 
+
+    @RequestMapping(value = "/listen/notecomment")
+    @ResponseBody
+    public JsonResponseVO noteComment(@RequestBody NoteEntity noteEntity){
+        final Long loginId = getListenerId();
+        noteEntity.setListenerId(loginId);
+        noteEntity.setCreateUserId(loginId);
+        final JsonResponseVO jsonResponseVO = new JsonResponseVO(Boolean.FALSE);
+        final Boolean flag = noteCommentService.noteComment(noteEntity);
+        jsonResponseVO.setSuccess(flag);
+        return jsonResponseVO;
+    }
 }

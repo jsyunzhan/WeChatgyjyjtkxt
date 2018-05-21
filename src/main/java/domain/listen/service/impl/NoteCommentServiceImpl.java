@@ -1,6 +1,8 @@
 package domain.listen.service.impl;
 
+import domain.listen.dao.NoteDao;
 import domain.listen.dao.SchoolDao;
+import domain.listen.entity.NoteEntity;
 import domain.listen.entity.SchoolEntity;
 import domain.listen.service.NoteCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,12 @@ import java.util.List;
 public class NoteCommentServiceImpl implements NoteCommentService{
 
     final private SchoolDao schoolDao;
+    final private NoteDao noteDao;
 
     @Autowired
-    public NoteCommentServiceImpl(SchoolDao schoolDao){
+    public NoteCommentServiceImpl(SchoolDao schoolDao,NoteDao noteDao){
         this.schoolDao = schoolDao;
+        this.noteDao = noteDao;
     }
 
     @Override
@@ -26,5 +30,10 @@ public class NoteCommentServiceImpl implements NoteCommentService{
     @Override
     public List<SchoolEntity> getSchool(SchoolEntity schoolEntity) {
         return schoolDao.getSchool(schoolEntity);
+    }
+
+    @Override
+    public Boolean noteComment(NoteEntity noteEntity) {
+        return noteDao.noteComment(noteEntity);
     }
 }

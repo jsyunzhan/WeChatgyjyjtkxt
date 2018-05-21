@@ -89,9 +89,8 @@ $(function () {
             $.ajax({
                 url:url,type:"POST",contentType: "application/json",data:JSON.stringify(data),
                 success:function (event) {
-                    console.log(event);
                     for(var i in event){
-                        var _html = '<option value="'+event[i].schoolName+'">'+event[i].schoolName+'</option>';
+                        var _html = '<option value="'+event[i].id+'">'+event[i].schoolName+'</option>';
                         $("#school").append(_html);
                     }
                 }
@@ -124,15 +123,30 @@ $(function () {
     })
 
     $(".submit").click(function () {
+        var schoolId = $("#school").val();
+        var className = $("#className").val();
+        var teacherName = $("#teacherName").val();
+        var disciplineId = $("#subject").val();
+        var subject = $("#topic").val();
+        var comments = $("#comments").val();
+        var scoreId = $("#score").val();
+        var shareFlag;
+        if($(".content_03").find("span").hasClass("choosen")){
+            shareFlag = 1;
+        }else{
+            shareFlag = 0;
+        }
+        var listenPath = $(".town").text();
+        var data = {schoolId:schoolId,className:className,teacherName:teacherName,
+                disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
+        url = "/listen/notecomment";
+        console.log(data);
         $.ajax({
+            url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
+            success:function (r) {
 
+            }
         })
     })
-
-
-
-
-
-
 
 });
