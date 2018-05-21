@@ -1,4 +1,5 @@
 $(function () {
+    initUtils();
     //获取乡镇下拉数据
     $.ajax({
         url:"/paramters/STREET",
@@ -144,7 +145,15 @@ $(function () {
         $.ajax({
             url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
             success:function (r) {
-
+                var flag = popup({
+                    'html': '<div class="new_pop"><div class="close_pop"><img src="../../static/images/listen/close.png"></div><div class="success_img"><img src="../../static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
+                    'width': '70%',
+                    'height': '',
+                    'params': {},
+                    'events':{'sure':function(){popdown(flag);},
+                        'close_pop':function(){popdown(flag);}
+                    }
+                },false);
             }
         })
     })

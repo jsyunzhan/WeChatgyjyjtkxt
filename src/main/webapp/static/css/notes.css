@@ -259,3 +259,41 @@ textarea:-ms-input-placeholder{
 	text-align: center;
 	color: #666
 }
+
+/*弹窗*/
+.new_pop{
+	background: #fff;
+	border: 2px solid #ccc;
+	position: relative;
+	color: #FFCC00;
+	font-family: '黑体';
+	text-align: center;
+	padding-top: 20px;
+}
+
+.new_pop .close_pop{
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	right: -15px;
+	top: -15px;
+}
+
+.new_pop .success_img{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.new_pop .success_font{
+	font-size: 16px;
+	line-height: 30px;
+}
+
+.new_pop .sure{
+	width: 70%;
+	margin: 10px auto;
+	background: #FFCC00;
+	color: #fff;
+	line-height: 30px;
+	font-size: 14px;
+}
