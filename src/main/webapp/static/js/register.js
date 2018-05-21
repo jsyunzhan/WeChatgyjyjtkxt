@@ -6,10 +6,12 @@ $(function () {
             url = "/base/registerSub";
 
         $.ajax({
-            url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
+            url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),async:false,
             success:function (r) {
                 if (r.success){
-                    window.open("/security/movetologin");
+                    location.href = "/security/movetologin";
+                }else {
+                    $(".input_error").text("姓名身份证不匹配！");
                 }
             },
             error:function (r) {

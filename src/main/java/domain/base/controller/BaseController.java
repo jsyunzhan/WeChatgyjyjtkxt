@@ -80,8 +80,8 @@ public class BaseController{
     private void login(String openid, HttpServletRequest request, HttpServletResponse response) throws IOException {
         final ListenerEntity listenerEntity = baseService.getListenerByOpenId(openid);
         if (Objects.isNull(listenerEntity)){
-            response.sendRedirect("/base/register");
             request.getSession().setAttribute("openid",openid);
+            response.sendRedirect("/base/register");
         }else {
             request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
             response.sendRedirect("/listen/note");

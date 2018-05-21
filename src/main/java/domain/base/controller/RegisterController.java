@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
  * 注册Controller
@@ -36,7 +38,7 @@ public class RegisterController extends AbstractActionController{
 
     @RequestMapping(value = "/base/registerSub")
     @ResponseBody
-    public JsonResponseVO register(@RequestBody ListenerEntity listenerEntity,HttpServletRequest request){
+    public JsonResponseVO register(@RequestBody ListenerEntity listenerEntity, HttpServletRequest request, HttpServletResponse response) throws IOException {
         final String openid = request.getSession().getAttribute("openid").toString();
         final JsonResponseVO jsonResponseVO = new JsonResponseVO(Boolean.FALSE);
         listenerEntity.setOpenId(openid);
