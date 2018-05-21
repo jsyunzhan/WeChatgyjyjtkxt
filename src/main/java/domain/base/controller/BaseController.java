@@ -2,6 +2,7 @@ package domain.base.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import domain.base.AuthUtil;
+import domain.base.entity.ListenerEntity;
 import domain.base.entity.ParamEntity;
 import domain.base.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.List;
+import java.util.Objects;
 
 import static domain.base.BaseWebURLMapping.PARAM_URL;
+import static domain.base.entity.SystemConfig.LOGIN_SESSION;
 
 @Controller
 public class BaseController{
@@ -34,8 +37,8 @@ public class BaseController{
         return baseService.getParams(paramType);
     }
 
-
-//    @RequestMapping(value = "/security/movetologin")
+    //去登陆页面
+    @RequestMapping(value = "/security/movetologin")
     @ResponseBody
     public void doget(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String backUrl = "http://192.168.0.171:80/security/backUrl";
@@ -48,6 +51,7 @@ public class BaseController{
         response.sendRedirect(url);
     }
 
+    //微信接口返回地址
     @RequestMapping(value = "/security/backUrl")
     public void doBack(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String code = request.getParameter("code");
@@ -66,7 +70,22 @@ public class BaseController{
                 "&lang=zh_CN";
 
         JSONObject userInfo = AuthUtil.doGetJson(infoUrl);
-        System.out.println(userInfo.toJSONString());
 
+
+        login(openid,request,response);
+
+    }
+
+    //登录
+    private void login(String openid,HttpServletRequest request,HttpServletResponse response) throws IOException {
+        final ListenerEntity listenerEntity = baseService.getListenerByOpenId(openid);
+        if (Objects.isNull(listenerEntity)){
+            System.out.println("1");
+        }else {
+            request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
+//            response.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
+            response.sendRedirect("/listen/note");
+
+        }
     }
 }

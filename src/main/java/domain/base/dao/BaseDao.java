@@ -1,5 +1,6 @@
 package domain.base.dao;
 
+import domain.base.entity.ListenerEntity;
 import domain.base.entity.ParamEntity;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +14,11 @@ public interface BaseDao {
      * @return List<ParamEntity>
      */
     List<ParamEntity> getParams(String paramType);
+
+    /**
+     * 根据openId 获取听课用户信息
+     * @param openid openId
+     * @return ListenerEntity
+     */
+    ListenerEntity getListenerByOpenId(String openid);
 }

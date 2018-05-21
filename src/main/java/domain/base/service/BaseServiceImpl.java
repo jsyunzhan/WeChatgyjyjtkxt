@@ -1,6 +1,7 @@
 package domain.base.service;
 
 import domain.base.dao.BaseDao;
+import domain.base.entity.ListenerEntity;
 import domain.base.entity.ParamEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,5 +24,10 @@ public class BaseServiceImpl implements BaseService{
     @Override
     public List<ParamEntity> getParams(String paramType) {
         return baseDao.getParams(paramType);
+    }
+
+    @Override
+    public ListenerEntity getListenerByOpenId(String openid) {
+        return baseDao.getListenerByOpenId(openid);
     }
 }

@@ -3,7 +3,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="domain.base.dao.BaseDao">
 
-    <!--查询蚕食-->
+    <!--查询参数-->
     <select id="getParams" resultType="ParamEntityInfo">
         SELECT
         t.ID id,
@@ -16,6 +16,24 @@
         FROM t_sys_parameter t
         WHERE t.DELETE_FLAG='1'
         AND t.PARAM_TYPE=#{paramType}
+    </select>
+
+    <!--根据openId 获取听课用户信息-->
+    <select id="getListenerByOpenId" resultType="ListenerEntityInfo">
+        SELECT
+        t.ID id,
+        t.LISTENER_NAME listenerName,
+        t.LISTENER_NUMB listenerNumb,
+        t.SCHOOL_NAME schoolName,
+        t.PERMISSION_FLAG permissionFlag,
+        t.OPEN_ID openId,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_person_listener t
+        WHERE t.DELETE_FLAG='1'
+        AND t.OPEN_ID=#{openid}
     </select>
 
 </mapper>

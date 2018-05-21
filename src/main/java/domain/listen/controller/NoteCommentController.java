@@ -29,7 +29,7 @@ public class NoteCommentController {
         this.noteCommentService = noteCommentService;
     }
 
-    @RequestMapping(value = "/security/movetologin")
+    @RequestMapping(value = "/listen/note")
     public ModelAndView index(){
         return new ModelAndView("login");
     }
