@@ -119,7 +119,7 @@
         <span><img src="../../../static/images/listen/icon_07.png"></span>
         <span>历史评价</span>
     </a>
-    <a href="javascript:;">
+    <a href="/user/personal">
         <span><img src="../../../static/images/listen/icon_08.png"></span>
         <span>用户中心</span>
     </a>
