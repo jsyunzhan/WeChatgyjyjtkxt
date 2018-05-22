@@ -3,6 +3,15 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="domain.listen.dao.NoteDao">
 
+    <sql id="noteConditionSql">
+        <!--<if test="beginDate!=null and beginDate!=''">-->
+            <!--<![CDATA[AND DATE(t.CREATE_DATA)>=#{beginDate}]]>-->
+        <!--</if>-->
+        <!--<if test="endDate!=null and endDate!=''">-->
+            <!--<![CDATA[AND DATE(t.CREATE_DATA)<=#{endDate}]]>-->
+        <!--</if>-->
+    </sql>
+
     <!--听课笔记新增-->
     <insert id="noteComment" >
         INSERT INTO t_listen_notes
@@ -36,5 +45,88 @@
         NOW()
         )
     </insert>
+
+    <!--查看自己的笔记-->
+    <select id="getOwnNote" resultType="NoteEntityInfo">
+        SELECT
+        t.ID id,
+        t.LISTENER_ID listenerId,
+        t.SCHOOL_ID schoolId,
+        (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID) schoolName,
+        t.CLASS_NAME className,
+        t.TEACHER_NAME teacherName,
+        t.DISCIPLINE_ID disciplineId,
+        (SELECT b.PARAM_NAME FROM  t_sys_parameter b where b.ID=t.DISCIPLINE_ID) disciplineName,
+        t.SHARE_FLAGE shareFlag,
+        t.COMMENTS comments,
+        t.PICTURE_PATH picturePath,
+        t.SCORE_ID scoreId,
+        (SELECT b.PARAM_NAME FROM  t_sys_parameter b where b.ID=t.SCORE_ID) scoreName,
+        t.LISTENER_PATH listenPath,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_listen_notes t
+        WHERE t.DELETE_FLAG='1'
+        AND t.LISTENER_ID=#{listenerId}
+        <include refid="noteConditionSql"/>
+        ORDER BY t.CREATE_DATA
+    </select>
+
+    <!--查看分享的笔记-->
+    <select id="getShareNote" resultType="NoteEntityInfo">
+        SELECT
+        t.ID id,
+        t.LISTENER_ID listenerId,
+        t.SCHOOL_ID schoolId,
+        (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID) schoolName,
+        t.CLASS_NAME className,
+        t.TEACHER_NAME teacherName,
+        t.DISCIPLINE_ID disciplineId,
+        (SELECT b.PARAM_NAME FROM  t_sys_parameter b where b.ID=t.DISCIPLINE_ID) disciplineName,
+        t.SHARE_FLAGE shareFlag,
+        t.COMMENTS comments,
+        t.PICTURE_PATH picturePath,
+        t.SCORE_ID scoreId,
+        (SELECT b.PARAM_NAME FROM  t_sys_parameter b where b.ID=t.SCORE_ID) scoreName,
+        t.LISTENER_PATH listenPath,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_listen_notes t
+        WHERE t.DELETE_FLAG='1'
+        AND t.SHARE_FLAGE='1'
+        <include refid="noteConditionSql"/>
+        ORDER BY t.CREATE_DATA
+    </select>
+
+    <!--查看所有的笔记-->
+    <select id="getAllNote" resultType="NoteEntityInfo">
+        SELECT
+        t.ID id,
+        t.LISTENER_ID listenerId,
+        t.SCHOOL_ID schoolId,
+        (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID) schoolName,
+        t.CLASS_NAME className,
+        t.TEACHER_NAME teacherName,
+        t.DISCIPLINE_ID disciplineId,
+        (SELECT b.PARAM_NAME FROM  t_sys_parameter b where b.ID=t.DISCIPLINE_ID) disciplineName,
+        t.SHARE_FLAGE shareFlag,
+        t.COMMENTS comments,
+        t.PICTURE_PATH picturePath,
+        t.SCORE_ID scoreId,
+        (SELECT b.PARAM_NAME FROM  t_sys_parameter b where b.ID=t.SCORE_ID) scoreName,
+        t.LISTENER_PATH listenPath,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_listen_notes t
+        WHERE t.DELETE_FLAG='1'
+        <include refid="noteConditionSql"/>
+        ORDER BY t.CREATE_DATA
+    </select>
 
 </mapper>
