@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -65,6 +66,17 @@ public class NoteCommentController extends AbstractActionController{
     }
 
 
+    @RequestMapping(value = "/listen/picturecomment")
+    @ResponseBody
+    public void pictureComment(MultipartFile[] file){
+        System.out.println("1");
+    }
+
+    /**
+     * 笔记提交
+     * @param noteEntity 提交实体
+     * @return JsonResponseVO
+     */
     @RequestMapping(value = "/listen/notecomment")
     @ResponseBody
     public JsonResponseVO noteComment(@RequestBody NoteEntity noteEntity){
