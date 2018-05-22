@@ -7,13 +7,12 @@ import domain.listen.entity.SchoolEntity;
 import domain.listen.service.NoteCommentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 
 import static domain.listen.ListenWebURLMapping.GET_SCHOOL_NAME;
@@ -68,8 +67,31 @@ public class NoteCommentController extends AbstractActionController{
 
     @RequestMapping(value = "/listen/picturecomment")
     @ResponseBody
-    public void pictureComment(MultipartFile[] file){
+    public String pictureComment(@RequestParam("singleFile1") MultipartFile[] file,
+                               HttpServletRequest request) throws IOException {
+
         System.out.println("1");
+
+//        if(!file.isEmpty()) {
+//            //获取服务器里的文件路径
+//            String realPath=request.getSession().getServletContext().getRealPath("upload");
+//            System.out.println(realPath);
+//            //获取上传文件的文件名
+//            String oFileName=file.getOriginalFilename();
+//            //截取文件后缀名
+//            String suffix = oFileName.substring(oFileName.indexOf("."),oFileName.length());
+//            System.out.println(suffix);
+//            //uuid + suffix  ;
+//            String newFileName = UUID.randomUUID().toString()+suffix;
+//            //创建文件
+//            File tempFile = new File(realPath+"/"+newFileName);
+//            //文件转换
+//            file.transferTo(tempFile);
+//            return "success";
+//        }else {
+//            return "fail";
+//        }
+        return "";
     }
 
     /**

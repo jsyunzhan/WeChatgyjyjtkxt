@@ -21,9 +21,10 @@
 <body>
 历史记录
 
-    <form id="upladForm"  enctype="multipart/form-data">
-        <input type="file" id="file" name="myfile" />
-        <input id="upladFile" type="button" value="上传" />
+    <form id="upladForm" method="post" action="/listen/picturecomment"  enctype="multipart/form-data">
+        <input type="file"  name="singleFile1" />
+        <input type="file"  name="singleFile1" />
+        <input id="upladFile" type="submit" value="上传" />
     </form>
 
 
