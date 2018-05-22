@@ -39,6 +39,35 @@ select{
 	border-bottom: 1px solid #eee;
 }
 
+#className .left,#className .right{
+	width: 50%;
+	float: left;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+}
+
+#className .right{
+	font-size: 0;
+}
+
+#className .left{
+	background: url("../../static/images/listen/down.png") no-repeat right 5px center;
+	background-size: 15px 15px;
+}
+
+#className .right input{
+	width: 60%;
+	text-align: center;
+	font-size: 16px;
+}
+
+#className .right span{
+	display: inline-block;
+	width: 40%;
+	font-size: 16px;
+}
+
 .inform .name{
 	width: 90px;
 	min-width: 90px;
@@ -296,4 +325,44 @@ textarea:-ms-input-placeholder{
 	color: #fff;
 	line-height: 30px;
 	font-size: 14px;
+}
+
+/*底部弹窗*/
+.pop_01{
+	position: fixed;
+	bottom:0;
+	left: 0;
+	background: #eee;
+	width: 100%;
+	font-size: 14px;
+}
+
+.pop_01 .pop_title{
+	line-height: 30px;
+	border-bottom: 1px solid #ccc;
+}
+
+.pop_01 .pop_title .close_pop_01{
+	float: left;
+	width: 60px;
+	text-align: center;
+}
+
+.pop_01 .pop_title .sure_01{
+	float: right;
+	width: 60px;
+	text-align: center;
+}
+
+.pop_01 .show_pop{
+	line-height: 30px;
+	margin-left: 4%;
+}
+
+.pop_01 .pop_con{
+	padding: 0 4%;
+}
+
+.pop_01 .pop_con div{
+	line-height: 30px;
 }

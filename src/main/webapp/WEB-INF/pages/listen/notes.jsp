@@ -18,44 +18,29 @@
 <form class="wrapper">
     <div class="title">听课评价</div>
     <div class="content_01">
-        <div class="inform">
-            <div class="name" width="100px;">所属乡镇</div>
-            <div class="text"></div>
-            <div class="arrow" width="100px;">
-                <img src="../../../static/images/listen/right.png">
-            </div>
-            <select id="town" name="town"><option>请选择</option></select>
-        </div>
-        <div class="inform">
-            <div class="name" width="100px;">学校类型</div>
-            <div class="text"></div>
-            <div class="arrow" width="100px;">
-                <img src="../../../static/images/listen/right.png">
-            </div>
-            <select id="school_lx" name="school_lx"><option>请选择</option></select>
-        </div>
-        <div class="inform">
+        <div class="inform" id="school">
             <div class="name" width="100px;">听课学校</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
                 <img src="../../../static/images/listen/right.png">
             </div>
-            <select id="school" name="school"><option>请选择</option></select>
         </div>
-        <div class="inform">
+        <div class="inform" id="className">
             <div class="name" width="100px;">班级年级</div>
-            <div class="text">
-                <input type="text" id="className" name="class" placeholder="请填写听课班级">
+            <div class="text clearfix">
+                <div class="left">年级</div>
+                <div class="right">
+                    <input type="number" name="class" placeholder="班级">
+                    <span>班</span>
+                </div>
             </div>
-            <div class="arrow" width="100px;"></div>
         </div>
-        <div class="inform">
+        <div class="inform" id="subject">
             <div class="name" width="100px;">听课学科</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
                 <img src="../../../static/images/listen/right.png">
             </div>
-            <select id="subject"><option>请选择</option></select>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课课题</div>
@@ -75,13 +60,12 @@
                 <textarea id="comments" name="comments" placeholder="请填写课堂评价"></textarea>
             </div>
         </div>
-        <div class="inform">
+        <div class="inform" id="score">
             <div class="name" width="100px;">课堂评分</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
                 <img src="../../../static/images/listen/right.png">
             </div>
-            <select id="score" name="score"><option>请选择</option></select>
         </div>
     </div>
     <div class="content_02">
