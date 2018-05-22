@@ -71,19 +71,22 @@ public class BaseController{
 
         JSONObject userInfo = AuthUtil.doGetJson(infoUrl);
 
+        final String imgUrl = userInfo.getString("headimgurl");
 
-        login(openid,request,response);
+        login(imgUrl,openid,request,response);
 
     }
 
     //登录
-    private void login(String openid, HttpServletRequest request, HttpServletResponse response) throws IOException {
+    private void login(String imgUrl,String openid, HttpServletRequest request, HttpServletResponse response) throws IOException {
         final ListenerEntity listenerEntity = baseService.getListenerByOpenId(openid);
         if (Objects.isNull(listenerEntity)){
             request.getSession().setAttribute("openid",openid);
+
             response.sendRedirect("/base/register");
         }else {
             request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
+            request.getSession().setAttribute("imgUrl",imgUrl);
             response.sendRedirect("/listen/note");
 
         }

@@ -37,4 +37,18 @@ public interface NoteDao {
      * @return List<NoteEntity>
      */
     List<NoteEntity> getAllNote(NoteEntity noteEntity);
+
+    /**
+     * 获取当前登录人，本月听课节数
+     * @param listenerId 当然登录人id
+     * @return Integer
+     */
+    Integer getThisMonthCount(Long listenerId);
+
+    /**
+     * 获取当前登录人,累计听课节数
+     * @param listnerId 当前登录人id
+     * @return Integer
+     */
+    Integer getAllCount(Long listnerId);
 }

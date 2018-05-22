@@ -129,4 +129,21 @@
         ORDER BY t.CREATE_DATA
     </select>
 
+    <!--获取当前登录人，本月听课节数-->
+    <select id="getThisMonthCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM t_listen_notes t
+        WHERE t.DELETE_FLAG='1'
+        AND t.LISTENER_ID=#{listenerId}
+        AND DATE_FORMAT(t.CREATE_DATA,'%Y-%m')=DATE_FORMAT(NOW(),'%Y-%m')
+    </select>
+
+    <!--获取当前登录人,累计听课节数-->
+    <select id="getAllCount" resultType="Integer">
+        SELECT COUNT(*)
+        FROM t_listen_notes t
+        WHERE t.DELETE_FLAG='1'
+        AND t.LISTENER_ID=#{listenerId}
+    </select>
+
 </mapper>

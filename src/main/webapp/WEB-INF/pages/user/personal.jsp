@@ -12,6 +12,14 @@
     <title>Title</title>
 </head>
 <body>
-    个人中心
+    <%--微信头像--%>
+    头像：<img style="height: 100px;width: 100px"  src="${imgUrl}">
+    <br>
+    <%--听课人员姓名--%>
+    <a>听课人员姓名：${listenerName}</a> <br>
+    <%--本月听课节数--%>
+    <a>本月听课节数：${thisMonthCount}</a> <br>
+    <%--累计听课节数--%>
+    <a>累计听课节数：${allCount}</a> <br>
 </body>
 </html>
