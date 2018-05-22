@@ -166,6 +166,8 @@ $(function () {
 
     // 提交表单
     $(".submit").click(function () {
+
+        console.log(aa);
         var schoolId = $("#school").find(".text").attr("value");
         var className = $("#className").find(".left").text()+$("#className").find("input").val()+"班";
         var disciplineId = $("#subject").find(".text").attr("value");
