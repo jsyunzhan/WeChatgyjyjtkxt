@@ -115,7 +115,7 @@
         <span><img src="../../../static/images/listen/icon_06.png"></span>
         <span>机关进校</span>
     </a>
-    <a href="http://www.baidu.com">
+    <a href="/history/history">
         <span><img src="../../../static/images/listen/icon_07.png"></span>
         <span>历史评价</span>
     </a>
