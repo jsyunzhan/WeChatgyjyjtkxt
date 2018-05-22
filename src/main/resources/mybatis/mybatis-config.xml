@@ -9,6 +9,7 @@
         <typeAlias alias="SchoolEntityInfo" type="domain.listen.entity.SchoolEntity"/>
         <typeAlias alias="ListenerEntityInfo" type="domain.base.entity.ListenerEntity"/>
         <typeAlias alias="NoteEntityInfo" type="domain.listen.entity.NoteEntity"/>
+        <typeAlias alias="PhoneEntityInfo" type="domain.user.entity.PhoneEntity"/>
     </typeAliases>
 
 </configuration>

@@ -1,6 +1,7 @@
 package domain.listen.dao;
 
 import domain.listen.entity.NoteEntity;
+import domain.user.entity.PhoneEntity;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -51,4 +52,10 @@ public interface NoteDao {
      * @return Integer
      */
     Integer getAllCount(Long listnerId);
+
+    /**
+     * 获取手机端消息
+     * @return List<PhoneEntity>
+     */
+    List<PhoneEntity> getPhoneMessage();
 }

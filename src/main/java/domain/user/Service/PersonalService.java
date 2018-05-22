@@ -1,5 +1,9 @@
 package domain.user.Service;
 
+import domain.user.entity.PhoneEntity;
+
+import java.util.List;
+
 public interface PersonalService {
     /**
      * 获取本月听课节数
@@ -14,4 +18,10 @@ public interface PersonalService {
      * @return Integer
      */
     Integer getAllCount(Long listnerId);
+
+    /**
+     * 获取手机端消息
+     * @return List<PhoneEntity>
+     */
+    List<PhoneEntity> getPhoneMessage();
 }

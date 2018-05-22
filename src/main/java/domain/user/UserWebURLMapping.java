@@ -11,4 +11,7 @@ public class UserWebURLMapping {
 
     //去个人中心页面
     public static final String PERSONAL_PAGE = USER_ROOT + "personal";
+
+    //手机端消息公告
+    public static final String PHONE_MESSAGE = PERSONAL_PAGE + "/message";
 }

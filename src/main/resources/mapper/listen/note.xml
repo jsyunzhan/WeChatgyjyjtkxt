@@ -146,4 +146,18 @@
         AND t.LISTENER_ID=#{listenerId}
     </select>
 
+    <select id="getPhoneMessage" resultType="PhoneEntityInfo">
+        SELECT
+        t.ID id,
+        t.TITLE title,
+        t.MESSAGE message,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_message_phone t
+        WHERE t.DELETE_FLAG='1'
+        ORDER BY t.CREATE_DATA
+    </select>
+
 </mapper>
