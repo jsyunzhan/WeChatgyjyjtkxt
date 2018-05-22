@@ -21,4 +21,8 @@
 <body>
 历史记录
 </body>
+    <script>
+        var permissionFlag = "${permissionFlag}";
+
+    </script>
 </html>

@@ -1,5 +1,8 @@
 $(function () {
 
+    //是否有权限查看私有笔记,0为没有权限，1为有
+    alert(permissionFlag);
+
     //获取本人提交的记录
    $.ajax({
        url:"/history/history/ownnote",type:"GET", dateType:"json",

@@ -30,7 +30,10 @@ public class HistoryController extends AbstractActionController{
     //去历史记录页面
     @RequestMapping(value = HISTORY_PAGE)
     public ModelAndView index(){
-        return new ModelAndView(HISTORY_NOTE);
+        final  Long permissionFlag = getPermissionFlag();
+        final ModelAndView mv = new ModelAndView(HISTORY_NOTE);
+        mv.addObject("permissionFlag",permissionFlag);
+        return mv;
     }
 
     /**
