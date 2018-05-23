@@ -97,8 +97,8 @@
 
 <div class="footer">
     <a href="javascript:;">
-            <span><img src="../../../static/images/listen/icon_01.png"></span>
-            <span style="color: #FFCC00;">听课评价</span>
+        <span><img src="../../../static/images/listen/icon_01.png"></span>
+        <span style="color: #FFCC00;">听课评价</span>
     </a>
     <a href="javascript:;">
         <span><img src="../../../static/images/listen/icon_06.png"></span>
