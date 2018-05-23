@@ -73,9 +73,9 @@ $(function () {
     function linkage03(obj){
         $(".choose_03").click(function(){
             $(".show_pop").append('<span>'+$(this).text()+'</span>');
-            popdown(obj);
             $("#school").find(".text").text($(this).text());
             $("#school").find(".text").attr("value",$(this).attr("value"));
+            popdown(obj);
         })
     }
 
@@ -97,8 +97,8 @@ $(function () {
     })
     function linkage04(obj){
         $(".choose_04").click(function(){
-            popdown(obj);
             $("#className").find(".left").text($(this).text());
+            popdown(obj);
         })
     }
 
@@ -127,9 +127,9 @@ $(function () {
     });
     function linkage05(obj){
         $(".choose_05").click(function(){
-            popdown(obj);
             $("#subject").find(".text").text($(this).text());
             $("#subject").find(".text").attr("value",$(this).attr("value"));
+            popdown(obj);
         })
     }
 
@@ -158,16 +158,14 @@ $(function () {
     });
     function linkage06(obj){
         $(".choose_06").click(function(){
-            popdown(obj);
             $("#score").find(".text").text($(this).text());
             $("#score").find(".text").attr("value",$(this).attr("value"));
+            popdown(obj);
         })
     }
 
     // 提交表单
     $(".submit").click(function () {
-
-        console.log(aa);
         var schoolId = $("#school").find(".text").attr("value");
         var className = $("#className").find(".left").text()+$("#className").find("input").val()+"班";
         var disciplineId = $("#subject").find(".text").attr("value");

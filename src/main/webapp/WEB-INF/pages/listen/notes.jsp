@@ -15,7 +15,7 @@
     <title>高邮市教育局机关进校园系统</title>
 </head>
 <body>
-<form class="wrapper">
+<form class="wrapper" method="post" action="/listen/picturecomment"  enctype="multipart/form-data">
     <div class="title">听课评价</div>
     <div class="content_01">
         <div class="inform" id="school">

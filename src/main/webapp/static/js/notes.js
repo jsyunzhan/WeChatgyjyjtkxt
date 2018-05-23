@@ -1,6 +1,4 @@
-var aa;
 $(function(){
-
 	// 图片上传
     function uploadImage(){
         $("#addImage").change(function(){
@@ -21,7 +19,6 @@ $(function(){
                 if (this.files[i]){
                     //这里的objURL就是input file的真实路径
                     var objURL = getObjectURL(this.files[i]);
-                    aa = objURL;
                     var imageHtml = '<div class="fileImage" style="background:url('+objURL+')no-repeat;background-size: 100% 100%;"><div class="imgclose"><img src="../../static/images/listen/imgClose.png"></div></div>';
                     $(".upload").append(imageHtml);
                 }

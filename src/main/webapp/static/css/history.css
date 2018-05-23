@@ -1,0 +1,233 @@
+body{
+    font-family: '微软雅黑';
+    background: #F7F7F7;
+}
+
+.wrapper{
+    padding-bottom: 60px;
+}
+
+/*tab切换*/
+.title{
+    line-height: 30px;
+    padding: 5px 0;
+    margin: 0 auto;
+    background: #000;
+    color: #A1A1A1;
+    font-size: 0px;
+    text-align: center;
+}
+
+.title span{
+    display: inline-block;
+    margin: 0 4%;
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.title .tit_choosen{
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 2px 0 #fff;
+}
+
+/*搜索*/
+.search{
+    display: flex;
+    padding: 0 4%;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+}
+
+.search .month{
+    position: relative;
+    line-height: 40px;
+    font-size: 0;
+    width: 90px;
+}
+
+.search .month select{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.search .font_search{
+    flex: 1;
+    display: flex;
+    width: 70%;
+    font-size: 14px;
+}
+
+.search .font_search div{
+    flex: 1;
+}
+
+.search .font_search input{
+    width: 100%;
+    outline: 0;
+    border: 0;
+    line-height: 30px;
+    height: 30px;
+    margin-top: 5px;
+    background: url(../../static/images/history/search.png) no-repeat #F7F7F7 left 7px center;
+    background-size: 16px 16px;
+    border-radius: 20px;
+    padding-left: 30px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.search .font_search span{
+    width: 60px;
+    line-height: 20px;
+    height: 20px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.search .month span{
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+    color: #FFCC00;
+}
+
+.search .month span:nth-child(2){
+    width: 10px;
+    margin: 0 5px;
+    margin-top: 15px;
+}
+
+/*听课记录*/
+.record{
+    position: relative;
+    background: #fff;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-top: 10px;
+    padding: 10px 4%;
+    color: #2B2B2B;
+}
+
+.record .topic{
+    line-height: 30px;
+    font-size: 16px;
+}
+
+.school span{
+    display: inline-block;
+    vertical-align: top;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.school span:nth-child(1){
+    width: 14px;
+    height: 14px;
+    margin-top: 5px;
+}
+
+.record .detail{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #FFCC00;
+}
+
+.record .detail span{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.record .detail span:nth-child(2){
+    width: 14px;
+    height: 14px;
+    margin-top: 5px;
+}
+
+/*页面底部*/
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+.footer div{
+    flex: 1;
+    background: #fefefe;
+    border-top: 1px solid #eee;
+}
+
+.footer div span{
+    display: block;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto;
+    line-height: 20px;
+}
+
+.footer div span:nth-child(1){
+    margin-top: 8px;
+}
+
+.footer div span:nth-child(2){
+    width: 80%;
+    text-align: center;
+    color: #666
+}
+
+/*底部弹窗*/
+.pop_01{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    background: #eee;
+    width: 100%;
+    font-size: 14px;
+}
+
+.pop_01 .pop_title{
+    line-height: 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.pop_01 .pop_title .close_pop_01{
+    float: left;
+    width: 60px;
+    text-align: center;
+}
+
+.pop_01 .pop_title .sure_01{
+    float: right;
+    width: 60px;
+    text-align: center;
+}
+
+.pop_01 .show_pop{
+    line-height: 30px;
+    margin-left: 4%;
+}
+
+.pop_01 .pop_con{
+    padding: 0 4%;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+
+.pop_01 .pop_con div{
+    line-height: 30px;
+}
