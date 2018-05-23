@@ -54,7 +54,6 @@
     </div>
     <div class="footer">
         <a href="/listen/note">
-
             <span><img src="../../../static/images/listen/icon_05.png"></span>
             <span>听课评价</span>
         </a>

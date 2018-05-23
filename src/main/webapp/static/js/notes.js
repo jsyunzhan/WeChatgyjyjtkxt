@@ -73,7 +73,7 @@ $(function(){
         $(this).find("span").toggleClass("choosen");
     })
 
-    // uploadImage();
+    uploadImage();
     map_position();
 
 })

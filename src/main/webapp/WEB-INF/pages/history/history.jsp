@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>历史评课</title>
+    <title>我的评课</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="../../../static/css/public.css">
@@ -14,8 +14,8 @@
 <body>
     <div class="wrapper">
         <div class="title">
-            <span class="tit_choosen"><a href="javascript:;">历史评课</a></span>
-            <span><a href="">共享评课</a></span>
+            <span class="tit_choosen"><a href="javascript:;">我的评课</a></span>
+            <span><a href="/history/share">共享评课</a></span>
         </div>
         <div class="search">
             <div class="month">
@@ -54,6 +54,5 @@
 </body>
     <script>
         var allNoteUrl = "${allNoteUrl}";
-
     </script>
 </html>

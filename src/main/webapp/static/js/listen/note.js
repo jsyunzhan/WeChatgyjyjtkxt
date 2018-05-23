@@ -167,24 +167,6 @@ $(function () {
 
     // 提交表单
     $(".submit").click(function () {
-
-        $.ajax({
-            url: "/listen/picturecomment",
-            type: 'POST',
-            cache: false,
-            data: new FormData($("#pictureForm")[0]),
-            processData: false,
-            contentType: false,
-            async: false,
-            success: function (result) {
-                picturePath = result;
-            },
-            error: function (err) {
-            }
-        });
-
-
-
         var schoolId = $("#school").find(".text").attr("value");
         var className = $("#className").find(".left").text()+$("#className").find("input").val()+"班";
         var disciplineId = $("#subject").find(".text").attr("value");
@@ -199,9 +181,26 @@ $(function () {
             shareFlag = 0;
         }
         var listenPath = $(".town").text();
-
+        var picURL = "";
+        picURL = document.getElementById("addImage").files;
+        console.log(picURL);
 
         if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&shareFlag){
+            $.ajax({
+                url: "/listen/picturecomment",
+                type: 'POST',
+                cache: false,
+                data: new FormData($("#pictureForm")[0]),
+                processData: false,
+                contentType: false,
+                async: false,
+                success: function (result) {
+                    picturePath = result;
+                    console.log(picturePath);
+                },
+                error: function (err) {
+                }
+            });
             var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
                     disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
                 url = "/listen/notecomment";
@@ -211,15 +210,14 @@ $(function () {
                 url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
                 success:function (r) {
                     var flag = popup({
-                        'html': '<div class="new_pop"><div class="close_pop"><img src="../../static/images/listen/close.png"></div><div class="success_img"><img src="../../static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
+                        'html': '<div class="new_pop"><div class="success_img"><img src="../../static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
                         'width': '70%',
                         'height': '200px',
                         'params': {},
                         'events':{'sure': function(){
                             popdown(flag);
-                                location.href = "/history/history";
-                            },
-                            'close_pop':function(){popdown(flag);}
+                                // location.href = "/history/history";
+                            }
                         }
                     },false);
                 }

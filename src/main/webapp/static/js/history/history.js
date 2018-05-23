@@ -5,7 +5,7 @@ $(function () {
     function allListener() {
         if(allNoteUrl){
             var _html = '';
-            _html = '<span><a href="allNoteUrl">所有评课</a></span>'
+            _html = '<span><a href="'+allNoteUrl+'">所有评课</a></span>'
             $(".title").append(_html);
         }
     }
@@ -63,21 +63,4 @@ $(function () {
             popdown(obj);
         })
     }
-
-
-    //获取分享的记录
-    $.ajax({
-        url:"/history/history/sharenote",type:"GET", dateType:"json",
-        success:function (r) {
-            console.log(r)
-        }
-    });
-
-    //权限人员获取所有笔记
-    $.ajax({
-        url:"/history/history/allnote",type:"GET", dateType:"json",
-        success:function (r) {
-            console.log(r)
-        }
-    })
 });
