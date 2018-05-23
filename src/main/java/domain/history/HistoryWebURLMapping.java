@@ -18,6 +18,7 @@ public class HistoryWebURLMapping {
     //分享记录页面
     public static final String SHARE_PAGE = HISTORY_ROOT + "share";
 
+    //所有笔记页面
     public static final String ALL_NOTE_PAGE_REQUEST = HISTORY_ROOT + "allNote";
 
     /*****************************************************/
