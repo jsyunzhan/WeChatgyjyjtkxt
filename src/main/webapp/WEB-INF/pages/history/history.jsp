@@ -50,16 +50,13 @@
     <%--</div>--%>
 历史记录
 
-    <form id="upladForm"  enctype="multipart/form-data">
-        <input type="file"  name="singleFile1"  accept="image/*" multiple/>
-        <input id="upladFile" type="button" value="上传" />
-    </form>
+
 
 
 
 </body>
     <script>
-        var permissionFlag = "${permissionFlag}";
+        var allNoteUrl = "${allNoteUrl}";
 
     </script>
 </html>

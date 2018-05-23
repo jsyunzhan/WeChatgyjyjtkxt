@@ -32,8 +32,10 @@ public class HistoryController extends AbstractActionController{
     public ModelAndView index(){
         final  Long permissionFlag = getPermissionFlag();
         final ModelAndView mv = new ModelAndView(HISTORY_NOTE);
-        mv.addObject("permissionFlag",permissionFlag);
 
+        if (1 == permissionFlag){
+            mv.addObject("allNoteUrl","/history/allNote");
+        }
         return mv;
     }
 
