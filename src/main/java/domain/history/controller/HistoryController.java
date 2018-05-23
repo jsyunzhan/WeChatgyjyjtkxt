@@ -35,6 +35,8 @@ public class HistoryController extends AbstractActionController{
 
         if (1 == permissionFlag){
             mv.addObject("allNoteUrl","/history/allNote");
+        }else {
+            mv.addObject("allNoteUrl","");
         }
         return mv;
     }

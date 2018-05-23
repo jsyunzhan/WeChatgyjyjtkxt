@@ -50,7 +50,7 @@
     </div>
 </body>
     <script>
-        var permissionFlag = "${permissionFlag}";
+        var allNoteUrl = "${allNoteUrl}";
 
     </script>
 </html>
