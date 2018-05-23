@@ -15,6 +15,13 @@ public class HistoryWebURLMapping {
     //历史记录页面
     public static final String HISTORY_PAGE = HISTORY_ROOT + "history";
 
+    //分享记录页面
+    public static final String SHARE_PAGE = HISTORY_ROOT + "share";
+
+    public static final String ALL_NOTE_PAGE_REQUEST = HISTORY_ROOT + "allNote";
+
+    /*****************************************************/
+
     //查看自己的笔记
     public static final String OWN_NOTE = HISTORY_PAGE + "/ownnote";
 
