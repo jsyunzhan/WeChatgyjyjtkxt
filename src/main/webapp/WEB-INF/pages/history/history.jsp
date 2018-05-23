@@ -31,7 +31,5 @@
     <script>
         var permissionFlag = "${permissionFlag}";
 
-        var list = "${list}";
-
     </script>
 </html>
