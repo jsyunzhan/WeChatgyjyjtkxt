@@ -13,7 +13,10 @@
 </head>
 <body>
     <div class="wrapper">
-        <div class="title"></div>
+        <div class="title">
+            <span class="tit_choosen"><a href="javascript:;">历史评课</a></span>
+            <span><a href="">共享评课</a></span>
+        </div>
         <div class="search">
             <div class="month">
                 <span>按月查看</span>

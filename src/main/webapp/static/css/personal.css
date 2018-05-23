@@ -123,12 +123,14 @@ body{
     font-size: 14px;
     text-indent: 2em;
     max-height: 200px;
+    color: #666;
 }
 
 .pop01_close{
     border-top: 1px solid #eee;
     line-height: 40px;
     text-align: center;
+    color: #FFCC00;
 }
 
 /*听课记录*/

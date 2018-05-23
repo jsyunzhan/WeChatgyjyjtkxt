@@ -1,19 +1,11 @@
 $(function () {
-
-
-    console.log(allNoteUrl);
-
-
     initUtils();
 
     // 权限区分
     function allListener() {
-        var _html = "";
-        if(permissionFlag == 0){
-            _html += '<span class="tit_choosen">历史评课</span><span>共享评课</span>';
-            $(".title").append(_html);
-        }else if(permissionFlag == 1){
-            _html += '<span class="tit_choosen">历史评课</span><span>共享评课</span><span>所有评课</span>';
+        if(allNoteUrl){
+            var _html = '';
+            _html = '<span><a href="allNoteUrl">所有评课</a></span>'
             $(".title").append(_html);
         }
     }
@@ -71,18 +63,6 @@ $(function () {
             popdown(obj);
         })
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     //获取分享的记录
