@@ -16,6 +16,9 @@ public class NoteEntity extends AbstractEntity {
     //听课人员id
     private Long listenerId;
 
+    //听课人员名称
+    private String listenerName;
+
     //听课学校id
     private Long schoolId;
 

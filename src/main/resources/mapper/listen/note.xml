@@ -51,6 +51,7 @@
         SELECT
         t.ID id,
         t.LISTENER_ID listenerId,
+        (SELECT b.LISTENER_NAME FROM  t_person_listener b where b.ID=t.listenerId) listenerName,
         t.SCHOOL_ID schoolId,
         (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID) schoolName,
         t.CLASS_NAME className,
@@ -80,6 +81,7 @@
         SELECT
         t.ID id,
         t.LISTENER_ID listenerId,
+        (SELECT b.LISTENER_NAME FROM  t_person_listener b where b.ID=t.listenerId) listenerName,
         t.SCHOOL_ID schoolId,
         (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID) schoolName,
         t.CLASS_NAME className,
@@ -109,6 +111,7 @@
         SELECT
         t.ID id,
         t.LISTENER_ID listenerId,
+        (SELECT b.LISTENER_NAME FROM  t_person_listener b where b.ID=t.listenerId) listenerName,
         t.SCHOOL_ID schoolId,
         (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID) schoolName,
         t.CLASS_NAME className,
