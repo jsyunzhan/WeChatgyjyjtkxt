@@ -1,4 +1,23 @@
 $(function () {
+
+    $("#upladFile").click(function () {
+
+        $.ajax({
+            url: "/listen/picturecomment",
+            type: 'POST',
+            cache: false,
+            data: new FormData($("#upladForm")[0]),
+            processData: false,
+            contentType: false,
+            success: function (result) {
+            },
+            error: function (err) {
+            }
+        });
+    });
+
+
+
     initUtils();
 
     // 权限区分

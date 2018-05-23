@@ -75,8 +75,11 @@
         </div>
         <div class="upload clearfix">
             <form class="addImage"  method="post" action="/listen/picturecomment"  enctype="multipart/form-data">
-                <input type="file" accept="image/*" name="addImage" id="addImage" multiple>	<!-- multiple属性支持多张照片上传 -->
+                <input type="file" accept="image/*" name="singleFile1" id="addImage" multiple>	<!-- multiple属性支持多张照片上传 -->
+                <br>
+
             </form>
+            <input type="submit" value="提交1">
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课地址</div>
@@ -88,6 +91,8 @@
         <span></span>是否公开此评价
     </div>
     <div class="submit">提交</div>
+
+
 </div>
 
 <div class="footer">
