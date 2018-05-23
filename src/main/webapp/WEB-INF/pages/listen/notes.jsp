@@ -15,7 +15,7 @@
     <title>高邮市教育局机关进校园系统</title>
 </head>
 <body>
-<form class="wrapper" method="post" action="/listen/picturecomment"  enctype="multipart/form-data">
+<div class="wrapper">
     <div class="title">听课评价</div>
     <div class="content_01">
         <div class="inform" id="school">
@@ -74,9 +74,9 @@
             <div><span class="imagesNum">0</span>/4</div>
         </div>
         <div class="upload clearfix">
-            <div class="addImage">
+            <form class="addImage"  method="post" action="/listen/picturecomment"  enctype="multipart/form-data">
                 <input type="file" accept="image/*" name="addImage" id="addImage" multiple>	<!-- multiple属性支持多张照片上传 -->
-            </div>
+            </form>
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课地址</div>
@@ -88,7 +88,7 @@
         <span></span>是否公开此评价
     </div>
     <div class="submit">提交</div>
-</form>
+</div>
 
 <div class="footer">
     <a href="javascript:;">
