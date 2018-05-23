@@ -73,7 +73,7 @@
         WHERE t.DELETE_FLAG='1'
         AND t.LISTENER_ID=#{listenerId}
         <include refid="noteConditionSql"/>
-        ORDER BY t.CREATE_DATA
+        ORDER BY t.CREATE_DATA DESC
     </select>
 
     <!--查看分享的笔记-->
@@ -103,7 +103,7 @@
         WHERE t.DELETE_FLAG='1'
         AND t.SHARE_FLAGE='1'
         <include refid="noteConditionSql"/>
-        ORDER BY t.CREATE_DATA
+        ORDER BY t.CREATE_DATA DESC
     </select>
 
     <!--查看所有的笔记-->
@@ -132,7 +132,7 @@
         FROM t_listen_notes t
         WHERE t.DELETE_FLAG='1'
         <include refid="noteConditionSql"/>
-        ORDER BY t.CREATE_DATA
+        ORDER BY t.CREATE_DATA DESC
     </select>
 
     <!--获取当前登录人，本月听课节数-->
@@ -152,6 +152,7 @@
         AND t.LISTENER_ID=#{listenerId}
     </select>
 
+    <!--获取公告消息-->
     <select id="getPhoneMessage" resultType="PhoneEntityInfo">
         SELECT
         t.ID id,
@@ -163,7 +164,7 @@
         t.UPDATE_DATA updateDate
         FROM t_message_phone t
         WHERE t.DELETE_FLAG='1'
-        ORDER BY t.CREATE_DATA
+        ORDER BY t.CREATE_DATA DESC
     </select>
 
 </mapper>
