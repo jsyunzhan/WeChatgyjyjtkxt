@@ -50,7 +50,6 @@ public class HistoryController extends AbstractActionController{
     public ModelAndView share(){
         final  Long permissionFlag = getPermissionFlag();
         final ModelAndView mv = new ModelAndView(SHARE_NOTE_PAGE);
-
         if (1 == permissionFlag){
             mv.addObject("allNoteUrl","/history/allNote");
         }else {
