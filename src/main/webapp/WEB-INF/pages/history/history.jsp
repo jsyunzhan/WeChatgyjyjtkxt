@@ -21,16 +21,17 @@
 <body>
 历史记录
 
-    <form id="upladForm" method="post" action="/listen/picturecomment"  enctype="multipart/form-data">
-        <input type="file"  name="singleFile1" />
-        <input type="file"  name="singleFile1" />
-        <input id="upladFile" type="submit" value="上传" />
-    </form>
+    <%--<form id="upladForm" method="post" action="/listen/picturecomment"  enctype="multipart/form-data">--%>
+        <%--<input type="file"  name="singleFile1"  accept="image/*" multiple/>--%>
+        <%--<input id="upladFile" type="submit" value="上传" />--%>
+    <%--</form>--%>
 
 
 </body>
     <script>
         var permissionFlag = "${permissionFlag}";
+
+        var list = "${list}";
 
     </script>
 </html>

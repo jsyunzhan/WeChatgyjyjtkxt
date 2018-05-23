@@ -33,6 +33,7 @@ public class HistoryController extends AbstractActionController{
         final  Long permissionFlag = getPermissionFlag();
         final ModelAndView mv = new ModelAndView(HISTORY_NOTE);
         mv.addObject("permissionFlag",permissionFlag);
+
         return mv;
     }
 
