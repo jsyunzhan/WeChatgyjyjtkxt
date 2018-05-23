@@ -1,3 +1,4 @@
+var picturePath;
 $(function () {
     initUtils();
     var grade_val;
@@ -166,6 +167,24 @@ $(function () {
 
     // 提交表单
     $(".submit").click(function () {
+
+        $.ajax({
+            url: "/listen/picturecomment",
+            type: 'POST',
+            cache: false,
+            data: new FormData($("#pictureForm")[0]),
+            processData: false,
+            contentType: false,
+            async: false,
+            success: function (result) {
+                picturePath = result;
+            },
+            error: function (err) {
+            }
+        });
+
+
+
         var schoolId = $("#school").find(".text").attr("value");
         var className = $("#className").find(".left").text()+$("#className").find("input").val()+"班";
         var disciplineId = $("#subject").find(".text").attr("value");
@@ -180,8 +199,10 @@ $(function () {
             shareFlag = 0;
         }
         var listenPath = $(".town").text();
-        if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&shareFlag&&listenPath){
-            var data = {schoolId:schoolId,className:className,teacherName:teacherName,
+
+
+        if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&shareFlag){
+            var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
                     disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
                 url = "/listen/notecomment";
 

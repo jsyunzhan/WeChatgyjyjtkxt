@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpServletRequest;
+import java.io.File;
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 
 import static domain.listen.ListenWebURLMapping.GET_SCHOOL_NAME;
@@ -65,33 +66,63 @@ public class NoteCommentController extends AbstractActionController{
     }
 
 
-    @RequestMapping(value = "/listen/picturecomment")
+    /**
+     * 图片上传
+     * @param fileArray 文件
+     * @return String
+     * @throws IOException io异常
+     */
+    @RequestMapping(value = "/listen/picturecomment",produces="text/html; charset=UTF-8")
     @ResponseBody
-    public String pictureComment(@RequestParam("singleFile1") MultipartFile[] file,
-                               HttpServletRequest request) throws IOException {
+    public String pictureComment(@RequestParam("singleFile1") MultipartFile[] fileArray) throws IOException {
 
-        System.out.println("1");
+        Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
+        int month = cal.get(Calendar.MONTH )+1;
+        int data = cal.get(Calendar.DATE);
+        int hour = cal.get(Calendar.HOUR);
+        int minute = cal.get(Calendar.MINUTE);
+        int second = cal.get(Calendar.SECOND);
+        //听课人员名称
+        final String litenerName = getListenerName();
 
-//        if(!file.isEmpty()) {
-//            //获取服务器里的文件路径
-//            String realPath=request.getSession().getServletContext().getRealPath("upload");
-//            System.out.println(realPath);
-//            //获取上传文件的文件名
-//            String oFileName=file.getOriginalFilename();
-//            //截取文件后缀名
-//            String suffix = oFileName.substring(oFileName.indexOf("."),oFileName.length());
-//            System.out.println(suffix);
-//            //uuid + suffix  ;
-//            String newFileName = UUID.randomUUID().toString()+suffix;
-//            //创建文件
-//            File tempFile = new File(realPath+"/"+newFileName);
-//            //文件转换
-//            file.transferTo(tempFile);
-//            return "success";
-//        }else {
-//            return "fail";
-//        }
-        return "";
+        String picturePath = "";
+
+        for (int i=0;i<fileArray.length;i++){
+            MultipartFile file = fileArray[i];
+
+            if(!file.isEmpty()) {
+
+                //文件存放路径
+                String dirPath = "D:/image/" + litenerName + "/" + year + "/" + month + "/" +data;
+                //创建文件夹
+                File dir = new File(dirPath);
+                if (!dir.exists()){
+                    dir.mkdirs();
+                }
+
+                //获取上传文件的文件名
+                String oFileName=file.getOriginalFilename();
+                //截取文件后缀名
+                String suffix = oFileName.substring(oFileName.indexOf("."),oFileName.length());
+
+                //文件名
+                String newFileName = year + "" + month + "" + data + "" + hour + "" + minute + "" + second + "" + i +suffix;
+
+                //文件的绝对路径
+                String realPath = dirPath+"/"+newFileName;
+                picturePath += realPath;
+                picturePath += ",";
+
+                //创建文件
+                File tempFile = new File(realPath);
+
+                //文件转换
+                file.transferTo(tempFile);
+            }
+        }
+
+        return picturePath;
     }
 
     /**
