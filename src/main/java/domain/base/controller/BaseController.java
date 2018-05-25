@@ -22,7 +22,7 @@ import static domain.base.BaseWebURLMapping.PARAM_URL;
 import static domain.base.entity.SystemConfig.LOGIN_SESSION;
 
 @Controller
-public class BaseController{
+public class BaseController {
 
     final private BaseService baseService;
 
@@ -41,7 +41,8 @@ public class BaseController{
     @RequestMapping(value = "/security/movetologin")
     @ResponseBody
     public void doget(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String backUrl = "http://192.168.0.171:80/security/backUrl";
+
+        String backUrl = "http://192.168.0.171:80"+request.getContextPath()+"/security/backUrl";
 
         String url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + AuthUtil.APPID
                 + "&redirect_uri=" +URLEncoder.encode(backUrl)
@@ -80,14 +81,17 @@ public class BaseController{
     //登录
     private void login(String imgUrl,String openid, HttpServletRequest request, HttpServletResponse response) throws IOException {
         final ListenerEntity listenerEntity = baseService.getListenerByOpenId(openid);
+
+        final String path = request.getContextPath();
+
         if (Objects.isNull(listenerEntity)){
             request.getSession().setAttribute("openid",openid);
 
-            response.sendRedirect("/base/register");
+            response.sendRedirect(path+"/base/register");
         }else {
             request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
             request.getSession().setAttribute("imgUrl",imgUrl);
-            response.sendRedirect("/listen/note");
+            response.sendRedirect( path+"/listen/note");
 
         }
 
