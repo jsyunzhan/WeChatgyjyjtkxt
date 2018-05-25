@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="footer">
-        <a href="/listen/note">
+        <a href="${APP_PATH}/listen/note">
             <span><img src="${APP_PATH}/static/images/listen/icon_05.png"></span>
             <span>听课评价</span>
         </a>
@@ -64,7 +64,7 @@
             <span><img src="${APP_PATH}/static/images/listen/icon_06.png"></span>
             <span>机关进校</span>
         </a>
-        <a href="/history/history">
+        <a href="${APP_PATH}/history/history">
             <span><img src="${APP_PATH}/static/images/listen/icon_07.png"></span>
             <span>历史评价</span>
         </a>
