@@ -115,11 +115,11 @@
         <span><img src="${APP_PATH}/static/images/listen/icon_06.png"></span>
         <span>机关进校</span>
     </a>
-    <a href="/history/history">
+    <a href="${APP_PATH}/history/history">
         <span><img src="${APP_PATH}/static/images/listen/icon_07.png"></span>
         <span>历史评价</span>
     </a>
-    <a href="/user/personal">
+    <a href="${APP_PATH}/user/personal">
         <span><img src="${APP_PATH}/static/images/listen/icon_08.png"></span>
         <span>用户中心</span>
     </a>
