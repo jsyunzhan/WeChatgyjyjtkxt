@@ -12,7 +12,7 @@ $(function(){
         reader.readAsDataURL(fil);
         reader.onload = function () {
             obj.hide();
-            obj.parent(".addImage").append('<img src="'+ reader.result + '"><div class="imgclose"><img src="../../static/images/listen/imgClose.png"></div>');
+            obj.parent(".addImage").append('<img src="'+ reader.result + '"><div class="imgclose"><img src="'+path+'/static/images/listen/imgClose.png"></div>');
             $(".imgclose").click(function () {
                 $(this).siblings("img").remove();
                 $(this).siblings("input").show();

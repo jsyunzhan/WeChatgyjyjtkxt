@@ -7,7 +7,7 @@ $(function () {
     //获取乡镇下拉数据
     $("#school").click(function(){
         $.ajax({
-            url:"/paramters/STREET",
+            url:path + "/paramters/STREET",
             type:"GET",
             dataType:"json",
             success:function (event) {
@@ -32,7 +32,7 @@ $(function () {
             $(".show_pop").append('<span>'+$(this).text()+'></span>');
             var id_01 = $(this).attr("value");
             $.ajax({
-                url:"/listen/getSchoolType/" + id_01,
+                url:path + "/listen/getSchoolType/" + id_01,
                 type:"GET",
                 dataType:"json",
                 success:function (event) {
@@ -57,7 +57,7 @@ $(function () {
             grade_val = $(this).attr("value");
             $(".show_pop").append('<span>'+$(this).text()+'></span>');
             var id_02 = $(this).attr("value");
-            var data = {streetId:id,schoolTypeId:id_02}, url = "/listen/getschoolname";
+            var data = {streetId:id,schoolTypeId:id_02}, url = path + "/listen/getschoolname";
             $.ajax({
                 url:url,type:"POST",contentType: "application/json",data:JSON.stringify(data),
                 success:function (event) {
@@ -105,7 +105,7 @@ $(function () {
 
     // 听课学课
     $.ajax({
-        url:"/paramters/DISCIPLINE",
+        url:path + "/paramters/DISCIPLINE",
         type:"GET",
         dataType:"json",
         success:function (event) {
@@ -136,7 +136,7 @@ $(function () {
 
     // 课堂评分
     $.ajax({
-        url:"/paramters/SCORE",
+        url:path + "/paramters/SCORE",
         type:"GET",
         dataType:"json",
         success:function (event) {
@@ -184,7 +184,7 @@ $(function () {
 
         if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&shareFlag){
             $.ajax({
-                url: "/listen/picturecomment",
+                url: path + "/listen/picturecomment",
                 type: 'POST',
                 cache: false,
                 data: new FormData($("#pictureForm")[0]),
@@ -200,14 +200,14 @@ $(function () {
             });
             var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
                     disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
-                url = "/listen/notecomment";
+                url = path + "/listen/notecomment";
 
             console.log(data);
             $.ajax({
                 url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
                 success:function (r) {
                     var flag = popup({
-                        'html': '<div class="new_pop"><div class="success_img"><img src="../../static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
+                        'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
                         'width': '70%',
                         'height': '200px',
                         'params': {},
