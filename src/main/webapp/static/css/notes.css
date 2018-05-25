@@ -166,9 +166,9 @@ textarea:-ms-input-placeholder{
 
 .upload .fileImage,.upload .addImage{
 	float: left;
-	width: 20%;
+	width: 21%;
 	padding-bottom: 20%;
-	margin-right: 3%;
+	margin: 0 4%;
 }
 
 .addImage{
@@ -186,7 +186,7 @@ textarea:-ms-input-placeholder{
 	overflow: hidden;
 }
 
-.addImage #addImage{
+.addImage input,.addImage img{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -195,22 +195,16 @@ textarea:-ms-input-placeholder{
 	opacity: 0;
 }
 
-.upload .fileImage{
-    position: relative;
-	border-radius: 5px;
-	border: 1px solid #eee;
+.addImage img{
+	opacity: 2;
 }
 
-.upload .fileImage .imgclose{
+.upload .addImage .imgclose{
     position: absolute;
-    right: -8px;
-    top: -8px;
-    width: 20px;
-    height: 20px;
-}
-
-.upload .fileImage .imgclose img{
-    border: 0;
+    right: 0px;
+    top: 0px;
+    width: 20%;
+    height: 20%;
 }
 
 /*地图定位*/
@@ -338,7 +332,7 @@ textarea:-ms-input-placeholder{
 }
 
 .pop_01 .pop_title{
-	line-height: 30px;
+	line-height: 50px;
 	border-bottom: 1px solid #ccc;
 }
 
@@ -355,8 +349,10 @@ textarea:-ms-input-placeholder{
 }
 
 .pop_01 .show_pop{
-	line-height: 30px;
+	line-height: 40px;
 	margin-left: 4%;
+	margin-right: 4%;
+	border-bottom: 1px solid #ccc;
 }
 
 .pop_01 .pop_con{
@@ -364,5 +360,6 @@ textarea:-ms-input-placeholder{
 }
 
 .pop_01 .pop_con div{
-	line-height: 30px;
+	line-height: 40px;
+	border-bottom: 1px solid #ccc;
 }

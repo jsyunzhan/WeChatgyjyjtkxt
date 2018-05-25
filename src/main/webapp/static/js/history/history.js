@@ -1,6 +1,15 @@
 $(function () {
     initUtils();
 
+    // 居中效果
+    function center(obj){
+        var win_width = $(window).width();
+        var win_height = $(window).height();
+        var obj_width = $(obj).width();
+        var obj_height = $(obj).height();
+        $(obj).css({"left":(win_width-obj_width)/2,"top":(win_height-obj_height)/2});
+    }
+
     // 权限区分
     function allListener() {
         if(allNoteUrl){
@@ -37,8 +46,40 @@ $(function () {
                $(".content").append(_html);
                _html = "";
            }
+           for (var i=0;i<event.length;i++){
+               !(function(i){
+                   $(".detail")[i].onclick = function(){
+                       var _html = '<div class="new_pop01"><div class="pop01_title">评课详情</div><div class="pop01_con">';
+                       _html += '<div class="mess"><div>听课学校：</div><div>'+event[i].schoolName+'</div></div>';
+                       _html += '<div class="mess"><div>班级年级：</div><div>'+event[i].className+'</div></div>';
+                       _html += '<div class="mess"><div>听课学科：</div><div>'+event[i].disciplineName+'</div></div>';
+                       _html += '<div class="mess"><div>听课课题：</div><div>'+event[i].subject+'</div></div>';
+                       _html += '<div class="mess"><div>执教老师：</div><div>'+event[i].teacherName+'</div></div>';
+                       _html += '<div class="mess"><div>听课老师：</div><div>'+event[i].listenerName+'</div></div>';
+                       _html += '<div class="mess"><div>课堂评分：</div><div>'+event[i].scoreId+'</div></div>';
+                       _html += '<div class="mess"><div>课堂评价：</div><div>'+event[i].comments+'</div></div>';
+                       _html += '<div class="mess"><div>听课位置：</div><div>'+event[i].listenPath+'</div></div>';
+                       _html += '<div class="mess"><div>提交时间：</div><div>'+timestampToTime(event[i].createDate)+'</div></div>';
+                       _html += '<div class="mess"><div>课堂照片：</div></div>';
+                       _html += '<div class="mess_pic"><div></div></div>';
+                       _html += '</div><div class="pop01_close">我知道了</div></div>';
+                       var flag = popup({
+                           'html': _html,
+                           'width': '',
+                           'height': '',
+                           'params': {},
+                           'events':{'pop01_close':function(){popdown(flag);}
+                           }
+                       },false);
+                       center(".new_pop01");
+                   }
+               })(i)
+           }
        }
    });
+    function detail(){
+
+    }
 
     $(".month").click(function(){
         var _html = "";

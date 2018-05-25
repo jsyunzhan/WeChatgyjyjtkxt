@@ -211,7 +211,7 @@ body{
 }
 
 .pop_01 .pop_title{
-    line-height: 30px;
+    line-height: 50px;
     border-bottom: 1px solid #ccc;
 }
 
@@ -228,7 +228,7 @@ body{
 }
 
 .pop_01 .show_pop{
-    line-height: 30px;
+    line-height: 50px;
     margin-left: 4%;
 }
 
@@ -239,5 +239,54 @@ body{
 }
 
 .pop_01 .pop_con div{
-    line-height: 30px;
+    line-height: 40px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+.new_pop01{
+    background: #fff;
+    border-radius: 5px;
+    position: fixed;
+    width: 80%;
+}
+
+.pop01_title{
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.pop01_con{
+    padding: 10px 10px;
+    line-height: 24px;
+    font-size: 14px;
+    text-indent: 2em;
+    max-height: 200px;
+    color: #666;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.pop01_con .mess{
+    display: flex;
+    text-indent: 0;
+}
+
+.pop01_con .mess div:nth-child(1){
+    width: 80px;
+    text-align: right;
+}
+
+.pop01_con .mess div:nth-child(2){
+    flex: 1;
+    word-break: break-all;
+    text-align: left;
+}
+
+.pop01_close{
+    border-top: 1px solid #eee;
+    line-height: 40px;
+    text-align: center;
+    color: #FFCC00;
 }

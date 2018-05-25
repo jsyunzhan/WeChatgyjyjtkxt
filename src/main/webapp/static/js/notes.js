@@ -1,44 +1,27 @@
 $(function(){
-	// 图片上传
-    function uploadImage(){
-        $("#addImage").change(function(){
-            var imageNum;
-            imageNum = $(".fileImage").length;
-            function getObjectURL(file) {
-                var url = null;
-                if (window.createObjcectURL != undefined) {
-                    url = window.createOjcectURL(file);
-                } else if (window.URL != undefined) {
-                    url = window.URL.createObjectURL(file);
-                } else if (window.webkitURL != undefined) {
-                    url = window.webkitURL.createObjectURL(file);
-                }
-                return url;
-            }
-            for(var i=0;i<4-imageNum;i++){
-                if (this.files[i]){
-                    //这里的objURL就是input file的真实路径
-                    var objURL = getObjectURL(this.files[i]);
-                    var imageHtml = '<div class="fileImage" style="background:url('+objURL+')no-repeat;background-size: 100% 100%;"><div class="imgclose"><img src="../../static/images/listen/imgClose.png"></div></div>';
-                    $(".upload").append(imageHtml);
-                }
-            }
-            imageNum = $(".fileImage").length;
-            if (imageNum == 4) {
-                $(".imagesNum").text(imageNum);
-                $(".addImage").hide();
-            }else{
-                $(".imagesNum").text(imageNum);
-            }
-            $(".imgclose").click(function(){
-                $(this).parent(".fileImage").remove();
-                imageNum = $(".fileImage").length;
-                $(".imagesNum").text(imageNum);
-                if (imageNum < 4){
-                    $(".addImage").show();
-                }
+
+    $(".addImage input").change(function () {
+        var This = $(this);
+        var fil = this.files;
+        for (var i = 0; i < fil.length; i++) {
+            reads(fil[i],This);
+        }
+    });
+    function reads(fil,obj) {
+        var reader = new FileReader();
+        reader.readAsDataURL(fil);
+        reader.onload = function () {
+            obj.hide();
+            obj.parent(".addImage").append('<img src="'+ reader.result + '"><div class="imgclose"><img src="../../static/images/listen/imgClose.png"></div>');
+            $(".imgclose").click(function () {
+                $(this).siblings("img").remove();
+                $(this).siblings("input").show();
+                $(this).siblings("input").val("");
+                $(this).remove();
             })
-        })
+        };
+
+
     }
 
     // 高德地图定位
@@ -73,7 +56,6 @@ $(function(){
         $(this).find("span").toggleClass("choosen");
     })
 
-    uploadImage();
     map_position();
 
 })

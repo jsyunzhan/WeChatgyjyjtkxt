@@ -71,11 +71,21 @@
     <div class="content_02">
         <div class="image_num clearfix">
             <div>随堂照片</div>
-            <div><span class="imagesNum">0</span>/4</div>
         </div>
-        <div class="upload clearfix">
-            <form id="pictureForm" class="addImage"  enctype="multipart/form-data">
-                <input type="file" accept="image/*" name="singleFile1" id="addImage" multiple>	<!-- multiple属性支持多张照片上传 -->
+        <div class="upload">
+            <form id="pictureForm" class="clearfix" enctype="multipart/form-data">
+                <div class="addImage">
+                    <input type="file" accept="image/*" name="singleFile1">	<!-- multiple属性支持多张照片上传 -->
+                </div>
+                <div class="addImage">
+                    <input type="file" accept="image/*" name="singleFile1">
+                </div>
+                <div class="addImage">
+                    <input type="file" accept="image/*" name="singleFile1">
+                </div>
+                <div class="addImage">
+                    <input type="file" accept="image/*" name="singleFile1">
+                </div>
             </form>
         </div>
         <div class="inform">

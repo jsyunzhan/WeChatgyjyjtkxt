@@ -181,9 +181,6 @@ $(function () {
             shareFlag = 0;
         }
         var listenPath = $(".town").text();
-        var picURL = "";
-        picURL = document.getElementById("addImage").files;
-        console.log(picURL);
 
         if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&shareFlag){
             $.ajax({
