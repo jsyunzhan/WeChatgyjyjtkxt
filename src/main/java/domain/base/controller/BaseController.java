@@ -42,7 +42,7 @@ public class BaseController {
     @ResponseBody
     public void doget(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String backUrl = "http://192.168.0.171:80"+request.getContextPath()+"/security/backUrl";
+        String backUrl = "http://180.100.216.22:8888"+request.getContextPath()+"/security/backUrl";
 
         String url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + AuthUtil.APPID
                 + "&redirect_uri=" +URLEncoder.encode(backUrl)
