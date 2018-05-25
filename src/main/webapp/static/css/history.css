@@ -216,7 +216,7 @@ body{
 }
 
 .pop_01 .pop_title .close_pop_01{
-    float: left;
+    float: right;
     width: 60px;
     text-align: center;
 }

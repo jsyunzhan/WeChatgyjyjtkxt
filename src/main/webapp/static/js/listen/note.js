@@ -16,12 +16,11 @@ $(function () {
                     _html += '<div class="choose_01" value="'+event[i].id+'">'+event[i].paramName+'</div>';
                 }
                 var flag = popup({
-                    'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="close_pop_01">取消</div><div class="sure_01">确定</div></div><div class="show_pop">选择：</div><div class="pop_con">'+_html+'</div></div> </div>',
+                    'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="show_pop">选择：</div><div class="pop_con">'+_html+'</div></div> </div>',
                     'width': '',
                     'height': '',
                     'params': {},
-                    'events':{'close_pop_01':function(){popdown(flag);},'sure_01':function(){popdown(flag);}
-                    }
+                    'events':{'close_pop_01':function(){popdown(flag);}}
                 },false);
                 linkage01(flag);
             }
@@ -87,12 +86,11 @@ $(function () {
             _html += '<div class="choose_04">'+grade[grade_val-1][i]+'</div>';
         }
         var flag = popup({
-            'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="close_pop_01">取消</div><div class="sure_01">确定</div></div><div class="pop_con">'+_html+'</div></div> </div>',
+            'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="pop_con">'+_html+'</div></div> </div>',
             'width': '',
             'height': '',
             'params': {},
-            'events':{'close_pop_01':function(){popdown(flag);},'sure_01':function(){popdown(flag);}
-            }
+            'events':{'close_pop_01':function(){popdown(flag);}}
         },false);
         linkage04(flag);
     })
@@ -115,12 +113,11 @@ $(function () {
                     _html += '<div class="choose_05" value="'+event[i].id+'">'+event[i].paramName+'</div>';
                 }
                 var flag = popup({
-                    'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="close_pop_01">取消</div><div class="sure_01">确定</div></div><div class="pop_con">'+_html+'</div></div> </div>',
+                    'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="pop_con">'+_html+'</div></div> </div>',
                     'width': '',
                     'height': '',
                     'params': {},
-                    'events':{'close_pop_01':function(){popdown(flag);},'sure_01':function(){popdown(flag);}
-                    }
+                    'events':{'close_pop_01':function(){popdown(flag);}}
                 },false);
                 linkage05(flag);
             })
@@ -146,12 +143,11 @@ $(function () {
                     _html += '<div class="choose_06" value="'+event[i].id+'">'+event[i].paramName+'</div>';
                 }
                 var flag = popup({
-                    'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="close_pop_01">取消</div><div class="sure_01">确定</div></div><div class="pop_con">'+_html+'</div></div> </div>',
+                    'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="pop_con">'+_html+'</div></div> </div>',
                     'width': '',
                     'height': '',
                     'params': {},
-                    'events':{'close_pop_01':function(){popdown(flag);},'sure_01':function(){popdown(flag);}
-                    }
+                    'events':{'close_pop_01':function(){popdown(flag);}}
                 },false);
                 linkage06(flag);
             })
@@ -213,7 +209,7 @@ $(function () {
                         'params': {},
                         'events':{'sure': function(){
                             popdown(flag);
-                                // location.href = "/history/history";
+                                location.href = "/history/history";
                             }
                         }
                     },false);

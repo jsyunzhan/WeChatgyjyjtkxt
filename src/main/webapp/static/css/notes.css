@@ -168,7 +168,7 @@ textarea:-ms-input-placeholder{
 	float: left;
 	width: 21%;
 	padding-bottom: 20%;
-	margin: 0 4%;
+	margin: 0 2%;
 }
 
 .addImage{
@@ -337,7 +337,7 @@ textarea:-ms-input-placeholder{
 }
 
 .pop_01 .pop_title .close_pop_01{
-	float: left;
+	float: right;
 	width: 60px;
 	text-align: center;
 }

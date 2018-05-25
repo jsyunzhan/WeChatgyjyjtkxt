@@ -64,6 +64,9 @@ body{
     flex: 1;
     text-align: right;
     padding-right: 10px;
+}
+
+.newest .more a{
     color: #FFCC00;
 }
 
@@ -103,34 +106,6 @@ body{
 .listened div:nth-child(2) span{
     color: #FFCC00;
     padding: 0 10px;
-}
-
-/*公告弹窗*/
-.new_pop01{
-    background: #fff;
-    border-radius: 5px;
-}
-
-.pop01_title{
-    text-align: center;
-    line-height: 40px;
-    font-size: 18px;
-}
-
-.pop01_con{
-    padding: 10px 10px;
-    line-height: 24px;
-    font-size: 14px;
-    text-indent: 2em;
-    max-height: 200px;
-    color: #666;
-}
-
-.pop01_close{
-    border-top: 1px solid #eee;
-    line-height: 40px;
-    text-align: center;
-    color: #FFCC00;
 }
 
 /*听课记录*/
@@ -216,4 +191,60 @@ body{
     width: 80%;
     text-align: center;
     color: #666
+}
+
+/*查看详情*/
+.new_pop01{
+    background: #fff;
+    border-radius: 5px;
+}
+
+.pop01_title{
+    text-align: center;
+    line-height: 40px;
+    font-size: 18px;
+}
+
+.pop01_con{
+    padding: 10px 10px;
+    line-height: 24px;
+    font-size: 14px;
+    text-indent: 2em;
+    max-height: 200px;
+    color: #666;
+    height: 200px;
+    overflow-y: scroll;
+}
+
+.pop01_con .mess{
+    display: flex;
+    text-indent: 0;
+}
+
+.pop01_con .mess div:nth-child(1){
+    width: 80px;
+    text-align: right;
+}
+
+.pop01_con .mess div:nth-child(2){
+    flex: 1;
+    word-break: break-all;
+    text-align: left;
+}
+
+.pop01_close{
+    border-top: 1px solid #eee;
+    line-height: 40px;
+    text-align: center;
+    color: #FFCC00;
+}
+
+/*公告*/
+.pop02_con{
+    padding: 10px 10px;
+    line-height: 24px;
+    font-size: 14px;
+    text-indent: 2em;
+    max-height: 200px;
+    color: #666;
 }

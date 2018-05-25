@@ -1,14 +1,7 @@
 $(function () {
     initUtils();
 
-    // 居中效果
-    function center(obj){
-        var win_width = $(window).width();
-        var win_height = $(window).height();
-        var obj_width = $(obj).width();
-        var obj_height = $(obj).height();
-        $(obj).css({"left":(win_width-obj_width)/2,"top":(win_height-obj_height)/2});
-    }
+
 
     // 权限区分
     function allListener() {
@@ -19,18 +12,6 @@ $(function () {
         }
     }
     allListener();
-
-    // 日期格式转换
-    function timestampToTime(timestamp) {
-        var date = new Date(timestamp);
-        Y = date.getFullYear() + '-';
-        M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
-        D = date.getDate() + ' ';
-        h = date.getHours() + ':';
-        m = date.getMinutes() + ':';
-        s = date.getSeconds();
-        return Y+M+D+h+m+s;
-    }
 
     //获取本人提交的记录
    $.ajax({
@@ -87,12 +68,11 @@ $(function () {
             _html += '<div class="choose_01">'+i+'月</div>';
         }
         var flag = popup({
-            'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="close_pop_01">取消</div><div class="sure_01">确定</div></div><div class="pop_con">'+_html+'</div></div> </div>',
+            'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="pop_con">'+_html+'</div></div> </div>',
             'width': '',
             'height': '',
             'params': {},
-            'events':{'close_pop_01':function(){popdown(flag);},'sure_01':function(){popdown(flag);}
-            }
+            'events':{'close_pop_01':function(){popdown(flag);}}
         },false);
         linkage(flag);
     })
