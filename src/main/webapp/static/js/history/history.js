@@ -17,7 +17,7 @@ $(function () {
    $.ajax({
        url:path + "/history/history/ownnote",type:"GET", dateType:"json",
        success:function (event) {
-           console.log(event);
+
            var _html = "";
            for(var i=0;i<event.length;i++){
                _html += '<div class="record"><div class="topic">听课课题：<span>'+event[i].subject+'</span></div>';
@@ -30,6 +30,25 @@ $(function () {
            for (var i=0;i<event.length;i++){
                !(function(i){
                    $(".detail")[i].onclick = function(){
+
+                       var data = {picturePath:event[i].picturePath};
+                       var url = path + "/listen/getPictureByte";
+                       $.ajax({
+                           url:url,type:"POST",contentType: "application/json",data:JSON.stringify(data),async: false,
+                           success:function (r) {
+                               console.log(r)
+                               // var listenerPicture = $('#listenerPicture');
+                               // listenerPicture.empty();
+                               //
+                               //
+                               // for (var i=0;i<r.length;i++){
+                               //     var picture = '<img src="data:image/gif;base64,' + r[i] + '" style="width:100%;height:100%">';
+                               //     listenerPicture.append(picture);
+                               // }
+
+                           }
+                       });
+
                        var _html = '<div class="new_pop01"><div class="pop01_title">评课详情</div><div class="pop01_con">';
                        _html += '<div class="mess"><div>听课学校：</div><div>'+event[i].schoolName+'</div></div>';
                        _html += '<div class="mess"><div>班级年级：</div><div>'+event[i].className+'</div></div>';
