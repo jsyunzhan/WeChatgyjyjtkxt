@@ -7,7 +7,7 @@ $(function () {
     function allListener() {
         if(allNoteUrl){
             var _html = '';
-            _html = '<span><a href="'+allNoteUrl+'">所有评课</a></span>'
+            _html = '<span><a href="'+path+allNoteUrl+'">所有评课</a></span>'
             $(".title").append(_html);
         }
     }
@@ -15,15 +15,15 @@ $(function () {
 
     //获取本人提交的记录
    $.ajax({
-       url:"/history/history/ownnote",type:"GET", dateType:"json",
+       url:path + "/history/history/ownnote",type:"GET", dateType:"json",
        success:function (event) {
            console.log(event);
            var _html = "";
            for(var i=0;i<event.length;i++){
                _html += '<div class="record"><div class="topic">听课课题：<span>'+event[i].subject+'</span></div>';
-               _html += '<div class="school"><span><img src="../../../static/images/history/position_1.png"></span><span>'+event[i].schoolName+'</span></div>';
-               _html += '<div class="school"><span><img src="../../../static/images/history/clock.png"></span><span>'+timestampToTime(event[i].createDate)+'</span></div>';
-               _html += '<div class="detail"><span>查看详情</span><span><img src="../../../static/images/history/more.png"></span></div></div>';
+               _html += '<div class="school"><span><img src="'+path+'/static/images/history/position_1.png"></span><span>'+event[i].schoolName+'</span></div>';
+               _html += '<div class="school"><span><img src="'+path+'/static/images/history/clock.png"></span><span>'+timestampToTime(event[i].createDate)+'</span></div>';
+               _html += '<div class="detail"><span>查看详情</span><span><img src="'+path+'/static/images/history/more.png"></span></div></div>';
                $(".content").append(_html);
                _html = "";
            }
