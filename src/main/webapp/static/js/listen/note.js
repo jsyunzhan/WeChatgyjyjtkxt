@@ -178,7 +178,7 @@ $(function () {
         }
         var listenPath = $(".town").text();
 
-        if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&shareFlag){
+        if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&listenPath){
             $.ajax({
                 url: path + "/listen/picturecomment",
                 type: 'POST',
@@ -194,27 +194,29 @@ $(function () {
                 error: function (err) {
                 }
             });
-            var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
-                    disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
-                url = path + "/listen/notecomment";
+            if(picturePath!=""){
+                var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
+                        disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
+                    url = path + "/listen/notecomment";
 
-            console.log(data);
-            $.ajax({
-                url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
-                success:function (r) {
-                    var flag = popup({
-                        'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
-                        'width': '70%',
-                        'height': '200px',
-                        'params': {},
-                        'events':{'sure': function(){
-                            popdown(flag);
-                                location.href = "/history/history";
+                console.log(data);
+                $.ajax({
+                    url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
+                    success:function (r) {
+                        var flag = popup({
+                            'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
+                            'width': '70%',
+                            'height': '200px',
+                            'params': {},
+                            'events':{'sure': function(){
+                                popdown(flag);
+                                    location.href = path +"/history/history";
+                                }
                             }
-                        }
-                    },false);
-                }
-            })
+                        },false);
+                    }
+                })
+            }
         }
     })
 

@@ -11,8 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
-import static domain.history.HistoryWebForward.HISTORY_NOTE;
-import static domain.history.HistoryWebForward.SHARE_NOTE_PAGE;
+import static domain.history.HistoryWebForward.*;
 import static domain.history.HistoryWebURLMapping.*;
 
 /**
@@ -65,7 +64,7 @@ public class HistoryController extends AbstractActionController{
     @RequestMapping(value = ALL_NOTE_PAGE_REQUEST)
     public ModelAndView allNote(){
         final  Long permissionFlag = getPermissionFlag();
-        final ModelAndView mv = new ModelAndView(SHARE_NOTE_PAGE);
+        final ModelAndView mv = new ModelAndView(ALL_NOTE_PAGE);
 
         if (1 == permissionFlag){
             mv.addObject("allNoteUrl","/history/allNote");

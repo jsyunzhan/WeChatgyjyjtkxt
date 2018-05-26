@@ -54,7 +54,7 @@ $(function () {
                         _html += '<div class="mess"><div>听课课题：</div><div>'+event[i].subject+'</div></div>';
                         _html += '<div class="mess"><div>执教老师：</div><div>'+event[i].teacherName+'</div></div>';
                         _html += '<div class="mess"><div>听课老师：</div><div>'+event[i].listenerName+'</div></div>';
-                        _html += '<div class="mess"><div>课堂评分：</div><div>'+event[i].scoreId+'</div></div>';
+                        _html += '<div class="mess"><div>课堂评分：</div><div>'+event[i].scoreName+'</div></div>';
                         _html += '<div class="mess"><div>课堂评价：</div><div>'+event[i].comments+'</div></div>';
                         _html += '<div class="mess"><div>听课位置：</div><div>'+event[i].listenPath+'</div></div>';
                         _html += '<div class="mess"><div>提交时间：</div><div>'+timestampToTime(event[i].createDate)+'</div></div>';

@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="${APP_PATH}/static/css/public.css">
     <link rel="stylesheet" type="text/css" href="${APP_PATH}/static/css/personal.css">
     <script type="text/javascript" src="${APP_PATH}/static/jquery/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="${APP_PATH}static/js/public.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/js/public.js"></script>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
     <script type="text/javascript" src="${APP_PATH}/static/jquery/pop.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/js/user/personal.js"></script>
@@ -50,7 +50,7 @@
             <div class="newest">
                 <div>共享评课</div>
                 <div class="more">
-                    <a href="/history/share">
+                    <a href="${APP_PATH}/history/share">
                     更多
                     <span><img src="${APP_PATH}/static/images/personal/more.png"></span>
                     </a>
