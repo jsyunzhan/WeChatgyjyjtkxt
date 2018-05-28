@@ -70,6 +70,7 @@ $(function () {
                                 for(var j=0;j<picImage.length;j++){
                                     _html += '<div style="background: url(data:image/gif;base64,'+picImage[j]+')no-repeat;background-size: 100% 100%"></div>';
                                 }
+
                                 _html += '</div><div class="mess_pic"><div></div></div>';
                                 _html += '</div><div class="pop01_close">我知道了</div></div>';
                                 closeLoading();
