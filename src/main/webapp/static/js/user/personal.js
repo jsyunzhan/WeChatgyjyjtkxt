@@ -66,6 +66,7 @@ $(function () {
                                 _html += '<div class="mess"><div>课堂评价：</div><div>'+event[i].comments+'</div></div>';
                                 _html += '<div class="mess"><div>听课位置：</div><div>'+event[i].listenPath+'</div></div>';
                                 _html += '<div class="mess"><div>提交时间：</div><div>'+timestampToTime(event[i].createDate)+'</div></div>';
+
                                 _html += '<div class="mess"><div>课堂照片：</div></div><div class="picImage clearfix"> ';
                                 for(var j=0;j<picImage.length;j++){
                                     _html += '<div style="background: url(data:image/gif;base64,'+picImage[j]+')no-repeat;background-size: 100% 100%"></div>';
