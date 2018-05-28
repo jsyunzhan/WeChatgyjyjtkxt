@@ -290,3 +290,10 @@ body{
     text-align: center;
     color: #FFCC00;
 }
+
+.picImage div{
+    float: left;
+    width: 21%;
+    padding-bottom: 21%;
+    margin: 0 2%;
+}

@@ -95,7 +95,7 @@
         </div>
         <div class="inform">
             <div class="name" width="100px;">听课地址</div>
-            <div class="text town"></div>
+            <div class="text town">点击获取定位信息</div>
             <div class="arrow" width="100px;"></div>
         </div>
     </div>
