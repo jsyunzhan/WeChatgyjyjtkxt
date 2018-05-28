@@ -35,9 +35,12 @@ body{
 }
 
 .title .tit_choosen{
-    color: #fff;
     font-size: 18px;
     box-shadow: 0 2px 0 #fff;
+}
+
+.title .tit_choosen a{
+    color: #fff;
 }
 
 /*搜索*/
@@ -296,4 +299,9 @@ body{
     width: 21%;
     padding-bottom: 21%;
     margin: 0 2%;
+}
+
+#loading{
+    width: 100px;
+    height: 100px;
 }

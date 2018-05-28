@@ -75,6 +75,8 @@ $(function () {
             $(".show_pop").append('<span>'+$(this).text()+'</span>');
             $("#school").find(".text").text($(this).text());
             $("#school").find(".text").attr("value",$(this).attr("value"));
+            $("#className .left").text("年级");
+            $("#className .right input").val("");
             popdown(obj);
         })
     }
@@ -216,7 +218,31 @@ $(function () {
                         },false);
                     }
                 })
+            }else{
+                // 未上传图片
+                var flag = popup({
+                    'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/fail.png"></div><div class="success_font" style="color: #DB2E21;">未上传随堂照片</div><div class="sure" style="background: #DB2E21;">确定</div></div></div>',
+                    'width': '70%',
+                    'height': '200px',
+                    'params': {},
+                    'events':{'sure': function(){
+                            popdown(flag);
+                        }
+                    }
+                },false);
             }
+        }else{
+            // 信息未填写完整
+            var flag = popup({
+                'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/fail.png"></div><div class="success_font" style="color: #DB2E21;">请完善提交信息</div><div class="sure" style="background: #DB2E21;">确定</div></div></div>',
+                'width': '70%',
+                'height': '200px',
+                'params': {},
+                'events':{'sure': function(){
+                        popdown(flag);
+                    }
+                }
+            },false);
         }
     })
 
