@@ -5,6 +5,8 @@ import domain.listen.dao.SchoolDao;
 import domain.listen.entity.NoteEntity;
 import domain.listen.entity.SchoolEntity;
 import domain.listen.service.NoteCommentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import java.util.List;
 
 @Service
 public class NoteCommentServiceImpl implements NoteCommentService{
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(NoteCommentServiceImpl.class);
 
     final private SchoolDao schoolDao;
     final private NoteDao noteDao;
@@ -34,6 +38,10 @@ public class NoteCommentServiceImpl implements NoteCommentService{
 
     @Override
     public Boolean noteComment(NoteEntity noteEntity) {
-        return noteDao.noteComment(noteEntity);
+        final Boolean flag = noteDao.noteComment(noteEntity) > 0;
+        if (LOGGER.isDebugEnabled()){
+            LOGGER.debug("笔记提交结果:{}",flag);
+        }
+        return flag;
     }
 }

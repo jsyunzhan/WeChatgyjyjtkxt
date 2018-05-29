@@ -16,7 +16,7 @@ public interface NoteDao {
      * @param noteEntity 提交实体
      * @return Boolean
      */
-    Boolean noteComment(NoteEntity noteEntity);
+    Integer noteComment(NoteEntity noteEntity);
 
     /**
      * 获取自己的笔记
