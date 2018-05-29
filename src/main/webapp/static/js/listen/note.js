@@ -1,6 +1,7 @@
 var picturePath;
 $(function () {
     initUtils();
+    var loading = (new Loading()).init(path+"/static/images/history/loading.gif","100px","100px");
     var grade_val;
     var grade = [["一年级","二年级","三年级","四年级","五年级","六年级"],["初一","初二","初三"],["高一","高二","高三"]];
 
@@ -165,6 +166,7 @@ $(function () {
 
     // 提交表单
     $(".submit").click(function () {
+        openLoading();
         var schoolId = $("#school").find(".text").attr("value");
         var className = $("#className").find(".left").text()+$("#className").find("input").val()+"班";
         var disciplineId = $("#subject").find(".text").attr("value");
@@ -205,6 +207,7 @@ $(function () {
                 $.ajax({
                     url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
                     success:function (r) {
+                        closeLoading();
                         var flag = popup({
                             'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
                             'width': '70%',
@@ -219,6 +222,7 @@ $(function () {
                     }
                 })
             }else{
+                closeLoading();
                 // 未上传图片
                 var flag = popup({
                     'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/fail.png"></div><div class="success_font" style="color: #DB2E21;">未上传随堂照片</div><div class="sure" style="background: #DB2E21;">确定</div></div></div>',
@@ -232,6 +236,7 @@ $(function () {
                 },false);
             }
         }else{
+            closeLoading();
             // 信息未填写完整
             var flag = popup({
                 'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/fail.png"></div><div class="success_font" style="color: #DB2E21;">请完善提交信息</div><div class="sure" style="background: #DB2E21;">确定</div></div></div>',

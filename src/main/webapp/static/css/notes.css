@@ -363,3 +363,8 @@ textarea:-ms-input-placeholder{
 	line-height: 40px;
 	border-bottom: 1px solid #ccc;
 }
+
+#loading{
+	width: 100px;
+	height: 100px;
+}
