@@ -10,10 +10,13 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class AuthUtil {
-//    wx0fb6f354d2df9769
-    public static final String APPID = "wx0fb6f354d2df9769";
 
-    //ec2de67c0a9d1221b49a339182407509
+    //开发
+//    public static final String APPID = "wx4145f1f6b4855b05";
+//    public static final String APPSECTE = "8f8d11172d83eca0db4c7df47e65acb9";
+
+    //测试
+    public static final String APPID = "wx0fb6f354d2df9769";
     public static final String APPSECTE = "ec2de67c0a9d1221b49a339182407509";
 
     public static JSONObject doGetJson(String url) throws IOException {

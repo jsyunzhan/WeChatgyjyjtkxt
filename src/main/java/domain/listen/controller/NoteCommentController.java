@@ -5,6 +5,8 @@ import domain.base.entity.JsonResponseVO;
 import domain.listen.entity.NoteEntity;
 import domain.listen.entity.SchoolEntity;
 import domain.listen.service.NoteCommentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -25,6 +27,8 @@ import static domain.listen.ListenWebURLMapping.GET_SCHOOL_TYPE;
  */
 @Controller
 public class NoteCommentController extends AbstractActionController{
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(NoteCommentController.class);
 
     final private NoteCommentService noteCommentService;
 
@@ -133,12 +137,23 @@ public class NoteCommentController extends AbstractActionController{
     @RequestMapping(value = "/listen/notecomment")
     @ResponseBody
     public JsonResponseVO noteComment(@RequestBody NoteEntity noteEntity){
+
         final Long loginId = getListenerId();
         noteEntity.setListenerId(loginId);
         noteEntity.setCreateUserId(loginId);
         final JsonResponseVO jsonResponseVO = new JsonResponseVO(Boolean.FALSE);
-        final Boolean flag = noteCommentService.noteComment(noteEntity);
-        jsonResponseVO.setSuccess(flag);
+
+        try {
+            final Boolean flag = noteCommentService.noteComment(noteEntity);
+            jsonResponseVO.setSuccess(flag);
+            if (LOGGER.isDebugEnabled()) {
+                LOGGER.debug("笔记上传，listenerId:{}",noteEntity.getListenerId());
+            }
+        }catch (Exception e){
+            LOGGER.error("业务异常",e);
+        }
+
+
         return jsonResponseVO;
     }
 }

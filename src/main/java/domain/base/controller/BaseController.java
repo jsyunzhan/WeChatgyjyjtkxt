@@ -5,6 +5,8 @@ import domain.base.AuthUtil;
 import domain.base.entity.ListenerEntity;
 import domain.base.entity.ParamEntity;
 import domain.base.service.BaseService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +25,7 @@ import static domain.base.entity.SystemConfig.LOGIN_SESSION;
 
 @Controller
 public class BaseController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
 
     final private BaseService baseService;
 
@@ -42,7 +45,15 @@ public class BaseController {
     @ResponseBody
     public void doget(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String backUrl = "http://180.100.216.22:8888"+request.getContextPath()+"/security/backUrl";
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("微信登录认证");
+        }
+
+        //开发
+//        String backUrl = "http://192.168.0.171:80"+request.getContextPath()+"/security/backUrl";
+
+        //测试
+        String backUrl = "http://jy.gylzzx.cn:8888"+request.getContextPath()+"/security/backUrl";
 
         String url ="https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + AuthUtil.APPID
                 + "&redirect_uri=" +URLEncoder.encode(backUrl)
@@ -89,6 +100,10 @@ public class BaseController {
 
             response.sendRedirect(path+"/base/register");
         }else {
+
+            if (LOGGER.isDebugEnabled()) {
+                LOGGER.debug("登录成功，listener:{}",listenerEntity.getListenerName());
+            }
             request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
             request.getSession().setAttribute("imgUrl",imgUrl);
             response.sendRedirect( path+"/listen/note");
