@@ -181,28 +181,27 @@ $(function () {
             shareFlag = 0;
         }
         var listenPath = $(".town").text();
-
+        var imgEmpty = $(".addImage input").val();
         if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&listenPath){
-            $.ajax({
-                url: path + "/listen/picturecomment",
-                type: 'POST',
-                cache: false,
-                data: new FormData($("#pictureForm")[0]),
-                processData: false,
-                contentType: false,
-                async: false,
-                success: function (result) {
-                    picturePath = result;
-                    console.log(picturePath);
-                },
-                error: function (err) {
-                }
-            });
-            if(picturePath!=""){
+            if(imgEmpty!=""){
+                $.ajax({
+                    url: path + "/listen/picturecomment",
+                    type: 'POST',
+                    cache: false,
+                    data: new FormData($("#pictureForm")[0]),
+                    processData: false,
+                    contentType: false,
+                    async: true,
+                    success: function (result) {
+                        picturePath = result;
+                        console.log(picturePath);
+                    },
+                    error: function (err) {
+                    }
+                });
                 var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
                         disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
                     url = path + "/listen/notecomment";
-
                 console.log(data);
                 $.ajax({
                     url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
