@@ -3,6 +3,8 @@ package domain.base.controller;
 import domain.base.entity.JsonResponseVO;
 import domain.base.entity.ListenerEntity;
 import domain.base.service.BaseService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +21,7 @@ import java.io.IOException;
  */
 @Controller
 public class RegisterController extends AbstractActionController{
+    private static final Logger LOGGER = LoggerFactory.getLogger(RegisterController.class);
     final BaseService baseService;
 
     @Autowired
@@ -39,6 +42,11 @@ public class RegisterController extends AbstractActionController{
     @RequestMapping(value = "/base/registerSub")
     @ResponseBody
     public JsonResponseVO register(@RequestBody ListenerEntity listenerEntity, HttpServletRequest request, HttpServletResponse response) throws IOException {
+
+        if (LOGGER.isDebugEnabled()) {
+            LOGGER.debug("用户注册，listener:{}",listenerEntity.getListenerName());
+        }
+
         final String openid = request.getSession().getAttribute("openid").toString();
         final JsonResponseVO jsonResponseVO = new JsonResponseVO(Boolean.FALSE);
         listenerEntity.setOpenId(openid);
