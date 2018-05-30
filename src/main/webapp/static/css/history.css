@@ -157,7 +157,17 @@ body{
     color: #FFCC00;
 }
 
-.record .detail span{
+.record .modify{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #FFCC00;
+}
+
+.record .detail span,.record .modify span{
     display: inline-block;
     vertical-align: top;
 }
@@ -267,13 +277,27 @@ body{
     text-indent: 2em;
     max-height: 200px;
     color: #666;
-    height: 200px;
+    height: 250px;
     overflow-y: scroll;
 }
 
 .pop01_con .mess{
     display: flex;
     text-indent: 0;
+}
+
+.pop01_con .mess input,.pop01_con .mess textarea{
+    display: block;
+    border: 1px solid #eee;
+    outline: 0;
+    width: 90%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 0 5%;
+    line-height: 30px;
+    font-size: 14px;
+    resize: none;
+    word-break: break-all;
 }
 
 .pop01_con .mess div:nth-child(1){
@@ -302,6 +326,20 @@ body{
 }
 
 #loading{
-    width: 100px;
-    height: 100px;
+     width: 100px;
+     height: 100px;
+ }
+
+.closeBtn div{
+    width: 50%;
+    float: left;
+    border-top: 1px solid #eee;
+    line-height: 40px;
+    text-align: center;
+    color: #FFCC00;
+    font-size: 16px;
+}
+
+.closeBtn div:nth-child(1){
+    box-shadow: 1px 0px 0 #eee;
 }

@@ -15,17 +15,20 @@ $(function () {
    $.ajax({
        url:path + "/history/history/ownnote",type:"GET", dateType:"json",
        success:function (event) {
+           console.log(event);
            var _html = "";
            for(var i=0;i<event.length;i++){
                _html += '<div class="record"><div class="topic">听课课题：<span>'+event[i].subject+'</span></div>';
                _html += '<div class="school"><span><img src="'+path+'/static/images/history/position_1.png"></span><span>'+event[i].schoolName+'</span></div>';
                _html += '<div class="school"><span><img src="'+path+'/static/images/history/clock.png"></span><span>'+timestampToTime(event[i].createDate)+'</span></div>';
-               _html += '<div class="detail"><span>查看详情</span><span><img src="'+path+'/static/images/history/more.png"></span></div></div>';
+               _html += '<div class="detail"><span>查看详情</span><span><img src="'+path+'/static/images/history/more.png"></span></div>';
+               _html += '<div class="modify"><span>修改</span></div></div>';
                $(".content").append(_html);
                _html = "";
                !(function(i){
                    $(".detail")[i].onclick = function(){
                        openLoading();
+                       center(".usemask");
                        var data = {picturePath:event[i].picturePath};
                        var url = path + "/listen/getPictureByte";
                        var picImage;
@@ -62,6 +65,32 @@ $(function () {
                                center(".new_pop01");
                            }
                        });
+                   }
+
+                   $(".modify")[i].onclick = function(){
+                       var _html = '<div class="new_pop01" id="'+event[i].id+'"><div class="pop01_title">修改</div><div class="pop01_con">';
+                       _html += '<div class="mess"><div>听课课题：</div></div><div class="mess"><input type="text" name="topic" placeholder="请填写听课课题" value="'+event[i].subject+'" id="topic"></div>';
+                       _html += '<div class="mess"><div>执教老师：</div></div><div class="mess"><input type="text" name="teacher" placeholder="请填写执教老师" value="'+event[i].teacherName+'" id="teacherName"></div>';
+                       _html += '<div class="mess"><div>课堂评价：</div></div><div class="mess"><textarea name="comments" placeholder="请填写课堂评价" id="comments">'+event[i].comments+'</textarea></div>';
+                       _html += '</div><div class="closeBtn clearfix"><div class="sure_02">确定</div><div class="cancel">取消</div></div></div>';
+                       var flag = popup({
+                           'html': _html,
+                           'width': '',
+                           'height': '',
+                           'params': {},
+                           'events':{'cancel':function () {popdown(flag);},
+                               'sure_02':function(){
+                                   var subject = $("#topic").val();
+                                   var teacherName = $("#teacherName").val();
+                                   var comments = $("#comments").val();
+                                   var id = $(".new_pop01").attr("id");
+                                   console.log(subject,teacherName,comments,id);
+                                   $.ajax({
+
+                                   })
+                               }}
+                       },false);
+                       center(".new_pop01");
                    }
                })(i)
            }
