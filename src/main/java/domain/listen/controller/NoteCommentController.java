@@ -5,6 +5,7 @@ import domain.base.entity.JsonResponseVO;
 import domain.listen.entity.NoteEntity;
 import domain.listen.entity.SchoolEntity;
 import domain.listen.service.NoteCommentService;
+import net.coobird.thumbnailator.Thumbnails;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -97,6 +98,8 @@ public class NoteCommentController extends AbstractActionController{
 
             if(!file.isEmpty()) {
 
+
+
                 //文件存放路径
                 String dirPath = "D:/image/" + litenerName + "/" + year + "/" + month + "/" +data;
                 //创建文件夹
@@ -117,12 +120,18 @@ public class NoteCommentController extends AbstractActionController{
                 String realPath = dirPath+"/"+newFileName;
                 picturePath += realPath;
                 picturePath += ",";
-
                 //创建文件
                 File tempFile = new File(realPath);
 
-                //文件转换
-                file.transferTo(tempFile);
+                try {
+                    // 先尝试压缩并保存图片
+                    Thumbnails.of(file.getInputStream()).scale(1f).outputQuality(0.25f).toFile(tempFile);
+                } catch (IOException e) {
+                    //文件转换
+                    file.transferTo(tempFile);
+                }
+
+
             }
         }
 
