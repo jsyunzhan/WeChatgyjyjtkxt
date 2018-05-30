@@ -106,7 +106,7 @@ public class BaseController {
             }
             request.getSession().setAttribute(LOGIN_SESSION,listenerEntity);
             request.getSession().setAttribute("imgUrl",imgUrl);
-            response.sendRedirect( path+"/listen/note");
+            response.sendRedirect( path+"/user/personal");
 
         }
 
