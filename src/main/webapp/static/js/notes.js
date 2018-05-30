@@ -1,27 +1,46 @@
 $(function(){
 
-    $(".addImage input").change(function () {
-        var This = $(this);
-        var fil = this.files;
-        for (var i = 0; i < fil.length; i++) {
-            reads(fil[i],This);
-        }
-    });
-    function reads(fil,obj) {
-        var reader = new FileReader();
-        reader.readAsDataURL(fil);
-        reader.onload = function () {
-            obj.hide();
-            obj.parent(".addImage").append('<img src="'+ reader.result + '"><div class="imgclose"><img src="'+path+'/static/images/listen/imgClose.png"></div>');
-            $(".imgclose").click(function () {
-                $(this).siblings("img").remove();
-                $(this).siblings("input").show();
-                $(this).siblings("input").val("");
-                $(this).remove();
-            })
-        };
-
-
+    for(var i=0;i<$(".addImage input").length;i++){
+        !(function (i) {
+            var fileImage = $(".addImage input")[i];
+            var reader = new FileReader();
+            fileImage.addEventListener("change",function(){
+                reader.readAsDataURL(fileImage.files[0]);
+                reader.onload = function(){
+                    var canvas = document.createElement("canvas");
+                    var ctx = canvas.getContext("2d");
+                    var image = new Image();
+                    image.src = this.result;
+                    image.onload = function(){
+                        var w = image.width;
+                        var h = image.height;
+                        var cw = image.width;
+                        var ch = image.height;
+                        if(cw>600&&cw>=ch){
+                            w = 600;
+                            h = 600*(ch/cw);
+                            canvas.width=w;
+                            canvas.height=h;
+                        }else if(ch>600&&ch>=cw){
+                            h = 600;
+                            w = 600*(cw/ch);
+                            canvas.width=w;
+                            canvas.height=h;
+                        }
+                        ctx.drawImage(image,0,0,w,h);
+                        var imgUrl = canvas.toDataURL("image/jpeg",1);
+                        $(fileImage).parent(".addImage").append('<img src="'+ imgUrl + '"><div class="imgclose"><img src="'+path+'/static/images/listen/imgClose.png"></div>');
+                        console.log(imgUrl);
+                        $(".imgclose").click(function () {
+                            $(this).siblings("img").remove();
+                            $(this).siblings("input").show();
+                            $(this).siblings("input").val("");
+                            $(this).remove();
+                        })
+                    }
+                }
+            });
+        })(i)
     }
 
     // 高德地图定位
