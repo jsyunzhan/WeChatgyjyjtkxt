@@ -181,9 +181,14 @@ $(function () {
             shareFlag = 0;
         }
         var listenPath = $(".town").text();
-        var imgEmpty = $(".addImage input").val();
+        var imgEmpty = false;
+        for(var i=0;i<$(".addImage input").length;i++){
+            if($($(".addImage input")[i]).val()){
+                imgEmpty = true;
+            }
+        }
         if(schoolId&&className&&disciplineId&&subject&&teacherName&&comments&&scoreId&&listenPath){
-            if(imgEmpty!=""){
+            if(imgEmpty){
                 $.ajax({
                     url: path + "/listen/picturecomment",
                     type: 'POST',

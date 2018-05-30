@@ -29,8 +29,7 @@ $(function(){
                         }
                         ctx.drawImage(image,0,0,w,h);
                         var imgUrl = canvas.toDataURL("image/jpeg",1);
-                        $(fileImage).parent(".addImage").append('<img src="'+ imgUrl + '"><div class="imgclose"><img src="'+path+'/static/images/listen/imgClose.png"></div>');
-                        console.log(imgUrl);
+                        $(fileImage).parent(".addImage").append('<img src="'+ reader.result + '"><div class="imgclose"><img src="'+path+'/static/images/listen/imgClose.png"></div>');
                         $(".imgclose").click(function () {
                             $(this).siblings("img").remove();
                             $(this).siblings("input").show();
