@@ -46,6 +46,17 @@
         )
     </insert>
 
+    <!--听课笔记修改-->
+    <update id="noteEdit">
+        UPDATE t_listen_notes SET
+        TEACHER_NAME=#{teacherName},
+        SUBJECT=#{subject},
+        COMMENTS=#{comments},
+        UPDATE_USER_ID=#{updateUserId},
+        UPDATE_DATA=NOW()
+        WHERE ID=#{id}
+    </update>
+
     <!--查看自己的笔记-->
     <select id="getOwnNote" resultType="NoteEntityInfo">
         SELECT

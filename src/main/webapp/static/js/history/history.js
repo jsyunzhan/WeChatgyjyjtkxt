@@ -85,8 +85,16 @@ $(function () {
                                    var comments = $("#comments").val();
                                    var id = $(".new_pop01").attr("id");
                                    console.log(subject,teacherName,comments,id);
-                                   $.ajax({
 
+                                   var data = {id:id,subject:subject,teacherName:teacherName,comments:comments};
+
+                                   $.ajax({
+                                       url:path +'/listen/noteedit',type:"POST",contentType: "application/json",data:JSON.stringify(data),
+                                       success:function (r) {
+                                            if (r){
+
+                                            }
+                                       }
                                    })
                                }}
                        },false);

@@ -29,4 +29,11 @@ public interface NoteCommentService {
      * @return Boolean
      */
     Boolean noteComment(NoteEntity noteEntity);
+
+    /**
+     * 听课笔记修改
+     * @param noteEntity 笔记实体
+     * @return Boolean
+     */
+    Boolean noteEdit(NoteEntity noteEntity);
 }

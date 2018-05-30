@@ -44,4 +44,14 @@ public class NoteCommentServiceImpl implements NoteCommentService{
         }
         return flag;
     }
+
+    @Override
+    public Boolean noteEdit(NoteEntity noteEntity) {
+        final Boolean flag = noteDao.noteEdit(noteEntity) > 0;
+
+        if (LOGGER.isDebugEnabled()){
+            LOGGER.debug("笔记修改结果:{}",flag);
+        }
+        return flag;
+    }
 }

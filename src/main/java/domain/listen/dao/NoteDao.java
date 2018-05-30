@@ -58,4 +58,11 @@ public interface NoteDao {
      * @return List<PhoneEntity>
      */
     List<PhoneEntity> getPhoneMessage();
+
+    /**
+     * 笔记修改
+     * @param noteEntity 修改实体
+     * @return Integer
+     */
+    Integer noteEdit(NoteEntity noteEntity);
 }

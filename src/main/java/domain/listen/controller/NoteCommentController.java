@@ -165,4 +165,21 @@ public class NoteCommentController extends AbstractActionController{
 
         return jsonResponseVO;
     }
+
+    @RequestMapping(value = "/listen/noteedit")
+    @ResponseBody
+    public JsonResponseVO noteEdit(@RequestBody NoteEntity noteEntity){
+        final JsonResponseVO jsonResponseVO = new JsonResponseVO(Boolean.FALSE);
+        noteEntity.setUpdateUserId(getListenerId());
+        try {
+            final Boolean flag = noteCommentService.noteEdit(noteEntity);
+            jsonResponseVO.setSuccess(flag);
+            if (LOGGER.isDebugEnabled()) {
+                LOGGER.debug("笔记修改，subject:{}",noteEntity.getSubject());
+            }
+        }catch (Exception e){
+            LOGGER.error("业务异常",e);
+        }
+        return jsonResponseVO;
+    }
 }
