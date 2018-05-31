@@ -23,7 +23,7 @@
         </div>
         <div class="search">
             <div class="month">
-                <span>按月查看</span>
+                <span>按时间查看</span>
                 <span><img src="${APP_PATH}/static/images/history/down.png"></span>
             </div>
             <div class="font_search">

@@ -135,8 +135,12 @@ $(function () {
 
     $(".month").click(function(){
         var _html = "";
-        for(var i=1;i<=12;i++){
-            _html += '<div class="choose_01">'+i+'月</div>';
+        var nowYear = new Date().getFullYear();
+        console.log(nowYear);
+        for(var i=0;i<100;i++){
+            if(nowYear-i>=2018){
+                _html += '<div class="choose_01">'+(nowYear-i)+'年</div>';
+            }
         }
         var flag = popup({
             'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="pop_con">'+_html+'</div></div> </div>',
@@ -148,11 +152,22 @@ $(function () {
         linkage(flag);
     })
 
-    // 月份选择
+    // 年份选择
     function linkage(obj){
+        var obj01 =obj;
         $(".choose_01").click(function () {
-            $(".month span").eq(0).text($(this).text());
-            popdown(obj);
+            var year = $(this).text();
+            _html = "";
+            for(var i=1;i<=12;i++){
+                _html += '<div class="choose_01">'+i+'月</div>';
+            }
+            $(".pop_con").html(_html);
+            $(".choose_01").click(function () {
+                var month = $(this).text();
+                var selectTime = year+month;
+                $(".month span").eq(0).text(selectTime);
+                popdown(obj01);
+            })
         })
     }
 
