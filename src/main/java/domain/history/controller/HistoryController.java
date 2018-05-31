@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -83,12 +84,16 @@ public class HistoryController extends AbstractActionController{
 
     /**
      * 查看自己的笔记
-     * @param noteEntity 查询实体
+     * @param
      * @return List<NoteEntity>
      */
     @RequestMapping(value = OWN_NOTE)
     @ResponseBody
-    public List<NoteEntity> getOwnNote(NoteEntity noteEntity){
+    public List<NoteEntity> getOwnNote(@RequestParam("yearString") String yearString,
+                                       @RequestParam("monthString") String monthString){
+        final NoteEntity noteEntity = new NoteEntity();
+        noteEntity.setYearString(yearString);
+        noteEntity.setMonthString(monthString);
         noteEntity.setListenerId(getListenerId());
         return historyService.getOwnNote(noteEntity);
     }

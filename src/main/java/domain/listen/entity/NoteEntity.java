@@ -68,6 +68,12 @@ public class NoteEntity extends AbstractEntity {
     //听课结束时间
     private String endDate;
 
+    //年份
+    private String yearString;
+
+    //月份
+    private String monthString;
+
 
     @Override
     public String toString() {

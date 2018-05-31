@@ -13,9 +13,8 @@ $(function () {
 
     //获取本人提交的记录
    $.ajax({
-       url:path + "/history/history/ownnote",type:"GET", dateType:"json",
+       url:path + "/history/history/ownnote?yearString=" + "" + "&monthString="+"",type:"GET", contentType: 'application/json',
        success:function (event) {
-           console.log(event);
            var _html = "";
            for(var i=0;i<event.length;i++){
                _html += '<div class="record"><div class="topic">听课课题：<span>'+event[i].subject+'</span></div>';
@@ -136,7 +135,6 @@ $(function () {
     $(".month").click(function(){
         var _html = "";
         var nowYear = new Date().getFullYear();
-        console.log(nowYear);
         for(var i=0;i<100;i++){
             if(nowYear-i>=2018){
                 _html += '<div class="choose_01">'+(nowYear-i)+'年</div>';
@@ -181,8 +179,14 @@ $(function () {
         if(month == '按月查看'){
             month = "";
         }
+        console.log(numyear);
+        console.log(nummonth);
+        var data = {yearString:numyear,monthString:nummonth};
         $.ajax({
-
+            url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth,contentType: 'application/json',
+            success:function (r) {
+                console.log(r)
+            }
         })
     })
 });

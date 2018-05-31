@@ -83,7 +83,12 @@
         FROM t_listen_notes t
         WHERE t.DELETE_FLAG='1'
         AND t.LISTENER_ID=#{listenerId}
-        <include refid="noteConditionSql"/>
+        <if test="yearString!=null and yearString!=''">
+            AND Year(t.CREATE_DATA) = #{yearString}
+        </if>
+        <if test="monthString!=null and monthString!=''">
+            AND Month(t.CREATE_DATA) = #{monthString}
+        </if>
         ORDER BY t.CREATE_DATA DESC
     </select>
 
