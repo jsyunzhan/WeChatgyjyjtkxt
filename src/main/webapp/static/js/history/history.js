@@ -69,7 +69,7 @@ $(function () {
                    }
 
                    $(".modify")[i].onclick = function(){
-                       var _html = '<div class="new_pop01" id="'+event[i].id+'"><div class="pop01_title">修改</div><div class="pop01_con">';
+                       var _html = '<div class="new_pop01" id="'+event[i].id+'"><div class="pop01_title">修改</div><div class="pop02_con">';
                        _html += '<div class="mess"><div>听课课题：</div></div><div class="mess"><input type="text" name="topic" placeholder="请填写听课课题" value="'+event[i].subject+'" id="topic"></div>';
                        _html += '<div class="mess"><div>执教老师：</div></div><div class="mess"><input type="text" name="teacher" placeholder="请填写执教老师" value="'+event[i].teacherName+'" id="teacherName"></div>';
                        _html += '<div class="mess"><div>课堂评价：</div></div><div class="mess"><textarea name="comments" placeholder="请填写课堂评价" id="comments">'+event[i].comments+'</textarea></div>';
@@ -85,16 +85,18 @@ $(function () {
                                    var teacherName = $("#teacherName").val();
                                    var comments = $("#comments").val();
                                    var id = $(".new_pop01").attr("id");
-                                   console.log(subject,teacherName,comments,id);
-                                   var data = {id:id,subject:subject,teacherName:teacherName,comments:comments};
-                                   $.ajax({
-                                       url:path +'/listen/noteedit',type:"POST",contentType: "application/json",data:JSON.stringify(data),
-                                       success:function (r) {
-                                            if (r){
-                                                popdown(flag);
-                                            }
-                                       }
-                                   })
+                                   if(subject!=""&&teacherName!=""&&comments!=""){
+                                       var data = {id:id,subject:subject,teacherName:teacherName,comments:comments};
+                                       $.ajax({
+                                           url:path +'/listen/noteedit',type:"POST",contentType: "application/json",data:JSON.stringify(data),
+                                           success:function (r) {
+                                                if (r){
+                                                    popdown(flag);
+                                                    window.location.reload();
+                                                }
+                                           }
+                                       })
+                                   }
                                }}
                        },false);
                        center(".new_pop01");

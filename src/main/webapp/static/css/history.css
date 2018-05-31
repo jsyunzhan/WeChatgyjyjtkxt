@@ -281,12 +281,22 @@ body{
     overflow-y: scroll;
 }
 
-.pop01_con .mess{
+.pop02_con{
+    padding: 10px 10px;
+    line-height: 24px;
+    font-size: 14px;
+    text-indent: 2em;
+    max-height: 250px;
+    color: #666;
+    overflow-y: scroll;
+}
+
+.pop01_con .mess,.pop02_con .mess{
     display: flex;
     text-indent: 0;
 }
 
-.pop01_con .mess input,.pop01_con .mess textarea{
+.pop02_con .mess input,.pop02_con .mess textarea{
     display: block;
     border: 1px solid #eee;
     outline: 0;
@@ -300,12 +310,12 @@ body{
     word-break: break-all;
 }
 
-.pop01_con .mess div:nth-child(1){
+.pop01_con .mess div:nth-child(1),.pop02_con .mess div:nth-child(1){
     width: 80px;
     text-align: right;
 }
 
-.pop01_con .mess div:nth-child(2){
+.pop01_con .mess div:nth-child(2),.pop02_con .mess div:nth-child(2){
     flex: 1;
     word-break: break-all;
     text-align: left;

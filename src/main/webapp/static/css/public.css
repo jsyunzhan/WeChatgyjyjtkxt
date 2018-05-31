@@ -176,6 +176,11 @@ input[type=button]{
 	outline:none
 }
 
+/*IOSinput输入框上边阴影*/
+input,textarea{
+	-webkit-appearance: none;
+}
+
 /*解决IOS中input点击变灰*/
 input{
 	tap-highlight-color:rgba(0,0,0,0);
