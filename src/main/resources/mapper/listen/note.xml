@@ -90,7 +90,8 @@
             AND Month(t.CREATE_DATA) = #{monthString}
         </if>
         <if test="subject!=null and subject!=''">
-            AND t.SUBJECT = #{subject}
+
+            AND t.SUBJECT like concat(concat('%',#{subject}),'%')
         </if>
         ORDER BY t.CREATE_DATA DESC
     </select>
