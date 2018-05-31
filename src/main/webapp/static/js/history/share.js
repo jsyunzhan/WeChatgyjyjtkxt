@@ -13,7 +13,7 @@ $(function () {
 
     //获取分享的记录
     $.ajax({
-        url:path + "/history/history/sharenote",type:"GET", dateType:"json",
+        url:path + "/history/history/sharenote?yearString="+ "" + "&monthString="+""+"&subject="+"",type:"GET", dateType:"json",
         success:function (event) {
             var _html = "";
             for(var i=0;i<event.length;i++){
@@ -134,9 +134,9 @@ $(function () {
             numyear = "";
             nummonth = "";
         }
-        var data = {yearString:numyear,monthString:nummonth};
+
         $.ajax({
-            url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth,contentType: 'application/json',
+            url:path + "/history/history/sharenote?yearString=" + numyear + "&monthString="+nummonth+"&subject="+keyWord,contentType: 'application/json',
             success:function (event) {
                 var _html = "";
                 for(var i=0;i<event.length;i++) {

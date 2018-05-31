@@ -102,12 +102,17 @@ public class HistoryController extends AbstractActionController{
 
     /**
      * 获取分享的笔记
-     * @param noteEntity 查询实体
      * @return List<NoteEntity>
      */
     @RequestMapping(value = SHARE_NOTE)
     @ResponseBody
-    public List<NoteEntity> getShareNote(NoteEntity noteEntity){
+    public List<NoteEntity> getShareNote(@RequestParam("yearString") String yearString,
+                                         @RequestParam("monthString") String monthString,
+                                         @RequestParam("subject") String subject){
+        final NoteEntity noteEntity = new NoteEntity();
+        noteEntity.setYearString(yearString);
+        noteEntity.setMonthString(monthString);
+        noteEntity.setSubject(subject);
         return historyService.getShareNote(noteEntity);
     }
 
