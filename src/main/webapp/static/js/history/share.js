@@ -86,4 +86,69 @@ $(function () {
         })
     }
 
+    $(".month").click(function(){
+        var _html = "";
+        var nowYear = new Date().getFullYear();
+        for(var i=0;i<100;i++){
+            if(nowYear-i>=2018){
+                _html += '<div class="choose_01">'+(nowYear-i)+'年</div>';
+            }
+        }
+        var flag = popup({
+            'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="pop_con">'+_html+'</div></div> </div>',
+            'width': '',
+            'height': '',
+            'params': {},
+            'events':{'close_pop_01':function(){popdown(flag);}}
+        },false);
+        linkage(flag);
+    })
+
+    // 年份选择
+    var numyear;
+    var nummonth;
+    function linkage(obj){
+        var obj01 =obj;
+        $(".choose_01").click(function () {
+            var year = $(this).text();
+            _html = "";
+            for(var i=1;i<=12;i++){
+                _html += '<div class="choose_01">'+i+'月</div>';
+            }
+            $(".pop_con").html(_html);
+            $(".choose_01").click(function () {
+                var month = $(this).text();
+                var selectTime = year+month;
+                numyear = parseInt(year);
+                nummonth = parseInt(month);
+                $(".month span").eq(0).text(selectTime);
+                popdown(obj01);
+            })
+        })
+    }
+
+    $(".font_search span").click(function () {
+        var month = $(".month span").text();
+        var keyWord = $(".font_search input").val();
+        if(month == '按时间查看'){
+            numyear = "";
+            nummonth = "";
+        }
+        var data = {yearString:numyear,monthString:nummonth};
+        $.ajax({
+            url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth,contentType: 'application/json',
+            success:function (event) {
+                var _html = "";
+                for(var i=0;i<event.length;i++) {
+                    _html += '<div class="record"><div class="topic">听课课题：<span>' + event[i].subject + '</span></div>';
+                    _html += '<div class="school"><span><img src="' + path + '/static/images/history/position_1.png"></span><span>' + event[i].schoolName + '</span></div>';
+                    _html += '<div class="school"><span><img src="' + path + '/static/images/history/clock.png"></span><span>' + timestampToTime(event[i].createDate) + '</span></div>';
+                    _html += '<div class="detail"><span>查看详情</span><span><img src="' + path + '/static/images/history/more.png"></span></div>';
+                    _html += '<div class="modify"><span>修改</span></div></div>';
+                }
+                $(".content").html(_html);
+            }
+        })
+    })
+
 })

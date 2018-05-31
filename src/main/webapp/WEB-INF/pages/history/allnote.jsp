@@ -21,6 +21,18 @@
         <span><a href="${APP_PATH}/history/history">我的评课</a></span>
         <span><a href="${APP_PATH}/history/share">共享评课</a></span>
     </div>
+    <div class="search">
+        <div class="month">
+            <span>按时间查看</span>
+            <span><img src="${APP_PATH}/static/images/history/down.png"></span>
+        </div>
+        <div class="font_search">
+            <div>
+                <input type="text" placeholder="搜索关键字查询">
+            </div>
+            <span>搜索</span>
+        </div>
+    </div>
     <div class="content">
 
     </div>

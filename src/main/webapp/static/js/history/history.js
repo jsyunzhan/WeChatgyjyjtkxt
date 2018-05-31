@@ -180,7 +180,6 @@ $(function () {
             numyear = "";
             nummonth = "";
         }
-
         var data = {yearString:numyear,monthString:nummonth};
         $.ajax({
             url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth+"&subject="+keyWord,contentType: 'application/json',
