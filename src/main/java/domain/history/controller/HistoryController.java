@@ -118,12 +118,17 @@ public class HistoryController extends AbstractActionController{
 
     /**
      * 获取所有的笔记
-     * @param noteEntity 查询实体
      * @return List<NoteEntity>
      */
     @RequestMapping(value = ALL_NOTE)
     @ResponseBody
-    public List<NoteEntity> getAllNote(NoteEntity noteEntity){
+    public List<NoteEntity> getAllNote(@RequestParam("yearString") String yearString,
+                                       @RequestParam("monthString") String monthString,
+                                       @RequestParam("subject") String subject){
+        final NoteEntity noteEntity = new NoteEntity();
+        noteEntity.setYearString(yearString);
+        noteEntity.setMonthString(monthString);
+        noteEntity.setSubject(subject);
         return historyService.getAllNote(noteEntity);
     }
 

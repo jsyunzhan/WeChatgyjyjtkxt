@@ -158,7 +158,15 @@
         t.UPDATE_DATA updateDate
         FROM t_listen_notes t
         WHERE t.DELETE_FLAG='1'
-        <include refid="noteConditionSql"/>
+        <if test="yearString!=null and yearString!=''">
+            AND Year(t.CREATE_DATA) = #{yearString}
+        </if>
+        <if test="monthString!=null and monthString!=''">
+            AND Month(t.CREATE_DATA) = #{monthString}
+        </if>
+        <if test="subject!=null and subject!=''">
+            AND t.SUBJECT like concat(concat('%',#{subject}),'%')
+        </if>
         ORDER BY t.CREATE_DATA DESC
     </select>
 

@@ -13,7 +13,7 @@ $(function () {
 
     //权限人员获取所有笔记
     $.ajax({
-        url:path + "/history/history/allnote",type:"GET", dateType:"json",
+        url:path + "/history/history/allnote?yearString="+ "" + "&monthString="+""+"&subject="+"",type:"GET", dateType:"json",
         success:function (event) {
             var _html = "";
             for(var i=0;i<event.length;i++){
@@ -138,9 +138,9 @@ $(function () {
             numyear = "";
             nummonth = "";
         }
-        var data = {yearString:numyear,monthString:nummonth};
+
         $.ajax({
-            url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth,contentType: 'application/json',
+            url:path + "/history/history/allnote?yearString=" + numyear + "&monthString="+nummonth+"&subject="+keyWord,contentType: 'application/json',
             success:function (event) {
                 var _html = "";
                 for(var i=0;i<event.length;i++) {
