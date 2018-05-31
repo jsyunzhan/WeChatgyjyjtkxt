@@ -153,6 +153,8 @@ $(function () {
     })
 
     // 年份选择
+    var numyear;
+    var nummonth;
     function linkage(obj){
         var obj01 =obj;
         $(".choose_01").click(function () {
@@ -165,6 +167,8 @@ $(function () {
             $(".choose_01").click(function () {
                 var month = $(this).text();
                 var selectTime = year+month;
+                numyear = parseInt(year);
+                nummonth = parseInt(month);
                 $(".month span").eq(0).text(selectTime);
                 popdown(obj01);
             })
@@ -177,7 +181,6 @@ $(function () {
         if(month == '按月查看'){
             month = "";
         }
-        console.log(month,keyWord);
         $.ajax({
 
         })
