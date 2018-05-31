@@ -34,7 +34,7 @@ $(function () {
 
     //获取分享的记录
     $.ajax({
-        url:path + "/history/history/sharenote",type:"GET", dateType:"json",
+        url:path + "/history/history/sharenote?yearString="+ "" + "&monthString="+""+"&subject="+"",type:"GET", dateType:"json",
         success:function (event) {
             var _html = "";
             for(var i=0;i<2;i++){
