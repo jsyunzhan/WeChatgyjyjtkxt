@@ -155,4 +155,16 @@ $(function () {
             popdown(obj);
         })
     }
+
+    $(".font_search span").click(function () {
+        var month = $(".month span").text();
+        var keyWord = $(".font_search input").val();
+        if(month == '按月查看'){
+            month = "";
+        }
+        console.log(month,keyWord);
+        $.ajax({
+
+        })
+    })
 });
