@@ -13,7 +13,7 @@ $(function () {
 
     //获取本人提交的记录
    $.ajax({
-       url:path + "/history/history/ownnote?yearString=" + "" + "&monthString="+"",type:"GET", contentType: 'application/json',
+       url:path + "/history/history/ownnote?yearString=" + "" + "&monthString="+""+"&subject="+"",type:"GET", contentType: 'application/json',
        success:function (event) {
            var _html = "";
            for(var i=0;i<event.length;i++){
@@ -176,12 +176,14 @@ $(function () {
     $(".font_search span").click(function () {
         var month = $(".month span").text();
         var keyWord = $(".font_search input").val();
-        if(month == '按月查看'){
-            month = "";
+        if(month == '按时间查看'){
+            numyear = "";
+            nummonth = "";
         }
+
         var data = {yearString:numyear,monthString:nummonth};
         $.ajax({
-            url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth,contentType: 'application/json',
+            url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth+"&subject="+keyWord,contentType: 'application/json',
             success:function (event) {
                 var _html = "";
                 for(var i=0;i<event.length;i++) {

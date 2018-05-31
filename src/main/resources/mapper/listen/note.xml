@@ -89,6 +89,9 @@
         <if test="monthString!=null and monthString!=''">
             AND Month(t.CREATE_DATA) = #{monthString}
         </if>
+        <if test="subject!=null and subject!=''">
+            AND t.SUBJECT = #{subject}
+        </if>
         ORDER BY t.CREATE_DATA DESC
     </select>
 

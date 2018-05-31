@@ -90,10 +90,12 @@ public class HistoryController extends AbstractActionController{
     @RequestMapping(value = OWN_NOTE)
     @ResponseBody
     public List<NoteEntity> getOwnNote(@RequestParam("yearString") String yearString,
-                                       @RequestParam("monthString") String monthString){
+                                       @RequestParam("monthString") String monthString,
+                                       @RequestParam("subject") String subject){
         final NoteEntity noteEntity = new NoteEntity();
         noteEntity.setYearString(yearString);
         noteEntity.setMonthString(monthString);
+        noteEntity.setSubject(subject);
         noteEntity.setListenerId(getListenerId());
         return historyService.getOwnNote(noteEntity);
     }
