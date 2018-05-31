@@ -133,7 +133,7 @@ $(function () {
     }
 
     $(".month").click(function(){
-        var _html = "";
+        var _html = '<div class="choose_02">全部</div>';
         var nowYear = new Date().getFullYear();
         for(var i=0;i<100;i++){
             if(nowYear-i>=2018){
@@ -171,12 +171,17 @@ $(function () {
                 popdown(obj01);
             })
         })
+        $(".choose_02").click(function () {
+            var year = $(this).text();
+            $(".month span").eq(0).text(year);
+            popdown(obj01);
+        })
     }
 
     $(".font_search span").click(function () {
         var month = $(".month span").text();
         var keyWord = $(".font_search input").val();
-        if(month == '按时间查看'){
+        if(month == '按时间查看'||month == '全部'){
             numyear = "";
             nummonth = "";
         }

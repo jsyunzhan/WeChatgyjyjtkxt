@@ -28,7 +28,7 @@
             </div>
             <div class="font_search">
                 <div>
-                    <input type="text" placeholder="搜索关键字查询">
+                    <input type="text" placeholder="搜索课题关键字查询">
                 </div>
                 <span>搜索</span>
             </div>
