@@ -63,6 +63,7 @@ $(function () {
                                    }
                                },false);
                                center(".new_pop01");
+                               bigImage(picImage);
                            }
                        });
                    }
@@ -85,14 +86,12 @@ $(function () {
                                    var comments = $("#comments").val();
                                    var id = $(".new_pop01").attr("id");
                                    console.log(subject,teacherName,comments,id);
-
                                    var data = {id:id,subject:subject,teacherName:teacherName,comments:comments};
-
                                    $.ajax({
                                        url:path +'/listen/noteedit',type:"POST",contentType: "application/json",data:JSON.stringify(data),
                                        success:function (r) {
                                             if (r){
-
+                                                popdown(flag);
                                             }
                                        }
                                    })
@@ -104,6 +103,22 @@ $(function () {
            }
        }
    });
+
+    function bigImage(obj){
+        var obj01 = obj;
+        for (var i=0;i<$(".picImage div").length;i++){
+            !(function(i) {
+                $($(".picImage div")[i]).click(function() {
+                    $(".bigImage").show();
+                    $(".bigImage img").attr("src","data:image/gif;base64,"+obj01[i]);
+                })
+            })(i)
+        }
+        $(".bigImage img").click(function(){
+            $(".bigImage").hide();
+            $(".bigImage img").attr("src","");
+        })
+    }
 
     $(".month").click(function(){
         var _html = "";

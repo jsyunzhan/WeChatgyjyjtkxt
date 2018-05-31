@@ -43,6 +43,9 @@
         <span>用户中心</span>
     </a>
 </div>
+<div class="bigImage none">
+    <div><img src=""></div>
+</div>
 </body>
 <script>
     var allNoteUrl = "${allNoteUrl}";
