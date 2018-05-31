@@ -92,7 +92,18 @@ $(function () {
                                            success:function (r) {
                                                 if (r){
                                                     popdown(flag);
-                                                    window.location.reload();
+                                                    var flag1 = popup({
+                                                        'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/success.png"></div><div class="success_font">修改成功</div><div class="sure">确定</div></div></div>',
+                                                        'width': '70%',
+                                                        'height': '200px',
+                                                        'params': {},
+                                                        'events':{'sure': function(){
+                                                                popdown(flag1);
+                                                                window.location.reload();
+                                                            }
+                                                        }
+                                                    },false);
+                                                    center(".new_pop");
                                                 }
                                            }
                                        })
