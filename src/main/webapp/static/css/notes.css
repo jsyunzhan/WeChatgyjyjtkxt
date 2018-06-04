@@ -45,27 +45,8 @@ select{
 	height: 50px;
 	line-height: 50px;
 	text-align: center;
-}
-
-#className .right{
-	font-size: 0;
-}
-
-#className .left{
 	background: url("../../static/images/listen/down.png") no-repeat right 5px center;
 	background-size: 15px 15px;
-}
-
-#className .right input{
-	width: 60%;
-	text-align: center;
-	font-size: 16px;
-}
-
-#className .right span{
-	display: inline-block;
-	width: 40%;
-	font-size: 16px;
 }
 
 .inform .name{

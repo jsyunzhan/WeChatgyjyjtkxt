@@ -34,10 +34,7 @@
             <div class="name" width="100px;">班级年级</div>
             <div class="text clearfix">
                 <div class="left">年级</div>
-                <div class="right">
-                    <input type="number" name="class" placeholder="班级">
-                    <span>班</span>
-                </div>
+                <div class="right">班级</div>
             </div>
         </div>
         <div class="inform" id="subject">

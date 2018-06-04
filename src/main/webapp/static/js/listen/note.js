@@ -82,7 +82,7 @@ $(function () {
         })
     }
 
-    // 年级班级
+    // 年级
     $("#className .left").click(function(){
         var _html = "";
         for(var i=0;i<grade[grade_val-1].length;i++) {
@@ -100,6 +100,28 @@ $(function () {
     function linkage04(obj){
         $(".choose_04").click(function(){
             $("#className").find(".left").text($(this).text());
+            popdown(obj);
+        })
+    }
+
+    // 班级
+    $("#className .right").click(function(){
+        var _html = "";
+        for(var i=0;i<20;i++) {
+            _html += '<div class="choose_07">'+(i+1)+'班</div>';
+        }
+        var flag = popup({
+            'html': '<div class="pop_01"><div class="pop_title clearfix"><div class="sure_01"></div><div class="close_pop_01">取消</div></div><div class="pop_con">'+_html+'</div></div> </div>',
+            'width': '',
+            'height': '',
+            'params': {},
+            'events':{'close_pop_01':function(){popdown(flag);}}
+        },false);
+        linkage07(flag);
+    })
+    function linkage07(obj){
+        $(".choose_07").click(function(){
+            $("#className").find(".right").text($(this).text());
             popdown(obj);
         })
     }
@@ -168,7 +190,7 @@ $(function () {
     $(".submit").click(function () {
         openLoading();
         var schoolId = $("#school").find(".text").attr("value");
-        var className = $("#className").find(".left").text()+$("#className").find("input").val()+"班";
+        var className = $("#className").find(".left").text()+$("#className").find(".right").text();
         var disciplineId = $("#subject").find(".text").attr("value");
         var subject = $("#topic").val();
         var teacherName = $("#teacherName").val();
@@ -193,7 +215,7 @@ $(function () {
                     contentType: false,
                     async: true,
                     success: function (picturePath) {
-
+                        console.log(1);
                         var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
                                 disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
                             url = path + "/listen/notecomment";
@@ -201,6 +223,7 @@ $(function () {
                         $.ajax({
                             url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
                             success:function (r) {
+                                console.log(2);
                                 closeLoading();
                                 var flag = popup({
                                     'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
