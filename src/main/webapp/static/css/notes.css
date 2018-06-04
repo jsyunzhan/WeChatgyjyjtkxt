@@ -357,6 +357,8 @@ textarea:-ms-input-placeholder{
 
 .pop_01 .pop_con{
 	padding: 0 4%;
+	max-height: 200px;
+	overflow-y: scroll;
 }
 
 .pop_01 .pop_con div{
