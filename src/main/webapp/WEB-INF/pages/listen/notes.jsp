@@ -57,13 +57,13 @@
             </div>
         </div>
         <div class="inform">
-            <div class="name" width="100px;">课堂评价</div>
+            <div class="name" width="100px;">听课内容</div>
             <div class="textarea">
-                <textarea id="comments" name="comments" placeholder="请填写课堂评价"></textarea>
+                <textarea id="comments" name="comments" placeholder="请填写听课内容"></textarea>
             </div>
         </div>
         <div class="inform" id="score">
-            <div class="name" width="100px;">课堂评分</div>
+            <div class="name" width="100px;">课堂评价</div>
             <div class="text"></div>
             <div class="arrow" width="100px;">
                 <img src="${APP_PATH}/static/images/listen/right.png">
