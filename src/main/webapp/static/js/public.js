@@ -22,6 +22,7 @@ function center(obj){
 // 底部导航二级标题
 function bottomFloor(){
     var secondNotes = document.getElementById("secondNotes");
+    var wrapper = document.getElementsByClassName("wrapper")[0];
     secondNotes.onclick = function(){
         var ev = ev||window.event;
         ev.cancelBubble = true;
@@ -33,7 +34,10 @@ function bottomFloor(){
             window.location.href = path+"/history/history";
         })
     }
-    document.onclick = function () {
+    wrapper.onclick = function(){
+        $(".secondFloor").hide();
+    }
+    document.onscroll = function (){
         $(".secondFloor").hide();
     }
 }
