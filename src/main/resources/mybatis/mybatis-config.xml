@@ -10,6 +10,7 @@
         <typeAlias alias="ListenerEntityInfo" type="domain.base.entity.ListenerEntity"/>
         <typeAlias alias="NoteEntityInfo" type="domain.listen.entity.NoteEntity"/>
         <typeAlias alias="PhoneEntityInfo" type="domain.user.entity.PhoneEntity"/>
-    </typeAliases>
+        <typeAlias alias="OrganEntityInfo" type="domain.organ.entity.OrganEntity"/>
+</typeAliases>
 
 </configuration>

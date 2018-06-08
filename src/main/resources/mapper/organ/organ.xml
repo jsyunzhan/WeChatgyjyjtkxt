@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="domain.organ.dao.OrganDao">
+
+    <!--机关进校园新增-->
+    <insert id="organComment" >
+        INSERT INTO t_organ_message
+        (
+        CHECK_TITLE,
+        CHECK_CONTENT,
+        CREATE_USER_ID,
+        CREATE_DATA
+        ) VALUE (
+        #{checkTitle},
+        #{checkContent},
+        #{createUserId},
+        NOW()
+        )
+    </insert>
+
+</mapper>
