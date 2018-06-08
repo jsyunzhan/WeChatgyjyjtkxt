@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="${APP_PATH}/static/css/public.css">
     <link rel="stylesheet" type="text/css" href="${APP_PATH}/static/css/notes.css">
     <script type="text/javascript" src="${APP_PATH}/static/jquery/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/js/public.js"></script>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
     <script type="text/javascript" src="${APP_PATH}/static/jquery/pop.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/js/notes.js"></script>
@@ -104,9 +105,13 @@
 </div>
 
 <div class="footer">
-    <a href="javascript:;">
+    <a href="javascript:;" id="secondNotes">
         <span><img src="${APP_PATH}/static/images/listen/icon_01.png"></span>
         <span style="color: #FFCC00;">听课评价</span>
+        <div class="secondFloor none">
+            <p>新建听课</p>
+            <p>历史评价</p>
+        </div>
     </a>
     <a href="javascript:;">
         <span><img src="${APP_PATH}/static/images/listen/icon_06.png"></span>

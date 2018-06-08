@@ -59,9 +59,13 @@
         </div>
     </div>
     <div class="footer">
-        <a href="${APP_PATH}/listen/note">
+        <a href="javascript:;" id="secondNotes">
             <span><img src="${APP_PATH}/static/images/listen/icon_05.png"></span>
             <span>听课评价</span>
+            <div class="secondFloor none">
+                <p>新建听课</p>
+                <p>历史评价</p>
+            </div>
         </a>
         <a href="javascript:;">
             <span><img src="${APP_PATH}/static/images/listen/icon_06.png"></span>

@@ -51,13 +51,11 @@ $(function(){
         }
     }
 
-
     // 公开评价
     $(".content_03").click(function(){
         $(this).find("span").toggleClass("choosen");
-    })
+    });
 
-
-
-    map_position()
+    bottomFloor();
+    map_position();
 })

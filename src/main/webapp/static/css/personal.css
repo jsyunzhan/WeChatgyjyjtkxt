@@ -169,9 +169,31 @@ body{
 }
 
 .footer a{
+    position: relative;
     flex: 1;
     background: #fefefe;
     border-top: 1px solid #eee;
+}
+
+.footer .secondFloor{
+    position: absolute;
+    top: -104px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #eee;
+}
+
+.footer .secondFloor p{
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    color: #767676;
+    border-bottom: 1px solid #eee;
+}
+
+.footer .secondFloor p:nth-last-child(1){
+    border-bottom: 0;
 }
 
 .footer a span{

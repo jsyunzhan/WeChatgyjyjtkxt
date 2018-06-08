@@ -105,5 +105,7 @@ $(function () {
             $(".bigImage").hide();
             $(".bigImage img").attr("src","");
         })
-    }
+    };
+
+    bottomFloor();
 });

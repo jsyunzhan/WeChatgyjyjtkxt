@@ -18,3 +18,22 @@ function center(obj){
     var obj_height = $(obj).height();
     $(obj).css({"left":(win_width-obj_width)/2,"top":(win_height-obj_height)/2});
 }
+
+// 底部导航二级标题
+function bottomFloor(){
+    var secondNotes = document.getElementById("secondNotes");
+    secondNotes.onclick = function(){
+        var ev = ev||window.event;
+        ev.cancelBubble = true;
+        $(".secondFloor").show();
+        $(".secondFloor p:nth-child(1)").click(function(){
+            window.location.href = path+"/listen/note";
+        })
+        $(".secondFloor p:nth-child(2)").click(function(){
+            window.location.href = path+"/history/history";
+        })
+    }
+    document.onclick = function () {
+        $(".secondFloor").hide();
+    }
+}
