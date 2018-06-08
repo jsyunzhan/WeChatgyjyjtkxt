@@ -214,7 +214,6 @@ $(function () {
                     contentType: false,
                     async: true,
                     success: function (picturePath) {
-                        console.log(1);
                         var data = {picturePath:picturePath,schoolId:schoolId,className:className,teacherName:teacherName,
                                 disciplineId:disciplineId,subject:subject,comments:comments,scoreId:scoreId,listenPath:listenPath,shareFlag:shareFlag},
                             url = path + "/listen/notecomment";
@@ -222,7 +221,6 @@ $(function () {
                         $.ajax({
                             url:url,type:"POST",contentType:"application/json",data:JSON.stringify(data),
                             success:function (r) {
-                                console.log(2);
                                 closeLoading();
                                 var flag = popup({
                                     'html': '<div class="new_pop"><div class="success_img"><img src="'+path+'/static/images/listen/success.png"></div><div class="success_font">评论提交成功</div><div class="sure">确定</div></div></div>',
