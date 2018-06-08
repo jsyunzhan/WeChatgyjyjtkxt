@@ -6,5 +6,5 @@ public class OrganWebForward {
 
     }
 
-    public final static String TO_PERSONAL_PAGE = "user/personal";
+    public final static String TO_ORGAN_COMMENT_PAGE = "organ/organcomment";
 }
