@@ -11,4 +11,11 @@ public interface OrganCommentService {
      * @return Boolean
      */
     Boolean organComment(OrganEntity organEntity);
+
+    /**
+     * 机关进校园修改
+     * @param organEntity 修改实体
+     * @return Boolean
+     */
+    Boolean organEdit(OrganEntity organEntity);
 }

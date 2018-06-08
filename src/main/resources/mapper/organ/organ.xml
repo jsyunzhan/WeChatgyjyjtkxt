@@ -19,4 +19,14 @@
         )
     </insert>
 
+    <!--机关进校园修改-->
+    <update id="organEdit">
+        UPDATE t_organ_message SET
+        CHECK_TITLE=#{checkTitle},
+        CHECK_CONTENT=#{checkContent},
+        UPDATE_USER_ID=#{updateUserId},
+        UPDATE_DATA=NOW()
+        WHERE ID=#{id}
+    </update>
+
 </mapper>

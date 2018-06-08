@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import static domain.organ.OrganWebForward.TO_ORGAN_COMMENT_PAGE;
-import static domain.organ.OrganWebURLMapping.ORGAN_COMMENT_ADD;
-import static domain.organ.OrganWebURLMapping.ORGAN_COMMENT_PAGE;
+import static domain.organ.OrganWebURLMapping.*;
 
 /**
  * 机关进校园提交
@@ -52,10 +51,33 @@ public class OrganCommentController extends AbstractActionController{
         final JsonResponseVO jsonResponseVO = new JsonResponseVO(Boolean.FALSE);
 
         try {
+            organEntity.setCreateUserId(getListenerId());
             final Boolean flag = organCommentService.organComment(organEntity);
             jsonResponseVO.setSuccess(flag);
             if (LOGGER.isDebugEnabled()) {
                 LOGGER.debug("机关进校园提交，title:{}",organEntity.getCheckTitle());
+            }
+        }catch (Exception e){
+            LOGGER.error("业务异常",e);
+        }
+        return jsonResponseVO;
+    }
+
+    /**
+     * 机关进校园修改
+     * @param organEntity 修改实体
+     * @return JsonResponseVO
+     */
+    @RequestMapping(value = ORGAN_COMMENT_EDIT)
+    @ResponseBody
+    public JsonResponseVO organEdit(@RequestBody OrganEntity organEntity){
+        final JsonResponseVO jsonResponseVO = new JsonResponseVO(Boolean.FALSE);
+        try {
+            organEntity.setUpdateUserId(getListenerId());
+            final Boolean flag = organCommentService.organEdit(organEntity);
+            jsonResponseVO.setSuccess(flag);
+            if (LOGGER.isDebugEnabled()) {
+                LOGGER.debug("机关进校园修改，title:{}",organEntity.getCheckTitle());
             }
         }catch (Exception e){
             LOGGER.error("业务异常",e);

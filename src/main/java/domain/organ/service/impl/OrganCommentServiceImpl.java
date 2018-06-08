@@ -34,4 +34,16 @@ public class OrganCommentServiceImpl implements OrganCommentService{
 
         return flag;
     }
+
+    @Override
+    public Boolean organEdit(OrganEntity organEntity) {
+
+        final Boolean flag = organDao.organEdit(organEntity) > 0;
+
+        if (LOGGER.isDebugEnabled()){
+            LOGGER.debug("机关进校园修改结果:{}",flag);
+        }
+
+        return flag;
+    }
 }
