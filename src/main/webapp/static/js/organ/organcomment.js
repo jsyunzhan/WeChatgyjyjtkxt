@@ -155,6 +155,7 @@ $(function(){
                 },false);
             }
         }else{
+
             closeLoading();
             // 信息未填写完整
             var flag = popup({
