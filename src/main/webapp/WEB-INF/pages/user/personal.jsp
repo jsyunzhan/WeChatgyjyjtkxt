@@ -67,7 +67,7 @@
                 <p>历史评价</p>
             </div>
         </a>
-        <a href="javascript:;">
+        <a href="${APP_PATH}/organ/commentpage">
             <span><img src="${APP_PATH}/static/images/listen/icon_06.png"></span>
             <span>机关进校</span>
         </a>
