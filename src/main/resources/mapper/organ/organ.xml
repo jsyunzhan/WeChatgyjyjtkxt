@@ -33,4 +33,21 @@
         WHERE ID=#{id}
     </update>
 
+    <!--机关进校园历史-->
+    <select id="organHistory" resultType="OrganEntityInfo">
+        SELECT
+        t.ID id,
+        t.SCHOOL_ID schoolId,
+        (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID) schoolName,
+        t.CHECK_CONTENT checkContent,
+        t.PICTURE_PATH picturePath,
+        t.CREATE_USER_ID createUserId,
+        t.CREATE_DATA createDate,
+        t.UPDATE_USER_ID updateUserId,
+        t.UPDATE_DATA updateDate
+        FROM t_organ_message t
+        WHERE t.DELETE_FLAG='1'
+        ORDER BY t.CREATE_DATA DESC
+    </select>
+
 </mapper>

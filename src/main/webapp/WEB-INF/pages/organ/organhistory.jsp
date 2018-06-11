@@ -12,10 +12,13 @@
     <script type="text/javascript" src="${APP_PATH}/static/js/public.js"></script>
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.4.3&key=def2284f646e68d9760389eac586b046"></script>
     <script type="text/javascript" src="${APP_PATH}/static/jquery/pop.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/js/history/history.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/js/organ/organhistory.js"></script>
     <title>Title</title>
 </head>
 <body>
     机关进校园历史
 </body>
+<script>
+    var path  = '<%=request.getContextPath()%>';
+</script>
 </html>

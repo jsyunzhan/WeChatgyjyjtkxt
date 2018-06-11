@@ -11,8 +11,11 @@ import lombok.Setter;
  */
 public class OrganEntity extends AbstractEntity{
 
-    //检查学校
+    //检查学校id
     private Long schoolId;
+
+    //检查学校name
+    private String schoolName;
 
     //检查内容
     private String checkContent;
