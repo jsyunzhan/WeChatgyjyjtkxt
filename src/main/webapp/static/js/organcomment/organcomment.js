@@ -22,7 +22,6 @@ $(function(){
             })
         };
     }
-
     //获取乡镇下拉数据
     $("#school").click(function(){
         $.ajax({
