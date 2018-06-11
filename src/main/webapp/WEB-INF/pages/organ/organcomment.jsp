@@ -11,7 +11,7 @@
     <script type="text/javascript" src="${APP_PATH}/static/jquery/jquery-1.7.2.min.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/js/public.js"></script>
     <script type="text/javascript" src="${APP_PATH}/static/jquery/pop.js"></script>
-    <script type="text/javascript" src="${APP_PATH}/static/js/organcomment/organcomment.js"></script>
+    <script type="text/javascript" src="${APP_PATH}/static/js/organ/organcomment.js"></script>
     <title>机关进校园</title>
 </head>
 <body>

@@ -98,10 +98,8 @@ public class NoteCommentController extends AbstractActionController{
 
             if(!file.isEmpty()) {
 
-
-
                 //文件存放路径
-                String dirPath = "D:/image/" + litenerName + "/" + year + "/" + month + "/" +data;
+                String dirPath = "D:/image/听课/" + litenerName + "/" + year + "/" + month + "/" +data;
                 //创建文件夹
                 File dir = new File(dirPath);
                 if (!dir.exists()){
