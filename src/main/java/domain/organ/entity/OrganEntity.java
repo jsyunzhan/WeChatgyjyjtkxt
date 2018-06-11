@@ -11,17 +11,21 @@ import lombok.Setter;
  */
 public class OrganEntity extends AbstractEntity{
 
-    //检查标题
-    private String checkTitle;
+    //检查学校
+    private Long schoolId;
 
     //检查内容
     private String checkContent;
 
+    //图片路径
+    private String picturePath;
+
     @Override
     public String toString() {
         return "OrganEntity{" +
-                "checkTitle='" + checkTitle + '\'' +
+                "schoolId=" + schoolId +
                 ", checkContent='" + checkContent + '\'' +
+                ", picturePath='" + picturePath + '\'' +
                 '}';
     }
 }

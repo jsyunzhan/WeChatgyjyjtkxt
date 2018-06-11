@@ -127,7 +127,7 @@ public class OrganCommentController extends AbstractActionController{
             final Boolean flag = organCommentService.organComment(organEntity);
             jsonResponseVO.setSuccess(flag);
             if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("机关进校园提交，title:{}",organEntity.getCheckTitle());
+                LOGGER.debug("机关进校园提交，schoolId:{}",organEntity.getSchoolId());
             }
         }catch (Exception e){
             LOGGER.error("业务异常",e);
@@ -149,7 +149,7 @@ public class OrganCommentController extends AbstractActionController{
             final Boolean flag = organCommentService.organEdit(organEntity);
             jsonResponseVO.setSuccess(flag);
             if (LOGGER.isDebugEnabled()) {
-                LOGGER.debug("机关进校园修改，title:{}",organEntity.getCheckTitle());
+                LOGGER.debug("机关进校园修改，schoolId:{}",organEntity.getSchoolId());
             }
         }catch (Exception e){
             LOGGER.error("业务异常",e);

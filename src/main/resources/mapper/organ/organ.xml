@@ -7,13 +7,15 @@
     <insert id="organComment" >
         INSERT INTO t_organ_message
         (
-        CHECK_TITLE,
+        SCHOOL_ID,
         CHECK_CONTENT,
+        PICTURE_PATH,
         CREATE_USER_ID,
         CREATE_DATA
         ) VALUE (
-        #{checkTitle},
+        #{schoolId},
         #{checkContent},
+        #{picturePath},
         #{createUserId},
         NOW()
         )
