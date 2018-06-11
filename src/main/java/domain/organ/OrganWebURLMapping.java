@@ -9,8 +9,11 @@ public class OrganWebURLMapping {
     //机关进校园
     public final static String ORGAN = "/organ/";
 
-    //机关进校园页面
+    //机关进校园提交页面
     public final static String ORGAN_COMMENT_PAGE = ORGAN + "commentpage";
+
+    //机关进校园历史页面
+    public final static String ORGAN_HISTORY_PAGE = ORGAN + "historypage";
 
     //机关进校园新增
     public final static String ORGAN_COMMENT_ADD = ORGAN_COMMENT_PAGE + "/add";
