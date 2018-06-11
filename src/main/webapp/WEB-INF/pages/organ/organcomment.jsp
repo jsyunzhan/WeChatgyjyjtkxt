@@ -18,18 +18,19 @@
     <div class="wrapper">
         <div class="title">机关进校园</div>
         <div class="content_01">
-            <div class="inform">
-                <div class="name" width="100px;">检查标题</div>
-                <div class="text">
-                    <input type="text" id="checkTitle" name="teacher" placeholder="请填写检查标题">
+            <div class="inform" id="school">
+                <div class="name" width="100px;">听课学校</div>
+                <div class="text"></div>
+                <div class="arrow" width="100px;">
+                    <img src="${APP_PATH}/static/images/listen/right.png">
                 </div>
             </div>
         </div>
         <div class="content_01">
             <div class="inform">
-                <div class="name" width="100px;">检查内容</div>
+                <div class="name" width="100px;">活动小记</div>
                 <div class="textarea">
-                    <textarea id="checkContent" name="comments" placeholder="请填写检查内容"></textarea>
+                    <textarea id="checkContent" name="comments" placeholder="请填写校园活动内容和校园印象"></textarea>
                 </div>
             </div>
         </div>
@@ -58,16 +59,16 @@
     </div>
     <div class="footer">
         <a href="javascript:;" id="secondNotes">
-            <span><img src="${APP_PATH}/static/images/listen/icon_01.png"></span>
-            <span style="color: #FFCC00;">听课评价</span>
+            <span><img src="${APP_PATH}/static/images/listen/icon_05.png"></span>
+            <span>听课评价</span>
             <div class="secondFloor none">
                 <p>新建听课</p>
                 <p>历史评价</p>
             </div>
         </a>
         <a href="javascript:;">
-            <span><img src="${APP_PATH}/static/images/listen/icon_06.png"></span>
-            <span>机关进校</span>
+            <span><img src="${APP_PATH}/static/images/listen/icon_02.png"></span>
+            <span style="color: #FFCC00;">机关进校</span>
         </a>
         <a href="${APP_PATH}/history/history">
             <span><img src="${APP_PATH}/static/images/listen/icon_07.png"></span>
