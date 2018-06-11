@@ -64,7 +64,6 @@ $(function(){
                     error: function (err) {
                     }
                 });
-
             }else{
                 closeLoading();
                 // 未上传图片
