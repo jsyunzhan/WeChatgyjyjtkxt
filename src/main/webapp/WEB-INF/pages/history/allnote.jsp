@@ -34,7 +34,6 @@
         </div>
     </div>
     <div class="content">
-
     </div>
 </div>
 <div class="footer">
