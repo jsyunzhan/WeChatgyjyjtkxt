@@ -78,14 +78,16 @@ body{
     margin-top: 10px;
 }
 
-.listen_num{
-    padding: 0 10px;
-}
-
 .listened{
     width: 50%;
     float: left;
-    margin: 10px 0;
+    margin: 10px auto;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.listened div{
+    float: left;
 }
 
 .listened:nth-child(1){
@@ -93,14 +95,15 @@ body{
 }
 
 .listened div:nth-child(1){
-    width: 18%;
+    width: 20px;
     margin: 0 auto;
 }
 
 .listened div:nth-child(2){
     text-align: center;
     line-height: 20px;
-    margin-top: 10px;
+
+    margin-left: 5px;
 }
 
 .listened div:nth-child(2) span{

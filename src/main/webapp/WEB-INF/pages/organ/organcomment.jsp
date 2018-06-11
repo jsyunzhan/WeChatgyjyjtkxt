@@ -58,7 +58,7 @@
         <div class="submit">提交</div>
     </div>
     <div class="footer">
-        <a href="javascript:;" id="secondNotes">
+        <a href="javascript:;" id="secondNotes1">
             <span><img src="${APP_PATH}/static/images/listen/icon_05.png"></span>
             <span>听课评价</span>
             <div class="secondFloor none">
@@ -66,9 +66,13 @@
                 <p>历史评价</p>
             </div>
         </a>
-        <a href="javascript:;">
+        <a href="javascript:;"  id="secondNotes2">
             <span><img src="${APP_PATH}/static/images/listen/icon_02.png"></span>
             <span style="color: #FFCC00;">机关进校</span>
+            <div class="secondFloor none">
+                <p>机关进校</p>
+                <p>历史评价</p>
+            </div>
         </a>
         <a href="${APP_PATH}/history/history">
             <span><img src="${APP_PATH}/static/images/listen/icon_07.png"></span>
