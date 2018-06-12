@@ -4,7 +4,7 @@ $(function () {
     var loading = (new Loading()).init(path+"/static/images/history/loading.gif","100px","100px");
 
    $.ajax({
-       url:path + "/organ/historypage/history",type:"GET",dataType:"json",
+       url:path + "/organ/historypage/history?yearString="+""+ "&monthString="+""+"&schoolName="+"",type:"GET",dataType:"json",
        success:function (event) {
            var _html = "";
            for(var i=0;i<event.length;i++) {
@@ -165,10 +165,11 @@ $(function () {
             numyear = "";
             nummonth = "";
         }
-        var data = {yearString:numyear,monthString:nummonth};
+
         $.ajax({
-            url:path + "/history/history/ownnote?yearString=" + numyear + "&monthString="+nummonth+"&subject="+keyWord,contentType: 'application/json',
+            url:path + "/organ/historypage/history?yearString=" + numyear + "&monthString="+nummonth+"&schoolName="+keyWord,contentType: 'application/json',
             success:function (event) {
+                console.log(event);
                 var _html = "";
                 for(var i=0;i<event.length;i++) {
                     _html += '<div class="record"><div class="topic">听课课题：<span>' + event[i].subject + '</span></div>';

@@ -10,5 +10,5 @@ public interface OrganHistoryService {
      * 机关进校园历史记录
      * @return List<OrganEntity>
      */
-    List<OrganEntity> organHistory();
+    List<OrganEntity> organHistory(OrganEntity organEntity);
 }

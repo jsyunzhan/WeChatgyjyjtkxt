@@ -6,6 +6,7 @@ import domain.organ.service.OrganHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -44,7 +45,14 @@ public class OrganHistoryController extends AbstractActionController{
      */
     @RequestMapping(value = ORGAN_HISTORY_LIST)
     @ResponseBody
-    public List<OrganEntity> organHistory(){
-        return organHistoryService.organHistory();
+    public List<OrganEntity> organHistory(@RequestParam("yearString") String yearString,
+                                          @RequestParam("monthString") String monthString,
+                                          @RequestParam("schoolName") String schoolName){
+
+        final OrganEntity organEntity = new OrganEntity();
+        organEntity.setSchoolName(schoolName);
+        organEntity.setYearString(yearString);
+        organEntity.setMonthString(monthString);
+        return organHistoryService.organHistory(organEntity);
     }
 }

@@ -19,7 +19,7 @@ public class OrganHistoryServiceImpl implements OrganHistoryService{
     }
 
     @Override
-    public List<OrganEntity> organHistory() {
-        return organDao.organHistory();
+    public List<OrganEntity> organHistory(OrganEntity organEntity) {
+        return organDao.organHistory(organEntity);
     }
 }

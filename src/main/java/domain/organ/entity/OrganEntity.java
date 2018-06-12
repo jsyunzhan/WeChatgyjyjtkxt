@@ -23,6 +23,13 @@ public class OrganEntity extends AbstractEntity{
     //图片路径
     private String picturePath;
 
+    //年份
+    private String yearString;
+
+    //月份
+    private String monthString;
+
+
     @Override
     public String toString() {
         return "OrganEntity{" +

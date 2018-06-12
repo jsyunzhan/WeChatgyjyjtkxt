@@ -47,6 +47,16 @@
         t.UPDATE_DATA updateDate
         FROM t_organ_message t
         WHERE t.DELETE_FLAG='1'
+        <if test="yearString!=null and yearString!=''">
+            AND Year(t.CREATE_DATA) = #{yearString}
+        </if>
+        <if test="monthString!=null and monthString!=''">
+            AND Month(t.CREATE_DATA) = #{monthString}
+        </if>
+        <if test="schoolName!=null and schoolName!=''">
+            AND (SELECT b.SCHOOL_NAME FROM  t_sys_school b where b.ID=t.SCHOOL_ID)
+            like concat(concat('%',#{schoolName}),'%')
+        </if>
         ORDER BY t.CREATE_DATA DESC
     </select>
 
