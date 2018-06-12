@@ -130,7 +130,7 @@ $(function(){
                                     'params': {},
                                     'events':{'sure': function(){
                                             popdown(flag);
-                                            location.href = path +"/history/history";
+                                            location.href = path +"/organ/historypage";
                                         }
                                     }
                                 },false);

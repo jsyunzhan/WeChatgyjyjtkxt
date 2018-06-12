@@ -95,7 +95,7 @@ $(function () {
 
     //获取机关进校园记录
     $.ajax({
-        url:path + "/organ/historypage/history",type:"GET",dataType:"json",
+        url:path + "/organ/historypage/history?yearString="+"&monthString="+""+"&schoolName="+"",type:"GET",dataType:"json",
         success:function (event) {
             var _html = "";
             for(var i=0;i<2;i++){
