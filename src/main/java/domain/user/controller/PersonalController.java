@@ -46,6 +46,7 @@ public class PersonalController extends AbstractActionController{
         mv.addObject("listenerName",getListenerName());
         mv.addObject("thisMonthCount",thisMonthCount);
         mv.addObject("allCount",allCount);
+        mv.addObject("orgFlag",getOrganFlag());
         return mv;
     }
 

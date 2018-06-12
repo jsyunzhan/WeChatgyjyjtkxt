@@ -44,7 +44,9 @@ public class OrganCommentController extends AbstractActionController{
      */
     @RequestMapping(value = ORGAN_COMMENT_PAGE)
     public ModelAndView index(){
-        return new ModelAndView(TO_ORGAN_COMMENT_PAGE);
+        final ModelAndView mv = new ModelAndView(TO_ORGAN_COMMENT_PAGE);
+        mv.addObject("orgFlag",getOrganFlag());
+        return mv;
     }
 
     /**

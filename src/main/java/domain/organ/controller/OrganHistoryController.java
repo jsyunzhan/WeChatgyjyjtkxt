@@ -36,7 +36,9 @@ public class OrganHistoryController extends AbstractActionController{
      */
     @RequestMapping(value = ORGAN_HISTORY_PAGE)
     public ModelAndView index(){
-        return new ModelAndView(TO_ORGAN_HISTORY_PAGE);
+        final ModelAndView mv = new ModelAndView(TO_ORGAN_HISTORY_PAGE);
+        mv.addObject("orgFlag",getOrganFlag());
+        return mv;
     }
 
     /**

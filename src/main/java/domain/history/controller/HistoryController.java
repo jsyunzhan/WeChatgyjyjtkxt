@@ -44,6 +44,7 @@ public class HistoryController extends AbstractActionController{
         }else {
             mv.addObject("allNoteUrl","");
         }
+        mv.addObject("orgFlag",getOrganFlag());
         return mv;
     }
 
@@ -60,6 +61,7 @@ public class HistoryController extends AbstractActionController{
         }else {
             mv.addObject("allNoteUrl","");
         }
+        mv.addObject("orgFlag",getOrganFlag());
         return mv;
     }
 
@@ -77,7 +79,7 @@ public class HistoryController extends AbstractActionController{
         }else {
             mv.addObject("allNoteUrl","");
         }
-
+        mv.addObject("orgFlag",getOrganFlag());
         return mv;
     }
 
