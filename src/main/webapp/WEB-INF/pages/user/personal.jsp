@@ -88,7 +88,7 @@
         </a>
         <a href="javascript:;">
             <span><img src="${APP_PATH}/static/images/listen/icon_07.png"></span>
-            <span>历史评价</span>
+            <span>爱心妈妈</span>
         </a>
         <a href="${APP_PATH}/user/personal">
             <span><img src="${APP_PATH}/static/images/listen/icon_04.png"></span>
