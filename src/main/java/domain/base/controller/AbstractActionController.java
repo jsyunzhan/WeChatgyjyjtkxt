@@ -47,4 +47,9 @@ public abstract class AbstractActionController {
         return getLoginSession().getPermissionFlag();
     }
 
+    //获取机关进校园提交权限
+    protected final Long getOrganFlag(){
+        return getLoginSession().getOrganFlag();
+    }
+
 }
