@@ -205,7 +205,7 @@ body{
 
 .footer .secondFloor{
     position: absolute;
-    top: -104px;
+    bottom: 50px;
     left: 0;
     width: 100%;
     background: #fff;

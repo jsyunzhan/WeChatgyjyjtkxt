@@ -38,4 +38,9 @@ function bottomFloor() {
             }
         })(i)
     }
+    if(organFlag==0){
+        $("#footer a:nth-child(2) .secondFloor p:nth-child(1)").hide();
+    }else if(organFlag==1){
+        $("#footer a:nth-child(2) .secondFloor p:nth-child(1)").show();
+    }
 }

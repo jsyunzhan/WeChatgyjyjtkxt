@@ -85,6 +85,7 @@
     </div>
 </body>
 <script>
+    var organFlag = "${organFlag}";
     var path  = '<%=request.getContextPath()%>';
 </script>
 </html>
