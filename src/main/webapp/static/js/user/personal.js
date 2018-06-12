@@ -1,4 +1,5 @@
 $(function () {
+    bottomFloor();
     initUtils();
     var loading = (new Loading()).init(path+"/static/images/history/loading.gif","100px","100px");
     // 日期格式转换

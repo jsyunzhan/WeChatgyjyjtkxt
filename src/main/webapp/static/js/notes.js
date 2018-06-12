@@ -56,7 +56,6 @@ $(function(){
         $(this).find("span").toggleClass("choosen");
     });
 
-    bottomFloor("secondNotes1");
-    bottomFloor("secondNotes2");
+    bottomFloor();
     map_position();
 })

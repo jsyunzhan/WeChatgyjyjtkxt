@@ -20,24 +20,22 @@ function center(obj){
 }
 
 // 底部导航二级标题
-function bottomFloor(id){
-    var secondNotes = document.getElementById(id);
+function bottomFloor() {
+    var footer = document.getElementById("footer");
+    var footera = footer.getElementsByTagName("a");
     var wrapper = document.getElementsByClassName("wrapper")[0];
-    secondNotes.onclick = function(){
-        var ev = ev||window.event;
-        ev.cancelBubble = true;
-        $("#"+id+" .secondFloor").show();
-        $("#"+id+" .secondFloor p:nth-child(1)").click(function(){
-            window.location.href = path+"/listen/note";
-        })
-        $("#"+id+" .secondFloor p:nth-child(2)").click(function(){
-            window.location.href = path+"/history/history";
-        })
-    }
-    wrapper.onclick = function(){
-        $("#"+id+" .secondFloor").hide();
-    }
-    document.onscroll = function (){
-        $("#"+id+" .secondFloor").hide();
+    for (var i=0;i<footera.length;i++){
+        !(function (i){
+            footera[i].onclick = function(ev){
+                $(".secondFloor").hide();
+                var secondFloor = this.getElementsByClassName("secondFloor")[0];
+                secondFloor.style.display = "block";
+                var ev = ev || window.event;
+                ev.cancelBubble = true;
+                wrapper.onclick = function(){
+                    secondFloor.style.display = "none";
+                }
+            }
+        })(i)
     }
 }

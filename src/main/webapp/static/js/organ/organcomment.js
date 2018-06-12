@@ -1,6 +1,5 @@
 $(function(){
-    bottomFloor("secondNotes1");
-    bottomFloor("secondNotes2");
+    bottomFloor();
     initUtils();
     var loading = (new Loading()).init(path+"/static/images/history/loading.gif","100px","100px");
     $(".addImage input").change(function () {
