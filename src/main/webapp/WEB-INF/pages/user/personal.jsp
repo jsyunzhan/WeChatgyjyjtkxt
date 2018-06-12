@@ -57,6 +57,17 @@
                 </div>
             </div>
         </div>
+        <div class="content_03">
+            <div class="newest">
+                <div>机关进校园</div>
+                <div class="more">
+                    <a href="${APP_PATH}/organ/historypage">
+                        更多
+                        <span><img src="${APP_PATH}/static/images/personal/more.png"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="footer" id="footer">
         <a href="javascript:;">

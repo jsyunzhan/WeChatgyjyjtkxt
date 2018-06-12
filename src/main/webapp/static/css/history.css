@@ -61,7 +61,7 @@ body{
     position: relative;
     line-height: 40px;
     font-size: 0;
-    width: 90px;
+    width: 100px;
 }
 
 .search .month select{

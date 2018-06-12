@@ -39,16 +39,16 @@
 </div>
 <div class="footer" id="footer">
     <a href="javascript:;">
-        <span><img src="${APP_PATH}/static/images/listen/icon_05.png"></span>
-        <span>听课评价</span>
+        <span><img src="${APP_PATH}/static/images/listen/icon_01.png"></span>
+        <span style="color: #FFCC00;">听课评价</span>
         <div class="secondFloor none">
             <p onclick='window.location.href = "${APP_PATH}/listen/note"'>新建听课</p>
             <p onclick='window.location.href = "${APP_PATH}/history/history"'>历史评价</p>
         </div>
     </a>
     <a href="javascript:;">
-        <span><img src="${APP_PATH}/static/images/listen/icon_02.png"></span>
-        <span style="color: #FFCC00;">机关进校</span>
+        <span><img src="${APP_PATH}/static/images/listen/icon_06.png"></span>
+        <span>机关进校</span>
         <div class="secondFloor none">
             <p onclick='window.location.href = "${APP_PATH}/organ/commentpage"'>机关进校</p>
             <p onclick='window.location.href = "${APP_PATH}/organ/historypage"'>历史评价</p>

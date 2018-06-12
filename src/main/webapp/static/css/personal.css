@@ -28,12 +28,12 @@ body{
     font-size: 14px;
 }
 
-.content_01,.content_02{
+.content_01,.content_02,.content_03{
     background: #fff;
     margin-bottom: 10px;
 }
 
-.content_02{
+.content_03{
     margin-bottom: 60px;
 }
 
@@ -138,6 +138,31 @@ body{
     width: 14px;
     height: 14px;
     margin-top: 5px;
+}
+
+.school{
+    display: flex;
+}
+
+.school p{
+    float: left;
+    line-height: 24px;
+    word-break: break-all;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    display:-webkit-box;
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:2;
+    font-size: 14px;
+}
+
+.school p:nth-child(1){
+    width: 94px;
+}
+
+.school p:nth-child(2){
+    flex: 1;
+    padding-right: 80px;
 }
 
 .record .detail{
