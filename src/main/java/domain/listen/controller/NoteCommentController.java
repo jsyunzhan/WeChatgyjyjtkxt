@@ -45,7 +45,7 @@ public class NoteCommentController extends AbstractActionController{
     @RequestMapping(value = "/listen/note")
     public ModelAndView index(){
         final ModelAndView mv = new ModelAndView("listen/notes");
-        mv.addObject("orgFlag",getOrganFlag());
+        mv.addObject("organFlag",getOrganFlag());
         return mv;
     }
 
