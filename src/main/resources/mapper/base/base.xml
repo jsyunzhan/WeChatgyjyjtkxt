@@ -26,7 +26,7 @@
         t.LISTENER_NUMB listenerNumb,
         t.SCHOOL_NAME schoolName,
         t.PERMISSION_FLAG permissionFlag,
-        t.ORGAN_FLAG organFlag，
+        t.ORGAN_FLAG organFlag,
         t.OPEN_ID openId,
         t.CREATE_USER_ID createUserId,
         t.CREATE_DATA createDate,
