@@ -63,9 +63,9 @@ $(function () {
                                    var comments = $("#comments").val();
                                    var id = $(".new_pop01").attr("id");
                                    if(comments!=""){
-                                       var data = {id:id,comments:comments};
+                                       var data = {id:id,checkContent:comments};
                                        $.ajax({
-                                           url:path +'/listen/noteedit',type:"POST",contentType: "application/json",data:JSON.stringify(data),
+                                           url:path +'/organ/commentpage/edit',type:"POST",contentType: "application/json",data:JSON.stringify(data),
                                            success:function (r) {
                                                if (r){
                                                    popdown(flag);
