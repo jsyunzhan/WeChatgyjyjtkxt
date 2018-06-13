@@ -217,3 +217,7 @@ img{
 .none{
 	display: none;
 }
+
+.footer .secondFloor p:active,.footer .secondFloor p:hover{
+	color: #FFCC00;
+}
